@@ -1,5 +1,5 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
+const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
@@ -15,32 +15,43 @@ app.use(express.urlencoded({ extended: true }));
 // Servir archivos estáticos
 app.use(express.static(path.join(__dirname)));
 
-// Configurar Nodemailer para Gmail SMTP (puerto 587 con STARTTLS)
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false, // true para 465, false para 587
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS
-  },
-  tls: {
-    rejectUnauthorized: false // Permite conexión en entornos cloud
-  },
-  connectionTimeout: 10000, // 10 segundos
-  greetingTimeout: 10000,
-  socketTimeout: 15000
-});
+// Configurar SendGrid con API Key
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+if (SENDGRID_API_KEY) {
+  sgMail.setApiKey(SENDGRID_API_KEY);
+  console.log('SendGrid configurado correctamente');
+} else {
+  console.warn('ADVERTENCIA: No se encontró SENDGRID_API_KEY en las variables de entorno');
+}
+
+// Función helper para enviar emails
+async function sendEmail({ to, from, replyTo, subject, html }) {
+  if (!SENDGRID_API_KEY) {
+    console.error('SendGrid no configurado - revisa variables de entorno');
+    throw new Error('SendGrid no configurado');
+  }
+  
+  const msg = {
+    to: to,
+    from: from || process.env.SENDGRID_FROM || 'team@Nexxts.es',
+    replyTo: replyTo,
+    subject: subject,
+    html: html
+  };
+  
+  await sgMail.send(msg);
+}
 
 // Endpoint para recibir datos del formulario de contacto
 app.post('/send-email', async (req, res) => {
   try {
     const { name, email, company, service, message } = req.body;
     const to = process.env.CONTACT_EMAIL || 'team@Nexxts.es';
+    const fromEmail = process.env.SENDGRID_FROM || 'team@Nexxts.es';
 
-    const mailOptions = {
-      from: process.env.SMTP_USER,
+    await sendEmail({
       to: to,
+      from: fromEmail,
       replyTo: email,
       subject: `Contacto desde Nexxts - ${name} - ${service || 'Consulta'}`,
       html: `
@@ -78,9 +89,7 @@ app.post('/send-email', async (req, res) => {
           </div>
         </div>
       `
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
     
     res.json({ 
       success: true, 
@@ -88,6 +97,9 @@ app.post('/send-email', async (req, res) => {
     });
   } catch (error) {
     console.error('Error al enviar email:', error);
+    if (error.response) {
+      console.error('Error detallado SendGrid:', error.response.body);
+    }
     res.status(500).json({ 
       success: false, 
       message: 'Hubo un error al enviar tu mensaje. Por favor intenta de nuevo.' 
@@ -100,10 +112,11 @@ app.post('/subscribe', async (req, res) => {
   try {
     const { email } = req.body;
     const to = process.env.CONTACT_EMAIL || 'team@Nexxts.es';
+    const fromEmail = process.env.SENDGRID_FROM || 'team@Nexxts.es';
 
-    const mailOptions = {
-      from: process.env.SMTP_USER,
+    await sendEmail({
       to: to,
+      from: fromEmail,
       replyTo: email,
       subject: 'Nuevo lead desde Nexxts',
       html: `
@@ -123,9 +136,7 @@ app.post('/subscribe', async (req, res) => {
           </div>
         </div>
       `
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
     
     res.json({ 
       success: true, 
@@ -133,6 +144,9 @@ app.post('/subscribe', async (req, res) => {
     });
   } catch (error) {
     console.error('Error al enviar email:', error);
+    if (error.response) {
+      console.error('Error detallado SendGrid:', error.response.body);
+    }
     res.status(500).json({ 
       success: false, 
       message: 'Hubo un error. Por favor intenta de nuevo.' 
@@ -147,5 +161,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Servidor Nexxts corriendo en http://localhost:${PORT}`);
-  console.log('SMTP configurado para Gmail - puerto 587 STARTTLS');
+  console.log('Usando SendGrid para envío de correos');
 });
