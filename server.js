@@ -15,13 +15,21 @@ app.use(express.urlencoded({ extended: true }));
 // Servir archivos estáticos
 app.use(express.static(path.join(__dirname)));
 
-// Configurar Nodemailer con Gmail SMTP
+// Configurar Nodemailer para Gmail SMTP (puerto 587 con STARTTLS)
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false, // true para 465, false para 587
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS
-  }
+  },
+  tls: {
+    rejectUnauthorized: false // Permite conexión en entornos cloud
+  },
+  connectionTimeout: 10000, // 10 segundos
+  greetingTimeout: 10000,
+  socketTimeout: 15000
 });
 
 // Endpoint para recibir datos del formulario de contacto
@@ -97,7 +105,7 @@ app.post('/subscribe', async (req, res) => {
       from: process.env.SMTP_USER,
       to: to,
       replyTo: email,
-      subject: 'Nuevo suscriptor desde Nexxts',
+      subject: 'Nuevo lead desde Nexxts',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background-color: #8B4513; color: white; padding: 20px; text-align: center;">
@@ -139,4 +147,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Servidor Nexxts corriendo en http://localhost:${PORT}`);
+  console.log('SMTP configurado para Gmail - puerto 587 STARTTLS');
 });
