@@ -936,9 +936,10 @@ footer {
   <div class="container">
     <h2>¿Listo para transformar tu <span class="em-serif">negocio?</span></h2>
     <p>Únete a las empresas que ya confían en Nexxts para sus proyectos de desarrollo. ¡Comienza tu proyecto hoy!</p>
-    <form class="cta-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos pronto para discutir tu proyecto.')">
-      <input type="email" placeholder="Ingresa tu email" required>
-      <button type="submit" class="btn">Comenzar</button>
+    <form class="cta-form" id="cta-form-main">
+      <input type="email" id="cta-email-main" placeholder="Ingresa tu email" required>
+      <button type="submit" class="btn" id="cta-submit-main">Comenzar</button>
+      <div id="cta-status-main" style="width:100%;font-family:var(--font-mono);font-size:0.7rem;display:none;"></div>
     </form>
   </div>
 </section>
@@ -1036,6 +1037,48 @@ document.querySelectorAll('.pill').forEach(pill => {
     pill.classList.add('active');
   });
 });
+
+// ── CTA Form ──
+(function() {
+  const form = document.getElementById('cta-form-main');
+  if (!form) return;
+  const input = document.getElementById('cta-email-main');
+  const btn = document.getElementById('cta-submit-main');
+  const status = document.getElementById('cta-status-main');
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = input.value.trim();
+    if (!email) return;
+    
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    status.style.display = 'block';
+    status.style.color = 'rgba(255,255,255,0.8)';
+    status.textContent = 'Enviando...';
+    
+    try {
+      const response = await fetch('/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const result = await response.json();
+      if (result.success) {
+        status.style.color = '#fff';
+        status.textContent = '✓ ¡Gracias! Te contactaremos pronto.';
+        input.value = '';
+      } else {
+        status.textContent = '✗ Error. Intenta de nuevo.';
+      }
+    } catch (error) {
+      status.textContent = '✗ Error de conexión.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Comenzar';
+    }
+  });
+})();
 </script>
 </body>
 </html>

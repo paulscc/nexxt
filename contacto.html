@@ -426,11 +426,11 @@ footer {
             <p><a href="mailto:team@Nexxts.es">team@Nexxts.es</a></p>
           </div>
         </div>
-        <div class="info-item">
+          <div class="info-item">
           <div class="info-icon">📱</div>
           <div class="info-content">
-            
-            <p>Lunes a Viernes, 9:00 - 18:00</p>
+
+            <p>Lunes a Viernes, 24hs</p>
           </div>
         </div>
         <div class="info-item">
@@ -443,7 +443,7 @@ footer {
         </div>
       </div>
       <div class="contact-form" data-reveal data-delay="400">
-        <form onsubmit="event.preventDefault(); alert('¡Gracias! Hemos recibido tu mensaje. Te contactaremos pronto.');">
+        <form id="contact-form">
           <div class="form-group">
             <label for="name">Nombre completo</label>
             <input type="text" id="name" name="name" required placeholder="Tu nombre">
@@ -472,7 +472,8 @@ footer {
             <label for="message">Mensaje</label>
             <textarea id="message" name="message" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+          <button type="submit" id="contact-submit" class="btn btn-primary">Enviar Mensaje</button>
+          <div id="contact-status" style="margin-top:1rem;font-family:var(--font-mono);font-size:0.75rem;display:none;"></div>
         </form>
       </div>
     </div>
@@ -567,6 +568,58 @@ footer {
     }
     lastScroll = currentScroll;
   }, { passive: true });
+})();
+
+// ── Formulario de contacto ──
+(function() {
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('contact-status');
+  const submitBtn = document.getElementById('contact-submit');
+  
+  if (!form) return;
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      company: form.company.value.trim(),
+      service: form.service.value,
+      message: form.message.value.trim()
+    };
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    status.style.display = 'block';
+    status.style.color = 'var(--muted)';
+    status.textContent = 'Enviando mensaje...';
+    
+    try {
+      const response = await fetch('/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        status.style.color = 'green';
+        status.textContent = '✓ ¡Mensaje enviado! Te contactaremos pronto.';
+        form.reset();
+      } else {
+        status.style.color = 'red';
+        status.textContent = '✗ Error al enviar. Intenta de nuevo.';
+      }
+    } catch (error) {
+      status.style.color = 'red';
+      status.textContent = '✗ Error de conexión. Intenta de nuevo.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar Mensaje';
+    }
+  });
 })();
 </script>
 </body>
