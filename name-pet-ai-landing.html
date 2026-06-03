@@ -1,0 +1,1014 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Name Pet AI — Discover the perfect name</title>
+<meta name="description" content="Test our AI and get a name. Your smart companion for finding unique, meaningful pet names.">
+<style>
+/* ── Atelier Zero: Editorial-Warm palette ── */
+:root {
+  --bg:      oklch(96.5% 0.015 75);
+  --surface: oklch(98.5% 0.008 75);
+  --fg:      oklch(18% 0.02 60);
+  --muted:   oklch(48% 0.015 60);
+  --border:  oklch(88% 0.012 75);
+  --accent:  oklch(52% 0.12 28);
+  --accent-soft: oklch(78% 0.06 28);
+
+  --font-display: 'Iowan Old Style', 'Charter', Georgia, 'Times New Roman', serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono:    ui-monospace, 'IBM Plex Mono', 'JetBrains Mono', Menlo, monospace;
+
+  --max-width: 1280px;
+  --gutter: clamp(1rem, 4vw, 3rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 100%; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-body);
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Typography ── */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.15; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
+h4 { font-size: clamp(1rem, 1.5vw, 1.2rem); }
+
+.ds-serif { font-family: var(--font-body); }
+.em-serif { font-family: var(--font-display); font-style: italic; }
+.mono { font-family: var(--font-mono); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.08em; }
+.accent { color: var(--accent); }
+
+/* ── Container ── */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter); }
+.section { padding: clamp(4rem, 8vw, 8rem) 0; position: relative; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* ── Topbar ── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem var(--gutter);
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.topbar-brand { font-weight: 600; color: var(--fg); }
+
+/* ── Nav ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255 255 255 / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: transform 0.3s;
+}
+nav.nav-hidden { transform: translateY(-100%); }
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem var(--gutter);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--fg);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.nav-logo:hover { text-decoration: none; }
+.nav-logo-mark { color: var(--accent); font-size: 1.5rem; }
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  font-size: 0.85rem;
+}
+.nav-links a {
+  color: var(--muted);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.nav-links a:hover { color: var(--fg); text-decoration: none; }
+.nav-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+}
+.nav-star {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.nav-star svg { width: 14px; height: 14px; fill: currentColor; }
+
+/* ── Hero ── */
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0;
+  position: relative;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+.hero h1 { margin-bottom: 1.5rem; }
+.hero h1 .em-serif { color: var(--accent); }
+.hero-lead {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 32em;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 2px;
+}
+.btn-primary:hover { background: oklch(44% 0.12 28); transform: translateY(-1px); }
+.btn-secondary {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+.btn-secondary:hover { border-color: var(--muted); background: var(--surface); }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.stat-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  color: var(--fg);
+}
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.hero-image {
+  aspect-ratio: 4/5;
+  background: var(--border);
+  overflow: hidden;
+  position: relative;
+}
+.hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── Section themes ── */
+.section-dark {
+  background: oklch(15% 0.015 60);
+  color: oklch(92% 0.005 80);
+}
+.section-dark .section-label { color: oklch(60% 0.015 60); }
+.section-dark .btn-secondary {
+  border-color: oklch(35% 0.01 60);
+  color: oklch(90% 0.005 80);
+}
+.section-dark .btn-secondary:hover { border-color: oklch(60% 0.01 60); }
+
+.section-alt {
+  background: var(--surface);
+}
+
+/* ── Stats rings (hero index) ── */
+.hero-index {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+.index-ring {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  transition: all 0.3s;
+  cursor: default;
+  border-radius: 50%;
+}
+.index-ring:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Capabilities grid ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: all 0.3s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+.card-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--accent);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.card-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.card h3 { margin-bottom: 0.75rem; }
+.card p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+
+/* ── Labs ── */
+.labs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.labs-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.pill {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 2px;
+}
+.pill.active { border-color: var(--accent); color: var(--accent); }
+.pill:hover { border-color: var(--muted); }
+
+.progress-bar {
+  height: 2px;
+  background: var(--border);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  width: 40%;
+  background: var(--accent);
+  transition: width 0.6s ease;
+}
+
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.lab-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s;
+}
+.lab-card:hover { transform: translateY(-2px); }
+.lab-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.lab-card h4 { margin-bottom: 0.5rem; font-size: 1rem; }
+.lab-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.lab-thumb {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: var(--border);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.lab-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── Method steps ── */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.method-step {
+  position: relative;
+  padding-top: 2.5rem;
+}
+.method-step::before {
+  content: attr(data-num);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.15;
+  line-height: 1;
+}
+.method-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.method-step h3 { margin-bottom: 0.5rem; }
+.method-step p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+.method-thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--border);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.method-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── Work ── */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.work-card {
+  background: oklch(20% 0.015 60);
+  padding: 2.5rem;
+  transform: rotate(-0.5deg);
+  transition: all 0.4s;
+  position: relative;
+}
+.work-card:nth-child(2) { transform: rotate(0.5deg) translateY(1rem); }
+.work-card:hover { transform: rotate(0deg) translateY(-0.25rem); }
+.work-card-category {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: oklch(60% 0.04 30);
+  margin-bottom: 0.75rem;
+}
+.work-card h3 {
+  font-size: 1.5rem;
+  color: oklch(92% 0.005 80);
+  margin-bottom: 0.5rem;
+}
+.work-card p { font-size: 0.9rem; color: oklch(70% 0.01 70); }
+
+/* ── Testimonial ── */
+.testimonial {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.testimonial-quote::before {
+  content: '\201C';
+  font-size: 4rem;
+  color: var(--accent);
+  opacity: 0.2;
+  position: absolute;
+  top: -1.5rem;
+  left: -1rem;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+.testimonial-author {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.partners {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+.partner-glyph {
+  width: 40px;
+  height: 40px;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+.partner-glyph:hover { opacity: 0.6; }
+.partner-glyph svg { width: 100%; height: 100%; fill: currentColor; }
+
+/* ── CTA ── */
+.cta-ribbon {
+  background: var(--accent);
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+}
+.cta-ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: oklch(44% 0.12 28);
+}
+.cta h2 { margin-bottom: 1rem; }
+.cta-ribbon h2 { color: #fff; }
+.cta-ribbon p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 2rem; max-width: 32em; margin-left: auto; margin-right: auto; }
+.cta-form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cta-form input {
+  padding: 0.85rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.95rem;
+  min-width: 280px;
+  font-family: var(--font-body);
+}
+.cta-form input::placeholder { color: rgba(255,255,255,0.5); }
+.cta-form input:focus { outline: none; border-color: #fff; }
+.cta-form .btn {
+  background: #fff;
+  color: var(--accent);
+  border-radius: 2px;
+}
+.cta-form .btn:hover { background: oklch(95% 0.01 80); }
+
+/* ── Footer ── */
+footer {
+  background: var(--fg);
+  color: oklch(88% 0.005 80);
+  padding: 4rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: oklch(60% 0.01 60);
+  margin-bottom: 1rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.5rem; }
+.footer-col a { color: oklch(80% 0.005 80); font-size: 0.9rem; }
+.footer-col a:hover { color: #fff; }
+.footer-mega {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: oklch(92% 0.005 80);
+  line-height: 1.1;
+  border-top: 1px solid oklch(30% 0.01 60);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+.footer-mega .em-serif { color: var(--accent); font-style: italic; }
+.footer-bottom {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: oklch(45% 0.01 60);
+  border-top: 1px solid oklch(25% 0.01 60);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ── Reveal animations ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal][data-delay="100"] { transition-delay: 0.1s; }
+[data-reveal][data-delay="200"] { transition-delay: 0.2s; }
+[data-reveal][data-delay="300"] { transition-delay: 0.3s; }
+[data-reveal][data-delay="400"] { transition-delay: 0.4s; }
+[data-reveal][data-delay="500"] { transition-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .work-card, .card, .lab-card { transform: none !important; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1080px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-image { aspect-ratio: 16/9; max-height: 60vh; }
+  .work-grid { grid-template-columns: 1fr; }
+  .work-card:nth-child(2) { transform: rotate(0deg) translateY(0); }
+}
+@media (max-width: 880px) {
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+}
+@media (max-width: 560px) {
+  .hero-stats { grid-template-columns: 1fr; gap: 1rem; }
+  .cards-grid, .labs-grid, .method-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .cta-form input { min-width: 100%; }
+}
+
+/* ── Dotted rules ── */
+.ruler-dotted {
+  border: none;
+  border-top: 1px dotted var(--border);
+  margin: 2rem 0;
+}
+
+/* ── Paper texture overlay ── */
+.paper-texture {
+  position: relative;
+}
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <span class="topbar-brand">✦ Name Pet AI</span>
+  <span>Vol. I / Issue 01 — <span class="mono">2026</span></span>
+  <span><span class="mono">Nombremascotas.com</span></span>
+</div>
+
+<!-- Nav -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-mark">✦</span>
+      <span>Name Pet</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About US <span class="nav-badge">Calendar</span></a></li>
+      <li><a href="#capabilities">Features <span class="nav-badge">Pets Library</span></a></li>
+      <li><a href="#labs">Teach us your pet <span class="nav-badge">Shop</span></a></li>
+      <li><a href="#testimonial">Social <span class="nav-badge">Blog</span></a></li>
+    </ul>
+    <div class="nav-star">
+      <svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
+      <span id="star-count">128</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero container" id="hero" data-reveal>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-label" data-reveal data-delay="100">Introducing Name Pet AI</div>
+      <h1 data-reveal data-delay="200">
+        Discover the perfect <span class="em-serif">name</span>
+        <span class="accent" style="font-family:var(--font-display)">✦</span>
+      </h1>
+      <p class="hero-lead" data-reveal data-delay="300">
+        Our smart AI helps you find unique, meaningful names for your beloved pets, making every companion truly special.
+      </p>
+      <div class="hero-actions" data-reveal data-delay="400">
+        <a href="#cta" class="btn btn-primary">Generate My Pet's Name</a>
+        <a href="#method" class="btn btn-secondary">Learn how it works</a>
+      </div>
+      <div class="hero-stats" data-reveal data-delay="500">
+        <div class="stat">
+          <div class="stat-value">100K+</div>
+          <div class="stat-label">Names Generated</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">98%</div>
+          <div class="stat-label">Satisfaction</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">5M+</div>
+          <div class="stat-label">Happy Pets</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image" data-reveal data-delay="300">
+      <img src="assets/hero.svg" alt="Name Pet AI hero illustration" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section paper-texture" id="about" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">I. About</div>
+    <div class="hero-grid" style="grid-template-columns: 1fr 1fr; gap: 4rem;">
+      <div>
+        <h2 data-reveal data-delay="200">Our Story &amp; Philosophy</h2>
+        <hr class="ruler-dotted" data-reveal data-delay="250">
+      </div>
+      <div>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--muted)" data-reveal data-delay="300">
+          At Name Pet AI, we believe every companion deserves a name that reflects their unique spirit. Our mission is to blend creativity with technology, helping pet owners discover names that are meaningful, memorable, and full of personality. Driven by innovation and love for animals, we aim to make naming your pet a joyful and inspiring experience.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Capabilities -->
+<section class="section section-alt paper-texture" id="capabilities" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">II. Capabilities</div>
+    <h2 data-reveal data-delay="200">What we <span class="em-serif">offer</span></h2>
+    <div class="cards-grid">
+      <div class="card" data-reveal data-delay="100">
+        <div class="card-num">01</div>
+        <div class="card-tag">Intuitive Matching</div>
+        <h3>AI-Powered Recommendations</h3>
+        <p>Our advanced algorithms analyze traits, preferences, and trends to suggest names that feel natural and fitting for your pet.</p>
+      </div>
+      <div class="card" data-reveal data-delay="200">
+        <div class="card-num">02</div>
+        <div class="card-tag">Vast Database</div>
+        <h3>Personalized Filters</h3>
+        <p>Access thousands of curated names with smart filters to find the perfect match for your pet's unique personality.</p>
+      </div>
+      <div class="card" data-reveal data-delay="300">
+        <div class="card-num">03</div>
+        <div class="card-tag">Personalized Filters</div>
+        <h3>Tailored to Your Pet</h3>
+        <p>Customize searches with filters for personality, species, or style, so every recommendation feels uniquely yours.</p>
+      </div>
+      <div class="card" data-reveal data-delay="400">
+        <div class="card-num">04</div>
+        <div class="card-tag">Community Input</div>
+        <h3>Share &amp; Discover</h3>
+        <p>Connect with fellow pet lovers, share your favorite names, and discover new ideas from a vibrant community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Labs -->
+<section class="section paper-texture" id="labs" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">III. Labs</div>
+    <div class="labs-header" data-reveal data-delay="200">
+      <h2>Behind the <span class="em-serif">research</span></h2>
+      <div class="labs-pills">
+        <span class="pill active">All</span>
+        <span class="pill">AI</span>
+        <span class="pill">Linguistics</span>
+        <span class="pill">Ethics</span>
+      </div>
+    </div>
+    <div class="progress-bar" data-reveal data-delay="250">
+      <div class="progress-fill" style="width:45%"></div>
+    </div>
+    <div class="labs-grid">
+      <div class="lab-card" data-reveal data-delay="100">
+        <div class="lab-thumb"><img src="assets/labs-1.svg" alt="Lexicon Synthesis Engine" loading="lazy"></div>
+        <div class="lab-card-num">I.</div>
+        <h4>Lexicon Synthesis Engine</h4>
+        <p>Our core AI system, constantly learning and generating new name permutations based on linguistic patterns and emotional resonance.</p>
+      </div>
+      <div class="lab-card" data-reveal data-delay="200">
+        <div class="lab-thumb"><img src="assets/labs-2.svg" alt="Ethno-Linguistic Datasets" loading="lazy"></div>
+        <div class="lab-card-num">II.</div>
+        <h4>Ethno-Linguistic Datasets</h4>
+        <p>Researching names across cultures and histories to unearth hidden gems and ensure diversity and depth in our suggestions.</p>
+      </div>
+      <div class="lab-card" data-reveal data-delay="300">
+        <div class="lab-thumb"><img src="assets/labs-3.svg" alt="Preference Learning Models" loading="lazy"></div>
+        <div class="lab-card-num">III.</div>
+        <h4>Preference Learning Models</h4>
+        <p>Analyzing user choices and feedback to intuitively understand what makes a name 'click' for different pet personalities and owners.</p>
+      </div>
+      <div class="lab-card" data-reveal data-delay="400">
+        <div class="lab-thumb"><img src="assets/labs-4.svg" alt="Pet Industry Semantics" loading="lazy"></div>
+        <div class="lab-card-num">IV.</div>
+        <h4>Pet Industry Semantics</h4>
+        <p>Working with pet experts and brands to understand industry trends and ensure names are relevant and aspirational within the pet community.</p>
+      </div>
+      <div class="lab-card" data-reveal data-delay="500">
+        <div class="lab-thumb"><img src="assets/labs-5.svg" alt="Bias Mitigation Frameworks" loading="lazy"></div>
+        <div class="lab-card-num">V.</div>
+        <h4>Bias Mitigation Frameworks</h4>
+        <p>Continuously refining our algorithms to eliminate bias and ensure all name suggestions are inclusive, respectful, and appropriate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="section section-alt paper-texture" id="method" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">IV. Method</div>
+    <h2 data-reveal data-delay="200">How it <span class="em-serif">works</span></h2>
+    <div class="method-grid">
+      <div class="method-step" data-num="01" data-reveal data-delay="100">
+        <div class="method-thumb"><img src="assets/method-1.svg" alt="Understand Your Pet" loading="lazy"></div>
+        <div class="method-tag">Define Personality</div>
+        <h3>Understand Your Pet</h3>
+        <p>Tell us about your pet's unique traits, breed, and your aspirations for their name.</p>
+      </div>
+      <div class="method-step" data-num="02" data-reveal data-delay="200">
+        <div class="method-thumb"><img src="assets/method-2.svg" alt="Tailor Your Search" loading="lazy"></div>
+        <div class="method-tag">Input Preferences</div>
+        <h3>Tailor Your Search</h3>
+        <p>Filter by length, origin, meaning, or even sounds that resonate with you.</p>
+      </div>
+      <div class="method-step" data-num="03" data-reveal data-delay="300">
+        <div class="method-thumb"><img src="assets/method-3.svg" alt="Discover Perfect Names" loading="lazy"></div>
+        <div class="method-tag">Generate &amp; Refine</div>
+        <h3>Discover Perfect Names</h3>
+        <p>Our AI will present a curated list, which you can further refine and explore.</p>
+      </div>
+      <div class="method-step" data-num="04" data-reveal data-delay="400">
+        <div class="method-thumb"><img src="assets/method-4.svg" alt="Welcome Your New Companion" loading="lazy"></div>
+        <div class="method-tag">Share &amp; Celebrate</div>
+        <h3>Welcome Your New Companion</h3>
+        <p>Once you've chosen, share your pet's new name with friends and family!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Work -->
+<section class="section section-dark paper-texture" id="work" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">V. Selected Work</div>
+    <h2 data-reveal data-delay="200">Our <span class="em-serif">projects</span></h2>
+    <div class="work-grid">
+      <div class="work-card" data-reveal data-delay="300">
+        <div class="work-card-category">Research &amp; Insights</div>
+        <h3>Naming Trends Report 2026</h3>
+        <p>Uncovering the Future of Pet Monikers</p>
+      </div>
+      <div class="work-card" data-reveal data-delay="400">
+        <div class="work-card-category">Curated Naming Sets</div>
+        <h3>The 'Furever' Collection</h3>
+        <p>Names That Last a Lifetime</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="section section-alt paper-texture" id="testimonial" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">VI. Testimonials</div>
+    <div class="testimonial" data-reveal data-delay="200">
+      <div class="testimonial-quote">
+        Name Pet AI isn't just a tool; it's a creative partner. We found the perfect name for our new rescue, and it truly embodies her playful spirit. Highly recommend!
+      </div>
+      <div class="testimonial-author">Sarah &amp; Buster, Happy Pet Parents</div>
+      <div class="partners">
+        <span class="partner-glyph"><svg viewBox="0 0 24 24"><path d="M12 0L15.09 4.56L20.62 5.09L16.31 8.35L17.58 13.91L12 10.5L6.42 13.91L7.69 8.35L3.38 5.09L8.91 4.56L12 0Z"/></svg></span>
+        <span class="partner-glyph"><svg viewBox="0 0 24 24"><path d="M20.89 12.33c-1.39-1.39-3.26-2.16-5.22-2.16-1.96 0-3.83.77-5.22 2.16-1.39 1.39-2.16 3.26-2.16 5.22 0 1.96.77 3.83 2.16 5.22 1.39 1.39 3.26 2.16 5.22 2.16 1.96 0 3.83-.77 5.22-2.16 1.39-1.39 2.16-3.26 2.16-5.22 0-1.96-.77-3.83-2.16-5.22zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></span>
+        <span class="partner-glyph"><svg viewBox="0 0 24 24"><path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></span>
+        <span class="partner-glyph"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 5.5v2.5h-2v-2.5h2zm5 0v2.5h-2v-2.5h2zm-2.5 7h-2.5v-2.5h2.5v2.5zM12 18.5c-2.76 0-5-2.24-5-5h-2c0 3.86 3.14 7 7 7s7-3.14 7-7h-2c0 2.76-2.24 5-5 5z"/></svg></span>
+        <span class="partner-glyph"><svg viewBox="0 0 24 24"><path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h4c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1h-4zm3-7h-2V7h2v3z"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-ribbon" id="cta" data-reveal>
+  <div class="container">
+    <h2>Ready to Find the Perfect <span class="em-serif">Name?</span></h2>
+    <p>Join thousands of happy pet owners who found their companion's ideal name with Name Pet AI. Start your journey today!</p>
+    <form class="cta-form" onsubmit="event.preventDefault(); alert('Thanks! You\'ll receive your first name suggestions soon.')">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit" class="btn">Get Started</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Name Generator</a></li>
+          <li><a href="#">AI Assistant</a></li>
+          <li><a href="#">Community Forum</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">API Docs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-mega">
+      Pet Naming reimagined. <span class="em-serif">Joyful.</span> <span class="accent" style="font-family:var(--font-display)">—</span>
+    </div>
+    <div class="footer-bottom">
+      <span>✦ Name Pet AI — © 2026</span>
+      <span>Nombremascotas.com</span>
+      <span>Licensed under Apache-2.0</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ──
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+})();
+
+// ── Headroom nav ──
+(function() {
+  const nav = document.getElementById('main-nav');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      nav.classList.add('nav-hidden');
+    } else {
+      nav.classList.remove('nav-hidden');
+    }
+    lastScroll = currentScroll;
+  }, { passive: true });
+})();
+
+// ── Smooth scroll for anchor links ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// ── Pill toggle for Labs ──
+document.querySelectorAll('.pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
+</｜｜DSML｜｜parameter>
+</｜｜DSML｜｜invoke>
+</｜｜DSML｜｜tool_calls>

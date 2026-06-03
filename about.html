@@ -1,0 +1,565 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nosotros — Nexxts | Páginas Web en Quito</title>
+<meta name="description" content="Nexxts, tu agencia de páginas web en Quito, Ecuador. Conoce nuestro equipo y descubre cómo creamos sitios web profesionales para negocios en Quito.">
+<style>
+/* ── Atelier Zero: Editorial-Warm palette ── */
+:root {
+  --bg:      oklch(96.5% 0.015 75);
+  --surface: oklch(98.5% 0.008 75);
+  --fg:      oklch(18% 0.02 60);
+  --muted:   oklch(48% 0.015 60);
+  --border:  oklch(88% 0.012 75);
+  --accent:  oklch(52% 0.12 28);
+  --accent-soft: oklch(78% 0.06 28);
+
+  --font-display: 'Iowan Old Style', 'Charter', Georgia, 'Times New Roman', serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono:    ui-monospace, 'IBM Plex Mono', 'JetBrains Mono', Menlo, monospace;
+
+  --max-width: 1280px;
+  --gutter: clamp(1rem, 4vw, 3rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 100%; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-body);
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Typography ── */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.15; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
+h4 { font-size: clamp(1rem, 1.5vw, 1.2rem); }
+
+.em-serif { font-family: var(--font-display); font-style: italic; }
+.mono { font-family: var(--font-mono); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.08em; }
+.accent { color: var(--accent); }
+
+/* ── Container ── */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter); }
+.section { padding: clamp(4rem, 8vw, 8rem) 0; position: relative; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* ── Topbar ── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem var(--gutter);
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.topbar-brand { font-weight: 600; color: var(--fg); }
+
+/* ── Nav ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255 255 255 / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: transform 0.3s;
+}
+nav.nav-hidden { transform: translateY(-100%); }
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem var(--gutter);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--fg);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.nav-logo:hover { text-decoration: none; }
+.nav-logo-mark { color: var(--accent); font-size: 1.5rem; }
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  font-size: 0.85rem;
+}
+.nav-links a {
+  color: var(--muted);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.nav-links a:hover { color: var(--fg); text-decoration: none; }
+.nav-links a.active { color: var(--accent); }
+
+/* ── Hero ── */
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0;
+  position: relative;
+}
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+.hero h1 { margin-bottom: 1.5rem; }
+.hero h1 .em-serif { color: var(--accent); }
+.hero-lead {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 32em;
+}
+
+/* ── Section themes ── */
+.section-dark {
+  background: oklch(15% 0.015 60);
+  color: oklch(92% 0.005 80);
+}
+.section-dark .section-label { color: oklch(60% 0.015 60); }
+
+.section-alt {
+  background: var(--surface);
+}
+
+/* ── Team grid ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.team-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: all 0.3s;
+}
+.team-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+.team-role {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.team-card h3 { margin-bottom: 0.5rem; }
+.team-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+/* ── Values grid ── */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.value-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: all 0.3s;
+}
+.value-card:hover { transform: translateY(-2px); }
+.value-icon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.value-card h3 { margin-bottom: 0.75rem; }
+.value-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+
+/* ── Location ── */
+.location-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.location-info p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.location-map {
+  aspect-ratio: 16/9;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--fg);
+  color: oklch(88% 0.005 80);
+  padding: 4rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: oklch(60% 0.01 60);
+  margin-bottom: 1rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.5rem; }
+.footer-col a { color: oklch(80% 0.005 80); font-size: 0.9rem; }
+.footer-col a:hover { color: #fff; }
+.footer-mega {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: oklch(92% 0.005 80);
+  line-height: 1.1;
+  border-top: 1px solid oklch(30% 0.01 60);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+.footer-mega .em-serif { color: var(--accent); font-style: italic; }
+.footer-bottom {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: oklch(45% 0.01 60);
+  border-top: 1px solid oklch(25% 0.01 60);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ── Reveal animations ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal][data-delay="100"] { transition-delay: 0.1s; }
+[data-reveal][data-delay="200"] { transition-delay: 0.2s; }
+[data-reveal][data-delay="300"] { transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 880px) {
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  .location-section { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .team-grid, .values-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Paper texture overlay ── */
+.paper-texture {
+  position: relative;
+}
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <span class="topbar-brand">✦ Nexxts</span>
+  <span>Quito, Ecuador — <span class="mono">2026</span></span>
+  <span><span class="mono">Nexxts.es</span></span>
+</div>
+
+<!-- Nav -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="dev-studio-landing.html" class="nav-logo">
+      <span class="nav-logo-mark">✦</span>
+      <span>Nexxts</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="dev-studio-landing.html">Inicio</a></li>
+      <li><a href="about.html" class="active">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero container" id="hero" data-reveal>
+  <div class="hero-label" data-reveal data-delay="100">Sobre Nosotros</div>
+  <h1 data-reveal data-delay="200">
+    Innovación desde <span class="em-serif">Quito</span>
+    <span class="accent">✦</span>
+  </h1>
+  <p class="hero-lead" data-reveal data-delay="300">
+    Somos un equipo de desarrolladores apasionados comprometidos con transformar ideas en soluciones digitales de vanguardia desde el corazón de Ecuador.
+  </p>
+</section>
+
+<!-- Story -->
+<section class="section paper-texture" id="story" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">Nuestra Historia</div>
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 data-reveal data-delay="200">Una visión compartida</h2>
+      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-top: 1.5rem;" data-reveal data-delay="300">
+        Nexxts nació en Quito, Ecuador, con la convicción de que la tecnología de calidad no debería ser exclusiva de grandes centros tecnológicos. Desde 2018, hemos trabajado incansablemente para demostrar que el talento ecuatoriano puede competir a nivel global en desarrollo de software, inteligencia artificial y machine learning.
+      </p>
+      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-top: 1.5rem;" data-reveal data-delay="400">
+        Nuestro equipo combina experiencia técnica con una profunda comprensión de las necesidades empresariales latinoamericanas, creando soluciones que no solo funcionan técnicamente, sino que generan valor real para nuestros clientes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section section-alt paper-texture" id="values" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">Nuestros Valores</div>
+    <h2 data-reveal data-delay="200">Lo que nos <span class="em-serif">define</span></h2>
+    <div class="values-grid">
+      <div class="value-card" data-reveal data-delay="100">
+        <div class="value-icon">🎯</div>
+        <h3>Excelencia Técnica</h3>
+        <p>Nos comprometemos con las más altas estándares de calidad en cada línea de código que escribimos.</p>
+      </div>
+      <div class="value-card" data-reveal data-delay="200">
+        <div class="value-icon">🤝</div>
+        <h3>Colaboración</h3>
+        <p>Trabajamos como una extensión de tu equipo, manteniendo comunicación transparente y constante.</p>
+      </div>
+      <div class="value-card" data-reveal data-delay="300">
+        <div class="value-icon">💡</div>
+        <h3>Innovación</h3>
+        <p>Exploramos continuamente nuevas tecnologías para ofrecer soluciones vanguardistas a nuestros clientes.</p>
+      </div>
+      <div class="value-card" data-reveal data-delay="400">
+        <div class="value-icon">🌍</div>
+        <h3>Impacto Local</h3>
+        <p>Creemos en el potencial de Ecuador y Latinoamérica para liderar la transformación digital.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section paper-texture" id="team" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">Nuestro Equipo</div>
+    <h2 data-reveal data-delay="200">Las personas detrás del <span class="em-serif">código</span></h2>
+    <div class="team-grid">
+      <div class="team-card" data-reveal data-delay="100">
+        <div class="team-role">CEO & Fundador</div>
+        <h3>Carlos Martínez</h3>
+        <p>Experto en arquitectura de software con más de 12 años de experiencia liderando proyectos tecnológicos en Latinoamérica.</p>
+      </div>
+      <div class="team-card" data-reveal data-delay="200">
+        <div class="team-role">CTO</div>
+        <h3>Ana Rodríguez</h3>
+        <p>Especialista en inteligencia artificial y machine learning, PhD en Ciencias de la Computación.</p>
+      </div>
+      <div class="team-card" data-reveal data-delay="300">
+        <div class="team-role">Lead Developer</div>
+        <h3>Miguel Sánchez</h3>
+        <p>Desarrollador full-stack con expertise en React, Node.js y arquitecturas cloud-native.</p>
+      </div>
+      <div class="team-card" data-reveal data-delay="400">
+        <div class="team-role">AI Engineer</div>
+        <h3>Laura González</h3>
+        <p>Especialista en LLMs, fine-tuning y NLP con experiencia en implementación de soluciones de IA generativa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="section section-alt paper-texture" id="location" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">Nuestra Ubicación</div>
+    <h2 data-reveal data-delay="200">Desde <span class="em-serif">Quito</span> para el mundo</h2>
+    <div class="location-section">
+      <div class="location-info" data-reveal data-delay="300">
+        <p>
+          Estamos orgullosamente ubicados en Quito, Ecuador, una ciudad que combina historia rica con una vibrante comunidad tecnológica en crecimiento. Nuestra ubicación estratégica nos permite servir a clientes en toda Latinoamérica y más allá.
+        </p>
+        <p>
+          Trabajamos de forma remota con equipos distribuidos, lo que nos permite adaptarnos a diferentes zonas horarias y culturas de trabajo, manteniendo siempre la calidad y el compromiso que nos caracteriza.
+        </p>
+        <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent);">
+          📍 Quito, Ecuador<br>
+          🕐 Zona horaria: GMT-5<br>
+          🌐 Servicios globales
+        </p>
+      </div>
+      <div class="location-map" data-reveal data-delay="400">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199359.9548475375!2d-78.5759709375!3d-0.2298519999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a2c5b6c5f5f%3A0x6d8b4b4b4b4b4b4b!2sQuito%2C%20Ecuador!5e0!3m2!1sen!2sus!4v1234567890" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark" id="cta" data-reveal>
+  <div class="container" style="text-align: center;">
+    <h2 data-reveal data-delay="100">¿Listo para trabajar <span class="em-serif">juntos?</span></h2>
+    <p style="font-size: 1.1rem; opacity: 0.85; margin: 1.5rem 0 2rem; max-width: 32em; margin-left: auto; margin-right: auto;" data-reveal data-delay="200">
+      Nos encantaría conocer más sobre tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.
+    </p>
+    <a href="contacto.html" class="btn" style="background: #fff; color: var(--accent); padding: 0.85rem 2rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; border-radius: 2px;" data-reveal data-delay="300">
+      Contáctanos
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="desarrollo-web.html">Desarrollo Web</a></li>
+          <li><a href="integraciones-ia.html">Integraciones IA</a></li>
+          <li><a href="machine-learning.html">Machine Learning</a></li>
+          <li><a href="llms-fine-tuning.html">LLMs & Fine-tuning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ubicación</h4>
+        <ul>
+          <li><a href="#">Quito, Ecuador</a></li>
+          <li><a href="#">Remoto Global</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+          <li><a href="terminos-servicio.html">Términos de Servicio</a></li>
+          <li><a href="politica-cookies.html">Política de Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-mega">
+      Innovación ecuatoriana para el mundo. <span class="em-serif">Nexxts.</span> <span class="accent">—</span>
+    </div>
+    <div class="footer-bottom">
+      <span>✦ Nexxts — © 2026</span>
+      <span>Quito, Ecuador</span>
+      <span>Todos los derechos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ──
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+})();
+
+// ── Headroom nav ──
+(function() {
+  const nav = document.getElementById('main-nav');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      nav.classList.add('nav-hidden');
+    } else {
+      nav.classList.remove('nav-hidden');
+    }
+    lastScroll = currentScroll;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
