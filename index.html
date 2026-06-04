@@ -67,19 +67,22 @@ h4 { font-size: clamp(1rem, 1.5vw, 1.2rem); }
 
 /* ── Topbar ── */
 .topbar {
+  width: 100%;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 0.6rem var(--gutter);
   font-size: 0.7rem;
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--muted);
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  max-width: var(--max-width);
-  margin: 0 auto;
 }
 .topbar-brand { font-weight: 600; color: var(--fg); }
 
@@ -662,9 +665,11 @@ footer {
 
 <!-- Topbar -->
 <div class="topbar">
-  <span class="topbar-brand">✦ Nexxts</span>
-  <span>Quito, Ecuador — <span class="mono">2026</span></span>
-  <span><span class="mono">Nexxts.es</span></span>
+  <div class="topbar-inner">
+    <span class="topbar-brand">✦ Nexxts</span>
+    <span>Quito, Ecuador — <span class="mono">2026</span></span>
+    <span><span class="mono">Nexxts.es</span></span>
+  </div>
 </div>
 
 <!-- Nav -->
