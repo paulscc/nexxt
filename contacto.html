@@ -644,6 +644,25 @@ footer {
     }
   });
 })();
+
+// ── Mobile menu toggle ──
+(function() {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('.nav-links');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      menu.classList.toggle('mobile-open');
+    });
+    // Close menu when clicking a link
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        menu.classList.remove('mobile-open');
+      });
+    });
+  }
+})();
 </script>
 <script>
 // ── Geo Location: cambiar a Ibarra si visitante está en Imbabura ──
