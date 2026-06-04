@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nosotros — Nexxts | Páginas Web en Quito</title>
+<title>Contacto — Nexxts | Páginas Web en Quito</title>
 <link rel="icon" href="assets/logoo.png" type="image/png">
-<meta name="description" content="Nexxts, tu agencia de páginas web en Quito, Ecuador. Conoce nuestro equipo y descubre cómo creamos sitios web profesionales para negocios en Quito.">
+<meta name="description" content="Contacta a Nexxts, tu agencia de páginas web en Quito, Ecuador. Solicita tu sitio web profesional para tu negocio en Quito.">
 <style>
 /* ── Atelier Zero: Editorial-Warm palette ── */
 :root {
@@ -173,72 +173,113 @@ nav.nav-hidden { transform: translateY(-100%); }
   background: var(--surface);
 }
 
-/* ── Team grid ── */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.team-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 2rem;
-  transition: all 0.3s;
-}
-.team-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-.team-role {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-}
-.team-card h3 { margin-bottom: 0.5rem; }
-.team-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
-
-/* ── Values grid ── */
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.value-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 2rem;
-  transition: all 0.3s;
-}
-.value-card:hover { transform: translateY(-2px); }
-.value-icon {
-  font-size: 2rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-.value-card h3 { margin-bottom: 0.75rem; }
-.value-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
-
-/* ── Location ── */
-.location-section {
+/* ── Contact grid ── */
+.contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+  margin-top: 2rem;
 }
-.location-info p {
-  font-size: 1.05rem;
-  line-height: 1.8;
+
+/* ── Contact info ── */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.info-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-soft);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.info-content h4 {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.info-content p {
+  font-size: 0.95rem;
   color: var(--muted);
+  line-height: 1.6;
+}
+.info-content a {
+  color: var(--fg);
+}
+
+/* ── Contact form ── */
+.contact-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+}
+.form-group {
   margin-bottom: 1.5rem;
 }
-.location-map {
-  aspect-ratio: 16/9;
-  background: var(--border);
-  border-radius: 4px;
-  overflow: hidden;
+.form-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
 }
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  border-radius: 2px;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  border-radius: 2px;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { background: oklch(44% 0.12 28); transform: translateY(-1px); }
 
 /* ── Footer ── */
 footer {
@@ -311,11 +352,11 @@ footer {
 @media (max-width: 880px) {
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
-  .location-section { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .team-grid, .values-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .contact-form { padding: 1.5rem; }
 }
 
 /* ── Paper texture overlay ── */
@@ -337,7 +378,6 @@ footer {
 <!-- Topbar -->
 <div class="topbar">
   <div class="topbar-inner">
-  <div class="topbar-inner">
   <span class="topbar-brand">✦ Nexxts</span>
   <span>Quito, Ecuador — <span class="mono">2026</span></span>
   <span><span class="mono">Nexxts.es</span></span>
@@ -352,128 +392,110 @@ footer {
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="nosotros.html" class="active">Nosotros</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html" class="active">Contacto</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero container" id="hero" data-reveal>
-  <div class="hero-label" data-reveal data-delay="100">Sobre Nosotros</div>
+  <div class="hero-label" data-reveal data-delay="100">Contacto</div>
   <h1 data-reveal data-delay="200">
-    Innovación desde <span class="em-serif">Quito</span>
+    Hablemos de tu <span class="em-serif">proyecto</span>
     <span class="accent">✦</span>
   </h1>
   <p class="hero-lead" data-reveal data-delay="300">
-    Somos un equipo de desarrolladores apasionados comprometidos con transformar ideas en soluciones digitales de vanguardia desde el corazón de Ecuador.
+    Estamos listos para ayudarte a transformar tus ideas en realidad. Cuéntanos sobre tu proyecto y te responderemos pronto.
   </p>
 </section>
 
-<!-- Story -->
-<section class="section paper-texture" id="story" data-reveal>
+<!-- Contact Section -->
+<section class="section section-alt paper-texture" id="contact" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">Nuestra Historia</div>
-    <div style="max-width: 800px; margin: 0 auto;">
-      <h2 data-reveal data-delay="200">Una visión compartida</h2>
-      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-top: 1.5rem;" data-reveal data-delay="300">
-        Nexxts nació en Quito, Ecuador, con la convicción de que la tecnología de calidad no debería ser exclusiva de grandes centros tecnológicos. Desde 2018, hemos trabajado incansablemente para demostrar que el talento ecuatoriano puede competir a nivel global en desarrollo de software, inteligencia artificial y machine learning.
-      </p>
-      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-top: 1.5rem;" data-reveal data-delay="400">
-        Nuestro equipo combina experiencia técnica con una profunda comprensión de las necesidades empresariales latinoamericanas, creando soluciones que no solo funcionan técnicamente, sino que generan valor real para nuestros clientes.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Values -->
-<section class="section section-alt paper-texture" id="values" data-reveal>
-  <div class="container">
-    <div class="section-label" data-reveal data-delay="100">Nuestros Valores</div>
-    <h2 data-reveal data-delay="200">Lo que nos <span class="em-serif">define</span></h2>
-    <div class="values-grid">
-      <div class="value-card" data-reveal data-delay="100">
-        <div class="value-icon">🎯</div>
-        <h3>Excelencia Técnica</h3>
-        <p>Nos comprometemos con las más altas estándares de calidad en cada línea de código que escribimos.</p>
+    <div class="section-label" data-reveal data-delay="100">Información de Contacto</div>
+    <h2 data-reveal data-delay="200">Conéctate con <span class="em-serif">nosotros</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info" data-reveal data-delay="300">
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-content">
+            <h4>Ubicación</h4>
+            <p>Quito, Ecuador</p>
+            <p>Trabajamos de forma remota con clientes en todo el mundo</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📧</div>
+          <div class="info-content">
+            <h4>Email</h4>
+            <p><a href="mailto:team@Nexxts.es">team@Nexxts.es</a></p>
+            <p><a href="mailto:team@Nexxts.es">team@Nexxts.es</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📱</div>
+          <div class="info-content">
+            <h4>Teléfono</h4>
+            <p><a href="tel:+593961427970">+593 96142 7970</a></p>
+            <p>24/7</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">💼</div>
+          <div class="info-content">
+            <h4>Servicios</h4>
+            <p>Desarrollo Web, IA, ML, LLMs, Fine-tuning</p>
+            <p>Consultoría tecnológica y soluciones a medida</p>
+          </div>
+        </div>
       </div>
-      <div class="value-card" data-reveal data-delay="200">
-        <div class="value-icon">🤝</div>
-        <h3>Colaboración</h3>
-        <p>Trabajamos como una extensión de tu equipo, manteniendo comunicación transparente y constante.</p>
-      </div>
-      <div class="value-card" data-reveal data-delay="300">
-        <div class="value-icon">💡</div>
-        <h3>Innovación</h3>
-        <p>Exploramos continuamente nuevas tecnologías para ofrecer soluciones vanguardistas a nuestros clientes.</p>
-      </div>
-      <div class="value-card" data-reveal data-delay="400">
-        <div class="value-icon">🌍</div>
-        <h3>Impacto Local</h3>
-        <p>Creemos en el potencial de Ecuador y Latinoamérica para liderar la transformación digital.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Team -->
-<section class="section paper-texture" id="team" data-reveal>
-  <div class="container">
-    <div class="section-label" data-reveal data-delay="100">Nuestro Equipo</div>
-    <h2 data-reveal data-delay="200">Las personas detrás del <span class="em-serif">código</span></h2>
-    <div class="team-grid">
-      <div class="team-card" data-reveal data-delay="100">
-        <div class="team-role">CEO & Fundador</div>
-        <h3>Carlos Martínez</h3>
-        <p>Experto en arquitectura de software con más de 12 años de experiencia liderando proyectos tecnológicos en Latinoamérica.</p>
-      </div>
-      <div class="team-card" data-reveal data-delay="200">
-        <div class="team-role">CTO</div>
-        <h3>Ana Rodríguez</h3>
-        <p>Especialista en inteligencia artificial y machine learning, PhD en Ciencias de la Computación.</p>
-      </div>
-      <div class="team-card" data-reveal data-delay="300">
-        <div class="team-role">Lead Developer</div>
-        <h3>Miguel Sánchez</h3>
-        <p>Desarrollador full-stack con expertise en React, Node.js y arquitecturas cloud-native.</p>
-      </div>
-      <div class="team-card" data-reveal data-delay="400">
-        <div class="team-role">AI Engineer</div>
-        <h3>Laura González</h3>
-        <p>Especialista en LLMs, fine-tuning y NLP con experiencia en implementación de soluciones de IA generativa.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Location -->
-<section class="section section-alt paper-texture" id="location" data-reveal>
-  <div class="container">
-    <div class="section-label" data-reveal data-delay="100">Nuestra Ubicación</div>
-    <h2 data-reveal data-delay="200">Desde <span class="em-serif">Quito</span> para el mundo</h2>
-    <div class="location-section">
-      <div class="location-info" data-reveal data-delay="300">
-        <p>
-          Estamos orgullosamente ubicados en Quito, Ecuador, una ciudad que combina historia rica con una vibrante comunidad tecnológica en crecimiento. Nuestra ubicación estratégica nos permite servir a clientes en toda Latinoamérica y más allá.
-        </p>
-        <p>
-          Trabajamos de forma remota con equipos distribuidos, lo que nos permite adaptarnos a diferentes zonas horarias y culturas de trabajo, manteniendo siempre la calidad y el compromiso que nos caracteriza.
-        </p>
-        <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent);">
-          📍 Quito, Ecuador<br>
-          🕐 Zona horaria: GMT-5<br>
-          🌐 Servicios globales
-        </p>
-      </div>
-      <div class="location-map" data-reveal data-delay="400">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199359.9548475375!2d-78.5759709375!3d-0.2298519999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a2c5b6c5f5f%3A0x6d8b4b4b4b4b4b4b!2sQuito%2C%20Ecuador!5e0!3m2!1sen!2sus!4v1234567890" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
+      <div class="contact-form" data-reveal data-delay="400">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="company">Empresa (opcional)</label>
+            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+          </div>
+          <div class="form-group">
+            <label for="phone">Teléfono (opcional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+593 99 999 9999">
+          </div>
+          <div class="form-group">
+            <label for="contact_method">Método de contacto preferido</label>
+            <select id="contact_method" name="contact_method">
+              <option value="">Selecciona...</option>
+              <option value="email">Email</option>
+              <option value="phone">Teléfono</option>
+              <option value="whatsapp">WhatsApp</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="service">Servicio de interés</label>
+            <select id="service" name="service">
+              <option value="">Selecciona un servicio</option>
+              <option value="Web">Desarrollo Web</option>
+              <option value="IA">Integraciones IA</option>
+              <option value="ML">Machine Learning</option>
+              <option value="LLM">LLMs y Fine-tuning</option>
+              <option value="Consultoria">Consultoría</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+          </div>
+          <button type="submit" id="contact-submit" class="btn btn-primary">Enviar Mensaje</button>
+          <div id="contact-status" style="margin-top:1rem;font-family:var(--font-mono);font-size:0.75rem;display:none;"></div>
+        </form>
       </div>
     </div>
   </div>
@@ -482,12 +504,12 @@ footer {
 <!-- CTA -->
 <section class="section section-dark" id="cta" data-reveal>
   <div class="container" style="text-align: center;">
-    <h2 data-reveal data-delay="100">¿Listo para trabajar <span class="em-serif">juntos?</span></h2>
+    <h2 data-reveal data-delay="100">¿Prefieres una <span class="em-serif">llamada?</span></h2>
     <p style="font-size: 1.1rem; opacity: 0.85; margin: 1.5rem 0 2rem; max-width: 32em; margin-left: auto; margin-right: auto;" data-reveal data-delay="200">
-      Nos encantaría conocer más sobre tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.
+      Agenda una llamada con nuestro equipo para discutir tu proyecto en detalle. Sin compromiso.
     </p>
-    <a href="contacto.html" class="btn" style="background: #fff; color: var(--accent); padding: 0.85rem 2rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; border-radius: 2px;" data-reveal data-delay="300">
-      Contáctanos
+    <a href="mailto:team@Nexxts.es?subject=Solicitud%20de%20llamada" class="btn" style="background: #fff; color: var(--accent); padding: 0.85rem 2rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; border-radius: 2px;" data-reveal data-delay="300">
+      Solicitar Llamada
     </a>
   </div>
 </section>
@@ -567,6 +589,60 @@ footer {
     }
     lastScroll = currentScroll;
   }, { passive: true });
+})();
+
+// ── Formulario de contacto ──
+(function() {
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('contact-status');
+  const submitBtn = document.getElementById('contact-submit');
+  
+  if (!form) return;
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      company: form.company.value.trim(),
+      phone: form.phone ? form.phone.value.trim() : '',
+      contactMethod: form.contact_method ? form.contact_method.value : '',
+      service: form.service.value,
+      message: form.message.value.trim()
+    };
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    status.style.display = 'block';
+    status.style.color = 'var(--muted)';
+    status.textContent = 'Enviando mensaje...';
+    
+    try {
+      const response = await fetch('/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        status.style.color = 'green';
+        status.textContent = '✓ ¡Mensaje enviado! Te contactaremos pronto.';
+        form.reset();
+      } else {
+        status.style.color = 'red';
+        status.textContent = '✗ Error al enviar. Intenta de nuevo.';
+      }
+    } catch (error) {
+      status.style.color = 'red';
+      status.textContent = '✗ Error de conexión. Intenta de nuevo.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar Mensaje';
+    }
+  });
 })();
 </script>
 <script>

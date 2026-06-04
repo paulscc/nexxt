@@ -3,15 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Página Web Quito — Diseño y Desarrollo Web en Quito, Ecuador | Nexxts</title>
+<title>LLMs & Fine-tuning — Nexxts Quito Ecuador</title>
 <link rel="icon" href="assets/logoo.png" type="image/png">
-<meta name="description" content="Creamos páginas web profesionales en Quito, Ecuador. Diseño web moderno, desarrollo web, tiendas online y sitios web corporativos para negocios en Quito. ¡Solicita tu página web hoy!">
-<meta name="keywords" content="página web Quito, páginas web Quito, diseño web Quito, desarrollo web Quito, agencia web Quito, crear página web Quito, sitio web Quito Ecuador, diseño de páginas web Quito, empresa de páginas web Quito">
-<meta name="robots" content="index, follow">
-<meta name="geo.region" content="EC-P">
-<meta name="geo.placename" content="Quito">
-<meta name="geo.position" content="-0.22985;-78.52495">
-<meta name="ICBM" content="-0.22985, -78.52495">
+<meta name="description" content="Servicios de LLMs y Fine-tuning en Nexxts. Personalizamos modelos de lenguaje como GPT, Claude y Llama para tu negocio.">
 <style>
 :root {
   --bg:      oklch(96.5% 0.015 75);
@@ -38,6 +32,7 @@ h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.01em; }
 h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
 h4 { font-size: clamp(1rem, 1.5vw, 1.2rem); }
+.ds-serif { font-family: var(--font-body); }
 .em-serif { font-family: var(--font-display); font-style: italic; }
 .mono { font-family: var(--font-mono); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.08em; }
 .accent { color: var(--accent); }
@@ -155,7 +150,6 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 
 <div class="topbar">
   <div class="topbar-inner">
-  <div class="topbar-inner">
   <span class="topbar-brand">✦ Nexxts</span>
   <span>Quito, Ecuador — <span class="mono">2026</span></span>
   <span><span class="mono">Nexxts.es</span></span>
@@ -178,50 +172,50 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 <section class="hero container" id="hero" data-reveal>
   <div class="hero-grid">
     <div>
-      <div class="hero-label" data-reveal data-delay="100">Página Web Quito</div>
+      <div class="hero-label" data-reveal data-delay="100">LLMs & Fine-tuning</div>
       <h1 data-reveal data-delay="200">
-        Tu <span class="em-serif">página web</span> en Quito
+        Modelos de lenguaje <span class="em-serif">a tu medida</span>
         <span class="accent" style="font-family:var(--font-display)">✦</span>
       </h1>
       <p class="hero-lead" data-reveal data-delay="300">
-        Somos tu agencia de páginas web en Quito, Ecuador Creamos sitios web profesionales, modernos y optimizados para que tu negocio destaque en el mercado quiteño. Diseño web, desarrollo web y posicionamiento para empresas en Quito.
+        Personalizamos y desplegamos Large Language Models (GPT, Claude, Llama) para tu negocio. Desde chatbots avanzados hasta sistemas de generación de contenido, adaptamos la IA a tu dominio específico.
       </p>
       <div class="hero-actions" data-reveal data-delay="400">
-        <a href="contacto.html" class="btn btn-primary">Solicita tu Página Web</a>
-        <a href="#services" class="btn btn-secondary">Nuestros Servicios Web</a>
+        <a href="contacto.html" class="btn btn-primary">Iniciar Proyecto</a>
+        <a href="#services" class="btn btn-secondary">Nuestros Servicios</a>
       </div>
       <div class="hero-stats" data-reveal data-delay="500">
         <div class="stat">
-          <div class="stat-value">80+</div>
-          <div class="stat-label">Páginas Web Creadas</div>
+          <div class="stat-value">30+</div>
+          <div class="stat-label">Modelos Fine-tuned</div>
         </div>
         <div class="stat">
-          <div class="stat-value">98%</div>
-          <div class="stat-label">Clientes en Quito Felices</div>
+          <div class="stat-value">8</div>
+          <div class="stat-label">Modelos Soportados</div>
         </div>
         <div class="stat">
-          <div class="stat-value">8+</div>
-          <div class="stat-label">Años en Quito</div>
+          <div class="stat-value">99.9%</div>
+          <div class="stat-label">Uptime APIs</div>
         </div>
       </div>
     </div>
     <div class="hero-image" data-reveal data-delay="300">
-      <img src="assets/desarrollo.gif" alt="Páginas web en Quito - Nexxts" loading="lazy">
+      <img src="assets/llms.gif" alt="Nexxts LLMs y fine-tuning" loading="lazy">
     </div>
   </div>
 </section>
 
 <section class="section paper-texture" id="about" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">I. Agencia Web en Quito</div>
+    <div class="section-label" data-reveal data-delay="100">I. Visión General</div>
     <div class="hero-grid" style="grid-template-columns: 1fr 1fr; gap: 4rem;">
       <div>
-        <h2 data-reveal data-delay="200">Expertos en páginas web <span class="em-serif">en Quito</span></h2>
+        <h2 data-reveal data-delay="200">LLMs <span class="em-serif">personalizados</span></h2>
         <hr class="ruler-dotted" data-reveal data-delay="250">
       </div>
       <div>
         <p style="font-size:1.05rem;line-height:1.8;color:var(--muted)" data-reveal data-delay="300">
-          En <strong>Nexxts</strong> somos una agencia de <strong>páginas web en Quito</strong> con más de 8 años de experiencia. Creamos sitios web profesionales para negocios quiteños: desde landing pages hasta tiendas online y plataformas corporativas. Trabajamos contigo para entender tu negocio y crear una página web que impulse tus resultados. Nuestra oficina está en Quito, Ecuador, y conocemos el mercado local.
+          En Nexxts somos especialistas en el fine-tuning de modelos de lenguaje. Tomamos modelos base como GPT-4, Claude, Llama y Mistral, y los ajustamos con tus datos específicos para crear asistentes virtuales, chatbots de dominio experto y sistemas de generación de contenido que entienden tu industria, tu tono y tus necesidades particulares. Transformamos la IA genérica en inteligencia especializada para tu negocio.
         </p>
       </div>
     </div>
@@ -230,142 +224,113 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 
 <section class="section section-alt paper-texture" id="services" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">II. Servicios de Páginas Web en Quito</div>
-    <h2 data-reveal data-delay="200">Creamos tu <span class="em-serif">página web</span></h2>
+    <div class="section-label" data-reveal data-delay="100">II. Servicios LLMs</div>
+    <h2 data-reveal data-delay="200">Lo que <span class="em-serif">personalizamos</span></h2>
     <div class="cards-grid">
       <div class="card" data-reveal data-delay="100">
         <div class="card-num">01</div>
-        <div class="card-tag">Página Web Quito</div>
-        <h3>Sitios Web Corporativos</h3>
-        <p>Páginas web profesionales para empresas en Quito. Diseño moderno, contenido optimizado y presencia digital que genera confianza en tus clientes quiteños.</p>
+        <div class="card-tag">Fine-tuning</div>
+        <h3>Personalización de Modelos</h3>
+        <p>Realizamos fine-tuning de modelos de lenguaje con tus datos corporativos para crear asistentes que conocen tu negocio, tu terminología y tus procesos internos a profundidad.</p>
       </div>
       <div class="card" data-reveal data-delay="200">
         <div class="card-num">02</div>
-        <div class="card-tag">Tiendas Online Quito</div>
-        <h3>E-commerce en Quito</h3>
-        <p>Tiendas online para negocios en Quito con catálogo de productos, carrito de compras, pagos integrados y envíos locales. Vende por internet en Ecuador.</p>
+        <div class="card-tag">Chatbots</div>
+        <h3>Chatbots con IA Generativa</h3>
+        <p>Desarrollamos chatbots avanzados con comprensión contextual, memoria conversacional y capacidad de ejecutar acciones a través de integraciones con tus sistemas internos.</p>
       </div>
       <div class="card" data-reveal data-delay="300">
         <div class="card-num">03</div>
-        <div class="card-tag">Landing Pages Quito</div>
-        <h3>Landing Pages Profesionales</h3>
-        <p>Páginas de aterrizaje optimizadas para captar clientes en Quito. Diseñadas para convertir visitantes en leads y ventas para tu negocio quiteño.</p>
+        <div class="card-tag">RAG</div>
+        <h3>Recuperación Aumentada (RAG)</h3>
+        <p>Implementamos sistemas RAG que conectan LLMs con tus bases de conocimiento internas, permitiendo respuestas precisas basadas en documentos reales de tu empresa.</p>
       </div>
       <div class="card" data-reveal data-delay="400">
         <div class="card-num">04</div>
-        <div class="card-tag">Rediseño Web Quito</div>
-        <h3>Rediseño de Sitios Web</h3>
-        <p>Renovamos tu página web en Quito con diseño moderno, mejor rendimiento y experiencia de usuario optimizada. Le damos una nueva vida a tu presencia digital.</p>
+        <div class="card-tag">Contenido</div>
+        <h3>Generación de Contenido</h3>
+        <p>Sistemas de generación de contenido automatizado para marketing, reportes, descripciones de productos y documentación técnica con tu tono y estilo de marca.</p>
       </div>
       <div class="card" data-reveal data-delay="500">
         <div class="card-num">05</div>
-        <div class="card-tag">SEO Quito</div>
-        <h3>Posicionamiento Web Local</h3>
-        <p>Optimizamos tu página web para que aparezca en Google cuando clientes en Quito busquen tus servicios. SEO local para negocios quiteños.</p>
+        <div class="card-tag">Agentes</div>
+        <h3>Agentes Autónomos</h3>
+        <p>Creamos agentes de IA que pueden planificar y ejecutar tareas complejas de forma autónoma, interactuando con APIs, bases de datos y herramientas externas.</p>
       </div>
       <div class="card" data-reveal data-delay="600">
         <div class="card-num">06</div>
-        <div class="card-tag">Mantenimiento Web</div>
-        <h3>Soporte y Mantenimiento</h3>
-        <p>Mantenemos tu página web en Quito actualizada, segura y funcionando correctamente. Soporte técnico local para tu sitio web.</p>
+        <div class="card-tag">Despliegue</div>
+        <h3>Hosting y Escalado</h3>
+        <p>Desplegamos y mantenemos tus modelos en infraestructura segura con balanceo de carga, monitoreo y escalado automático para garantizar disponibilidad continua.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section paper-texture" id="why" data-reveal>
+<section class="section paper-texture" id="tech" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">III. ¿Por qué elegirnos para tu página web en Quito?</div>
-    <h2 data-reveal data-delay="200">Tu mejor opción en <span class="em-serif">Quito</span></h2>
-    <div class="process-grid">
-      <div class="process-step" data-num="01" data-reveal data-delay="100">
-        <div class="process-tag">Local</div>
-        <h3>Somos de Quito</h3>
-        <p>Conocemos el mercado quiteño y ecuatoriano. Trabajamos cara a cara contigo en Quito para entender tu negocio y crear la página web perfecta.</p>
-      </div>
-      <div class="process-step" data-num="02" data-reveal data-delay="200">
-        <div class="process-tag">Profesional</div>
-        <h3>Diseño Web Moderno</h3>
-        <p>Creamos páginas web con diseño profesional, responsive y optimizadas para dispositivos móviles. Tu sitio web se verá increíble en cualquier dispositivo.</p>
-      </div>
-      <div class="process-step" data-num="03" data-reveal data-delay="300">
-        <div class="process-tag">Rápido</div>
-        <h3>Resultados Rápidos</h3>
-        <p>Entregamos tu página web en Quito en tiempo récord. Desde la primera reunión hasta el lanzamiento, trabajamos ágilmente para que tu negocio esté online cuanto antes.</p>
-      </div>
-      <div class="process-step" data-num="04" data-reveal data-delay="400">
-        <div class="process-tag">Soporte</div>
-        <h3>Acompañamiento Continuo</h3>
-        <p>No te dejamos solo después del lanzamiento. Te acompañamos con soporte técnico, capacitación y mejoras continuas para tu página web en Quito.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt paper-texture" id="tech" data-reveal>
-  <div class="container">
-    <div class="section-label" data-reveal data-delay="100">IV. Tecnologías para tu Página Web</div>
-    <h2 data-reveal data-delay="200">Tecnología <span class="em-serif">moderna</span></h2>
+    <div class="section-label" data-reveal data-delay="100">III. Tecnologías</div>
+    <h2 data-reveal data-delay="200">Modelos y <span class="em-serif">herramientas</span></h2>
     <div class="tech-grid">
-      <div class="tech-item" data-reveal data-delay="100"><div class="tech-icon">⚛️</div><h4>React</h4><p>Interfaces Modernas</p></div>
-      <div class="tech-item" data-reveal data-delay="150"><div class="tech-icon">▲</div><h4>Next.js</h4><p>Rendimiento Óptimo</p></div>
-      <div class="tech-item" data-reveal data-delay="200"><div class="tech-icon">🔷</div><h4>TypeScript</h4><p>Código Seguro</p></div>
-      <div class="tech-item" data-reveal data-delay="250"><div class="tech-icon">🗄️</div><h4>PostgreSQL</h4><p>Base de Datos</p></div>
-      <div class="tech-item" data-reveal data-delay="300"><div class="tech-icon">☁️</div><h4>AWS</h4><p>Hosting en la Nube</p></div>
-      <div class="tech-item" data-reveal data-delay="350"><div class="tech-icon">📱</div><h4>Responsive</h4><p>Diseño Adaptable</p></div>
-      <div class="tech-item" data-reveal data-delay="400"><div class="tech-icon">🚀</div><h4>SEO</h4><p>Posicionamiento</p></div>
-      <div class="tech-item" data-reveal data-delay="450"><div class="tech-icon">⚡</div><h4>Rendimiento</h4><p>Carga Rápida</p></div>
-      <div class="tech-item" data-reveal data-delay="500"><div class="tech-icon">🔒</div><h4>SSL</h4><p>Seguridad</p></div>
-      <div class="tech-item" data-reveal data-delay="550"><div class="tech-icon">🎨</div><h4>UI/UX</h4><p>Experiencia de Usuario</p></div>
-      <div class="tech-item" data-reveal data-delay="600"><div class="tech-icon">📊</div><h4>Analytics</h4><p>Mide Resultados</p></div>
-      <div class="tech-item" data-reveal data-delay="650"><div class="tech-icon">🔄</div><h4>CMS</h4><p>Gestión de Contenido</p></div>
+      <div class="tech-item" data-reveal data-delay="100"><div class="tech-icon">🤖</div><h4>OpenAI</h4><p>GPT-4o, GPT-4</p></div>
+      <div class="tech-item" data-reveal data-delay="150"><div class="tech-icon">🟣</div><h4>Anthropic</h4><p>Claude 3.5</p></div>
+      <div class="tech-item" data-reveal data-delay="200"><div class="tech-icon">🦙</div><h4>Llama 3</h4><p>Meta Open Source</p></div>
+      <div class="tech-item" data-reveal data-delay="250"><div class="tech-icon">🌊</div><h4>Mistral</h4><p>Modelos Eficientes</p></div>
+      <div class="tech-item" data-reveal data-delay="300"><div class="tech-icon">🔵</div><h4>Gemini</h4><p>Google DeepMind</p></div>
+      <div class="tech-item" data-reveal data-delay="350"><div class="tech-icon">🐍</div><h4>LangChain</h4><p>Orquestación LLM</p></div>
+      <div class="tech-item" data-reveal data-delay="400"><div class="tech-icon">📡</div><h4>LangGraph</h4><p>Agentes LLM</p></div>
+      <div class="tech-item" data-reveal data-delay="450"><div class="tech-icon">🗄️</div><h4>Pinecone</h4><p>Vector Database</p></div>
+      <div class="tech-item" data-reveal data-delay="500"><div class="tech-icon">⚡</div><h4>vLLM</h4><p>Inferencia Rápida</p></div>
+      <div class="tech-item" data-reveal data-delay="550"><div class="tech-icon">☁️</div><h4>HuggingFace</h4><p>Model Hub</p></div>
+      <div class="tech-item" data-reveal data-delay="600"><div class="tech-icon">🎯</div><h4>Ollama</h4><p>Modelos Locales</p></div>
+      <div class="tech-item" data-reveal data-delay="650"><div class="tech-icon">🔄</div><h4>LoRA</h4><p>Fine-tuning Eficiente</p></div>
     </div>
   </div>
 </section>
 
-<section class="section section-dark paper-texture" id="process" data-reveal>
+<section class="section section-alt paper-texture" id="process" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">V. Proceso para tu Página Web</div>
-    <h2 data-reveal data-delay="200">Así creamos tu <span class="em-serif">página web</span></h2>
+    <div class="section-label" data-reveal data-delay="100">IV. Metodología</div>
+    <h2 data-reveal data-delay="200">Cómo <span class="em-serif">personalizamos</span></h2>
     <div class="process-grid">
       <div class="process-step" data-num="01" data-reveal data-delay="100">
-        <div class="process-tag">Reunión</div>
-        <h3>Conocemos tu Negocio</h3>
-        <p>Nos reunimos contigo en Quito (o por videollamada) para entender tu negocio, tus objetivos y lo que necesitas en tu página web.</p>
+        <div class="process-tag">Análisis</div>
+        <h3>Evaluación de Necesidades</h3>
+        <p>Analizamos tu caso de uso, identificamos el modelo base más adecuado y definimos los objetivos de rendimiento y las métricas de éxito del proyecto.</p>
       </div>
       <div class="process-step" data-num="02" data-reveal data-delay="200">
-        <div class="process-tag">Diseño</div>
-        <h3>Diseñamos tu Sitio</h3>
-        <p>Creamos el diseño de tu página web con mockups y prototipos. Aprobamos cada detalle contigo antes de empezar a desarrollar.</p>
+        <div class="process-tag">Datos</div>
+        <h3>Preparación de Dataset</h3>
+        <p>Recopilamos, limpiamos y estructuramos tus datos para el fine-tuning. Creamos pares de instrucción-respuesta de alta calidad que alinean el modelo con tu dominio.</p>
       </div>
       <div class="process-step" data-num="03" data-reveal data-delay="300">
-        <div class="process-tag">Desarrollo</div>
-        <h3>Desarrollamos tu Web</h3>
-        <p>Construimos tu página web con las mejores tecnologías. Te mantenemos informado del progreso en cada etapa del desarrollo.</p>
+        <div class="process-tag">Entrenamiento</div>
+        <h3>Fine-tuning del Modelo</h3>
+        <p>Entrenamos el modelo con técnicas avanzadas como LoRA y QLoRA para un fine-tuning eficiente en recursos, evaluando continuamente la calidad de las respuestas.</p>
       </div>
       <div class="process-step" data-num="04" data-reveal data-delay="400">
-        <div class="process-tag">Lanzamiento</div>
-        <h3>Publicamos tu Sitio</h3>
-        <p>Desplegamos tu página web, la optimizamos para buscadores y la lanzamos al mundo. Tu negocio en Quito ahora tiene presencia online profesional.</p>
+        <div class="process-tag">Producción</div>
+        <h3>Despliegue y Monitoreo</h3>
+        <p>Desplegamos el modelo fine-tuned en producción con APIs optimizadas, monitoreo de calidad, guardrails de seguridad y reentrenamiento periódico según sea necesario.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section paper-texture" id="work" data-reveal>
+<section class="section section-dark paper-texture" id="work" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">VI. Proyectos Web en Quito</div>
-    <h2 data-reveal data-delay="200">Páginas web que <span class="em-serif">hemos creado</span></h2>
+    <div class="section-label" data-reveal data-delay="100">V. Casos de Éxito</div>
+    <h2 data-reveal data-delay="200">Proyectos <span class="em-serif">LLM</span></h2>
     <div class="work-grid">
       <div class="work-card" data-reveal data-delay="300">
-        <div class="work-card-category">Página Web Corporativa</div>
-        <h3>Sitio Web para Constructora</h3>
-        <p>Página web profesional para constructora en Quito con portafolio de proyectos, galería de imágenes y formulario de contacto para captar clientes.</p>
+        <div class="work-card-category">Asistente Legal</div>
+        <h3>Chatbot Jurídico Especializado</h3>
+        <p>Fine-tuning de Llama 3 con 50,000 documentos legales ecuatorianos para crear un asistente que responde consultas legales con precisión del 92% citando normativa vigente.</p>
       </div>
       <div class="work-card" data-reveal data-delay="400">
-        <div class="work-card-category">Tienda Online Quito</div>
-        <h3>E-commerce para Tienda de Ropa</h3>
-        <p>Tienda online con catálogo de productos, carrito de compras, pasarela de pagos y logística de envíos para todo Ecuador.</p>
+        <div class="work-card-category">Generación de Contenido</div>
+        <h3>Sistema de Reportes Automatizados</h3>
+        <p>Modelo fine-tuned con GPT-4 para generar reportes financieros y análisis de mercado con el tono y formato corporativo, reduciendo el tiempo de elaboración en un 80%.</p>
       </div>
     </div>
   </div>
@@ -373,23 +338,23 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 
 <section class="section section-alt paper-texture" id="testimonial" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">VII. Testimonios</div>
+    <div class="section-label" data-reveal data-delay="100">VI. Testimonios</div>
     <div class="testimonial" data-reveal data-delay="200">
       <div class="testimonial-quote">
-        Nexxts creó la página web para mi negocio en Quito y los resultados fueron increíbles. El diseño es moderno, el sitio carga rápido y ahora mis clientes me encuentran fácilmente en Google. ¡Totalmente recomendados para crear páginas web en Quito!
+        Nexxts fine-tuneó un modelo Llama 3 con nuestra base de conocimiento técnica y el resultado fue extraordinario. Nuestro equipo de soporte ahora resuelve consultas en segundos con información precisa y actualizada. Revolucionaron nuestra operación.
       </div>
-      <div class="testimonial-author">Patricia Morales, Dueña de Boutique en Quito</div>
+      <div class="testimonial-author">Carolina Vega, CTO TechSupport Solutions</div>
     </div>
   </div>
 </section>
 
 <section class="cta-ribbon" id="cta" data-reveal>
   <div class="container">
-    <h2>Solicita tu <span class="em-serif">página web en Quito</span></h2>
-    <p>¿Necesitas una página web para tu negocio en Quito? Contáctanos hoy y te enviaremos una propuesta sin compromiso. Transforma tu presencia digital con Nexxts.</p>
-    <form class="cta-form" onsubmit="event.preventDefault(); alert('¡Gracias por contactarnos! Te responderemos pronto para crear tu página web en Quito.');">
-      <input type="email" placeholder="Tu email" required>
-      <button type="submit" class="btn">Quiero mi Página Web</button>
+    <h2>¿Listo para crear tu propio modelo de <span class="em-serif">lenguaje?</span></h2>
+    <p>Personaliza la IA para tu negocio con nuestros servicios de fine-tuning. Solicita una consultoría y descubre cómo un LLM especializado puede transformar tu operación.</p>
+    <form class="cta-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos pronto para discutir tu proyecto de LLMs.')">
+      <input type="email" placeholder="Ingresa tu email" required>
+      <button type="submit" class="btn">Comenzar</button>
     </form>
   </div>
 </section>
@@ -400,7 +365,6 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
-          <li><a href="quito.html">Página Web Quito</a></li>
           <li><a href="web.html">Desarrollo Web</a></li>
           <li><a href="ia.html">Integraciones IA</a></li>
           <li><a href="ml.html">Machine Learning</a></li>
@@ -431,10 +395,10 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
       </div>
     </div>
     <div class="footer-mega">
-      Páginas web en Quito, Ecuador. <span class="em-serif">Nexxts.</span> <span class="accent" style="font-family:var(--font-display)">—</span>
+      Innovación ecuatoriana para el mundo. <span class="em-serif">Nexxts.</span> <span class="accent" style="font-family:var(--font-display)">—</span>
     </div>
     <div class="footer-bottom">
-      <span>✦ Nexxts — Páginas Web en Quito © 2026</span>
+      <span>✦ Nexxts — © 2026</span>
       <span>Quito, Ecuador</span>
       <span>Todos los derechos reservados</span>
     </div>

@@ -39,7 +39,12 @@ h4 { font-size: clamp(1rem, 1.5vw, 1.2rem); }
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter); }
 .section { padding: clamp(4rem, 8vw, 8rem) 0; position: relative; }
 .section-label { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 1rem; }
-.topbar { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem var(--gutter); font-size: 0.7rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); background: var(--surface); border-bottom: 1px solid var(--border); max-width: var(--max-width); margin: 0 auto; }
+.topbar {
+  width: 100%;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-inner { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem var(--gutter); font-size: 0.7rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); background: var(--surface); border-bottom: 1px solid var(--border); max-width: var(--max-width); margin: 0 auto; }
 .topbar-brand { font-weight: 600; color: var(--fg); }
 nav { position: sticky; top: 0; z-index: 100; background: rgba(255 255 255 / 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: transform 0.3s; }
 nav.nav-hidden { transform: translateY(-100%); }
@@ -144,6 +149,8 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 <body>
 
 <div class="topbar">
+  <div class="topbar-inner">
+  <div class="topbar-inner">
   <span class="topbar-brand">✦ Nexxts</span>
   <span>Quito, Ecuador — <span class="mono">2026</span></span>
   <span><span class="mono">Nexxts.es</span></span>

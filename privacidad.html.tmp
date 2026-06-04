@@ -3,10 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contacto Test — Nexxts (Solo pruebas)</title>
+<title>Política de Privacidad — Nexxts Quito Ecuador</title>
 <link rel="icon" href="assets/logoo.png" type="image/png">
-<meta name="description" content="Página de prueba del formulario de contacto Nexxts.">
-<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Política de privacidad de Nexxts. Conoce cómo protegemos y gestionamos tus datos personales.">
 <style>
 :root {
   --bg:      oklch(96.5% 0.015 75);
@@ -56,26 +55,22 @@ nav.nav-hidden { transform: translateY(-100%); }
 .nav-links a { color: var(--muted); transition: color 0.2s; display: flex; align-items: center; gap: 0.3rem; }
 .nav-links a:hover { color: var(--fg); text-decoration: none; }
 .nav-badge { font-family: var(--font-mono); font-size: 0.6rem; background: var(--accent-soft); color: var(--accent); padding: 0.1rem 0.4rem; border-radius: 3px; }
-
-.hero { min-height: 30vh; display: flex; flex-direction: column; justify-content: center; padding: 4rem 0; position: relative; }
+.hero { min-height: 40vh; display: flex; flex-direction: column; justify-content: center; padding: 4rem 0; position: relative; }
 .hero-label { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 1.5rem; }
 .hero h1 { margin-bottom: 1.5rem; }
 .hero h1 .em-serif { color: var(--accent); }
 .hero-lead { font-size: clamp(1.1rem, 1.5vw, 1.3rem); color: var(--muted); line-height: 1.7; margin-bottom: 2.5rem; max-width: 32em; }
+.section-alt { background: var(--surface); }
+.legal-content { max-width: 800px; margin: 0 auto; }
+.legal-content p { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+.legal-content h3 { margin-top: 2.5rem; margin-bottom: 1rem; color: var(--fg); }
+.legal-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+.legal-content li { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.5rem; }
+.legal-content strong { color: var(--fg); }
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .btn:hover { text-decoration: none; }
 .btn-primary { background: var(--accent); color: #fff; border-radius: 2px; }
 .btn-primary:hover { background: oklch(44% 0.12 28); transform: translateY(-1px); }
-.section-alt { background: var(--surface); }
-
-.contact-test-form { max-width: 680px; margin: 2rem auto 0; background: var(--surface); border: 1px solid var(--border); padding: 2.5rem; }
-.form-group { margin-bottom: 1.5rem; }
-.form-group label { display: block; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.5rem; }
-.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--border); background: var(--bg); color: var(--fg); font-size: 0.95rem; font-family: var(--font-body); border-radius: 2px; transition: border-color 0.2s; }
-.form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--accent); }
-.form-group textarea { min-height: 150px; resize: vertical; }
-.test-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; background: #ff6b35; color: #fff; padding: 0.25rem 0.75rem; border-radius: 3px; margin-bottom: 0.5rem; }
-
 footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem; }
 .footer-col h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(60% 0.01 60); margin-bottom: 1rem; }
@@ -86,7 +81,6 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 .footer-mega { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: oklch(92% 0.005 80); line-height: 1.1; border-top: 1px solid oklch(30% 0.01 60); padding-top: 2rem; margin-top: 2rem; }
 .footer-mega .em-serif { color: var(--accent); font-style: italic; }
 .footer-bottom { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(45% 0.01 60); border-top: 1px solid oklch(25% 0.01 60); padding-top: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
-
 [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 [data-reveal].revealed { opacity: 1; transform: translateY(0); }
 [data-reveal][data-delay="100"] { transition-delay: 0.1s; }
@@ -102,7 +96,6 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 <body>
 
 <div class="topbar">
-  <div class="topbar-inner">
   <div class="topbar-inner">
   <span class="topbar-brand">✦ Nexxts</span>
   <span>Quito, Ecuador — <span class="mono">2026</span></span>
@@ -124,67 +117,83 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 </nav>
 
 <section class="hero container" id="hero" data-reveal>
-  <div class="hero-label" data-reveal data-delay="100">Página de Prueba</div>
-  <div class="test-badge" data-reveal data-delay="150">⚠ Solo pruebas internas — No visible al público</div>
+  <div class="hero-label" data-reveal data-delay="100">Legal</div>
   <h1 data-reveal data-delay="200">
-    Formulario de <span class="em-serif">Prueba</span>
+    Política de <span class="em-serif">Privacidad</span>
     <span class="accent" style="font-family:var(--font-display)">✦</span>
   </h1>
   <p class="hero-lead" data-reveal data-delay="300">
-    Esta página solo es accesible mediante la URL directa <code style="font-family:var(--font-mono);font-size:0.85rem;">/contactotest</code>. Úsala para probar el envío del formulario.
+    Última actualización: Enero 2026. En Nexxts nos tomamos muy en serio la privacidad de tus datos.
   </p>
 </section>
 
 <section class="section section-alt paper-texture" data-reveal>
+  <div class="container legal-content">
+    <div class="section-label" data-reveal data-delay="100">I. Información General</div>
+    <p data-reveal data-delay="200">
+      <strong>Nexxts</strong> (en adelante, "la Empresa", "nosotros" o "nuestro") opera el sitio web <strong>Nexxts.es</strong> y proporciona servicios de desarrollo de software, inteligencia artificial y consultoría tecnológica. Esta Política de Privacidad describe cómo recopilamos, usamos, procesamos y protegemos la información personal que nos proporcionas al utilizar nuestros servicios o visitar nuestro sitio web.
+    </p>
+
+    <h3 data-reveal data-delay="200">II. Datos que Recopilamos</h3>
+    <p data-reveal data-delay="200">Podemos recopilar los siguientes tipos de información personal:</p>
+    <ul data-reveal data-delay="200">
+      <li><strong>Información de contacto:</strong> nombre, dirección de correo electrónico, número de teléfono y empresa.</li>
+      <li><strong>Información de comunicación:</strong> mensajes que nos envías a través de formularios de contacto, correos electrónicos o llamadas.</li>
+      <li><strong>Datos de uso:</strong> información sobre cómo interactúas con nuestro sitio web, incluyendo páginas visitadas, tiempo de navegación y preferencias.</li>
+      <li><strong>Datos técnicos:</strong> dirección IP, tipo de navegador, sistema operativo y cookies (según nuestra Política de Cookies).</li>
+    </ul>
+
+    <h3 data-reveal data-delay="200">III. Finalidad del Tratamiento</h3>
+    <p data-reveal data-delay="200">Utilizamos tus datos personales para las siguientes finalidades:</p>
+    <ul data-reveal data-delay="200">
+      <li>Responder a tus consultas y solicitudes de información sobre nuestros servicios.</li>
+      <li>Proveer los servicios de desarrollo de software, IA y consultoría que hayas contratado.</li>
+      <li>Enviar comunicaciones comerciales sobre nuestros servicios, solo si has dado tu consentimiento explícito.</li>
+      <li>Mejorar nuestro sitio web y servicios mediante análisis de uso.</li>
+      <li>Cumplir con obligaciones legales y regulatorias aplicables.</li>
+    </ul>
+
+    <h3 data-reveal data-delay="200">IV. Base Legal</h3>
+    <p data-reveal data-delay="200">El tratamiento de tus datos se basa en las siguientes bases legales:</p>
+    <ul data-reveal data-delay="200">
+      <li><strong>Consentimiento:</strong> cuando nos proporcionas voluntariamente tus datos a través de formularios de contacto.</li>
+      <li><strong>Ejecución de un contrato:</strong> cuando necesitamos tus datos para proveer los servicios contratados.</li>
+      <li><strong>Interés legítimo:</strong> para mejorar nuestros servicios y mantener la seguridad de nuestro sitio web.</li>
+      <li><strong>Cumplimiento legal:</strong> para cumplir con obligaciones fiscales, laborales y regulatorias.</li>
+    </ul>
+
+    <h3 data-reveal data-delay="200">V. Conservación de Datos</h3>
+    <p data-reveal data-delay="200">Conservamos tus datos personales durante el tiempo necesario para cumplir con las finalidades para las que fueron recopilados, incluyendo cualquier requisito legal, contable o de informes. Generalmente, esto significa que conservaremos tus datos mientras mantengas una relación contractual con nosotros y durante los plazos legales de prescripción aplicables.</p>
+
+    <h3 data-reveal data-delay="200">VI. Tus Derechos</h3>
+    <p data-reveal data-delay="200">Como titular de los datos, tienes los siguientes derechos:</p>
+    <ul data-reveal data-delay="200">
+      <li><strong>Acceso:</strong> solicitar información sobre los datos personales que tenemos sobre ti.</li>
+      <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos o incompletos.</li>
+      <li><strong>Supresión:</strong> solicitar la eliminación de tus datos cuando ya no sean necesarios.</li>
+      <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos para fines de marketing directo.</li>
+      <li><strong>Limitación:</strong> solicitar la restricción del tratamiento de tus datos.</li>
+      <li><strong>Portabilidad:</strong> recibir tus datos en un formato estructurado y de uso común.</li>
+    </ul>
+    <p data-reveal data-delay="200">Para ejercer cualquiera de estos derechos, contáctanos a través de <a href="mailto:team@Nexxts.es">team@Nexxts.es</a>.</p>
+
+    <h3 data-reveal data-delay="200">VII. Seguridad</h3>
+    <p data-reveal data-delay="200">Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger tus datos personales contra el acceso no autorizado, la alteración, la divulgación o la destrucción. Utilizamos cifrado SSL, firewalls y sistemas de control de acceso para garantizar la confidencialidad e integridad de tu información.</p>
+
+    <h3 data-reveal data-delay="200">VIII. Contacto</h3>
+    <p data-reveal data-delay="200">Si tienes preguntas sobre esta Política de Privacidad o deseas ejercer tus derechos, puedes contactarnos en:</p>
+    <p data-reveal data-delay="200">
+      <strong>Email:</strong> <a href="mailto:team@Nexxts.es">team@Nexxts.es</a><br>
+      <strong>Ubicación:</strong> Quito, Ecuador<br>
+      
+    </p>
+  </div>
+</section>
+
+<section class="section paper-texture" style="text-align:center;" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">Formulario de Contacto — TEST</div>
-    <div class="contact-test-form" data-reveal data-delay="200">
-      <form id="contact-test-form">
-        <div class="form-group">
-          <label for="test-name">Nombre completo</label>
-          <input type="text" id="test-name" name="name" required placeholder="Nombre de prueba">
-        </div>
-        <div class="form-group">
-          <label for="test-email">Email</label>
-          <input type="email" id="test-email" name="email" required placeholder="test@ejemplo.com">
-        </div>
-        <div class="form-group">
-          <label for="test-company">Empresa (opcional)</label>
-          <input type="text" id="test-company" name="company" placeholder="Empresa de prueba">
-        </div>
-        <div class="form-group">
-          <label for="test-phone">Teléfono (opcional)</label>
-          <input type="tel" id="test-phone" name="phone" placeholder="+593 99 999 9999">
-        </div>
-        <div class="form-group">
-          <label for="test-contact-method">Método de contacto preferido</label>
-          <select id="test-contact-method" name="contact_method">
-            <option value="">Selecciona...</option>
-            <option value="email">Email</option>
-            <option value="phone">Teléfono</option>
-            <option value="whatsapp">WhatsApp</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="test-service">Servicio de interés</label>
-          <select id="test-service" name="service">
-            <option value="">Selecciona un servicio</option>
-            <option value="web">Desarrollo Web</option>
-            <option value="ai">Integraciones IA</option>
-            <option value="ml">Machine Learning</option>
-            <option value="llm">LLMs y Fine-tuning</option>
-            <option value="consulting">Consultoría</option>
-            <option value="other">Otro</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="test-message">Mensaje</label>
-          <textarea id="test-message" name="message" required placeholder="Este es un mensaje de prueba..."></textarea>
-        </div>
-        <button type="submit" id="test-submit" class="btn btn-primary">Enviar Mensaje de Prueba</button>
-        <div id="test-status" style="margin-top:1rem;font-family:var(--font-mono);font-size:0.75rem;display:none;"></div>
-      </form>
-    </div>
+    <p style="font-family:var(--font-mono);font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Al utilizar nuestros servicios, aceptas los términos de esta Política de Privacidad.</p>
+    <a href="contacto.html" class="btn btn-primary">Contactar</a>
   </div>
 </section>
 
@@ -224,12 +233,12 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
       </div>
     </div>
     <div class="footer-mega">
-      Página de prueba — Solo testing. <span class="em-serif">Nexxts.</span> <span class="accent" style="font-family:var(--font-display)">—</span>
+      Innovación ecuatoriana para el mundo. <span class="em-serif">Nexxts.</span> <span class="accent" style="font-family:var(--font-display)">—</span>
     </div>
     <div class="footer-bottom">
-      <span>✦ Nexxts — Página de Prueba © 2026</span>
+      <span>✦ Nexxts — © 2026</span>
       <span>Quito, Ecuador</span>
-      <span>Solo testing</span>
+      <span>Todos los derechos reservados</span>
     </div>
   </div>
 </footer>
@@ -237,59 +246,7 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 <script>
 (function() { if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 }); document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el)); })();
 (function() { const nav = document.getElementById('main-nav'); let lastScroll = 0; window.addEventListener('scroll', () => { const currentScroll = window.pageYOffset; if (currentScroll > lastScroll && currentScroll > 100) { nav.classList.add('nav-hidden'); } else { nav.classList.remove('nav-hidden'); } lastScroll = currentScroll; }, { passive: true }); })();
-
-// ── Formulario de prueba ──
-(function() {
-  const form = document.getElementById('contact-test-form');
-  if (!form) return;
-  const status = document.getElementById('test-status');
-  const submitBtn = document.getElementById('test-submit');
-  
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = {
-      name: form.querySelector('#test-name').value.trim(),
-      email: form.querySelector('#test-email').value.trim(),
-      company: form.querySelector('#test-company').value.trim(),
-      phone: form.querySelector('#test-phone') ? form.querySelector('#test-phone').value.trim() : '',
-      contactMethod: form.querySelector('#test-contact-method') ? form.querySelector('#test-contact-method').value : '',
-      service: form.querySelector('#test-service').value,
-      message: form.querySelector('#test-message').value.trim()
-    };
-    
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando...';
-    status.style.display = 'block';
-    status.style.color = 'var(--muted)';
-    status.textContent = 'Enviando mensaje de prueba...';
-    
-    try {
-      const response = await fetch('/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      
-      const result = await response.json();
-      
-      if (result.success) {
-        status.style.color = 'green';
-        status.textContent = '✓ ¡Mensaje de prueba enviado correctamente! Revisa tu correo.';
-        form.reset();
-      } else {
-        status.style.color = 'red';
-        status.textContent = '✗ Error: ' + (result.message || 'Intenta de nuevo.');
-      }
-    } catch (error) {
-      status.style.color = 'red';
-      status.textContent = '✗ Error de conexión. Verifica que el servidor esté corriendo.';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Enviar Mensaje de Prueba';
-    }
-  });
-})();
+document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const target = document.querySelector(a.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
 </script>
 <script>
 // ── Geo Location: cambiar a Ibarra si visitante está en Imbabura ──

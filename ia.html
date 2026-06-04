@@ -46,6 +46,11 @@ h4 { font-size: clamp(1rem, 1.5vw, 1.2rem); }
   letter-spacing: 0.12em; color: var(--muted); margin-bottom: 1rem;
 }
 .topbar {
+  width: 100%;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-inner {
   display: flex; justify-content: space-between; align-items: center;
   padding: 0.6rem var(--gutter); font-size: 0.7rem;
   font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em;
@@ -194,6 +199,8 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 <body>
 
 <div class="topbar">
+  <div class="topbar-inner">
+  <div class="topbar-inner">
   <span class="topbar-brand">✦ Nexxts</span>
   <span>Quito, Ecuador — <span class="mono">2026</span></span>
   <span><span class="mono">Nexxts.es</span></span>

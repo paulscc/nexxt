@@ -3,10 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contacto Test — Nexxts (Solo pruebas)</title>
+<title>Política de Cookies — Nexxts Quito Ecuador</title>
 <link rel="icon" href="assets/logoo.png" type="image/png">
-<meta name="description" content="Página de prueba del formulario de contacto Nexxts.">
-<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Política de cookies de Nexxts. Información sobre el uso de cookies en nuestro sitio web.">
 <style>
 :root {
   --bg:      oklch(96.5% 0.015 75);
@@ -56,26 +55,26 @@ nav.nav-hidden { transform: translateY(-100%); }
 .nav-links a { color: var(--muted); transition: color 0.2s; display: flex; align-items: center; gap: 0.3rem; }
 .nav-links a:hover { color: var(--fg); text-decoration: none; }
 .nav-badge { font-family: var(--font-mono); font-size: 0.6rem; background: var(--accent-soft); color: var(--accent); padding: 0.1rem 0.4rem; border-radius: 3px; }
-
-.hero { min-height: 30vh; display: flex; flex-direction: column; justify-content: center; padding: 4rem 0; position: relative; }
+.hero { min-height: 40vh; display: flex; flex-direction: column; justify-content: center; padding: 4rem 0; position: relative; }
 .hero-label { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 1.5rem; }
 .hero h1 { margin-bottom: 1.5rem; }
 .hero h1 .em-serif { color: var(--accent); }
 .hero-lead { font-size: clamp(1.1rem, 1.5vw, 1.3rem); color: var(--muted); line-height: 1.7; margin-bottom: 2.5rem; max-width: 32em; }
+.section-alt { background: var(--surface); }
+.legal-content { max-width: 800px; margin: 0 auto; }
+.legal-content p { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+.legal-content h3 { margin-top: 2.5rem; margin-bottom: 1rem; color: var(--fg); }
+.legal-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+.legal-content li { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.5rem; }
+.legal-content strong { color: var(--fg); }
+.legal-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.legal-content table th, .legal-content table td { border: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.9rem; }
+.legal-content table th { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: var(--surface); }
+.legal-content table td { color: var(--muted); }
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .btn:hover { text-decoration: none; }
 .btn-primary { background: var(--accent); color: #fff; border-radius: 2px; }
 .btn-primary:hover { background: oklch(44% 0.12 28); transform: translateY(-1px); }
-.section-alt { background: var(--surface); }
-
-.contact-test-form { max-width: 680px; margin: 2rem auto 0; background: var(--surface); border: 1px solid var(--border); padding: 2.5rem; }
-.form-group { margin-bottom: 1.5rem; }
-.form-group label { display: block; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.5rem; }
-.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--border); background: var(--bg); color: var(--fg); font-size: 0.95rem; font-family: var(--font-body); border-radius: 2px; transition: border-color 0.2s; }
-.form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--accent); }
-.form-group textarea { min-height: 150px; resize: vertical; }
-.test-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; background: #ff6b35; color: #fff; padding: 0.25rem 0.75rem; border-radius: 3px; margin-bottom: 0.5rem; }
-
 footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem; }
 .footer-col h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(60% 0.01 60); margin-bottom: 1rem; }
@@ -86,7 +85,6 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 .footer-mega { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: oklch(92% 0.005 80); line-height: 1.1; border-top: 1px solid oklch(30% 0.01 60); padding-top: 2rem; margin-top: 2rem; }
 .footer-mega .em-serif { color: var(--accent); font-style: italic; }
 .footer-bottom { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(45% 0.01 60); border-top: 1px solid oklch(25% 0.01 60); padding-top: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
-
 [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 [data-reveal].revealed { opacity: 1; transform: translateY(0); }
 [data-reveal][data-delay="100"] { transition-delay: 0.1s; }
@@ -94,7 +92,7 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 [data-reveal][data-delay="300"] { transition-delay: 0.3s; }
 @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } }
 @media (max-width: 880px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } }
-@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } .legal-content table { font-size: 0.8rem; } .legal-content table th, .legal-content table td { padding: 0.5rem; } }
 .paper-texture { position: relative; }
 .paper-texture::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); background-size: 256px 256px; pointer-events: none; }
 </style>
@@ -102,7 +100,6 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 <body>
 
 <div class="topbar">
-  <div class="topbar-inner">
   <div class="topbar-inner">
   <span class="topbar-brand">✦ Nexxts</span>
   <span>Quito, Ecuador — <span class="mono">2026</span></span>
@@ -124,67 +121,104 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 </nav>
 
 <section class="hero container" id="hero" data-reveal>
-  <div class="hero-label" data-reveal data-delay="100">Página de Prueba</div>
-  <div class="test-badge" data-reveal data-delay="150">⚠ Solo pruebas internas — No visible al público</div>
+  <div class="hero-label" data-reveal data-delay="100">Legal</div>
   <h1 data-reveal data-delay="200">
-    Formulario de <span class="em-serif">Prueba</span>
+    Política de <span class="em-serif">Cookies</span>
     <span class="accent" style="font-family:var(--font-display)">✦</span>
   </h1>
   <p class="hero-lead" data-reveal data-delay="300">
-    Esta página solo es accesible mediante la URL directa <code style="font-family:var(--font-mono);font-size:0.85rem;">/contactotest</code>. Úsala para probar el envío del formulario.
+    Última actualización: Enero 2026. Esta política explica qué son las cookies y cómo las utilizamos en nuestro sitio web.
   </p>
 </section>
 
 <section class="section section-alt paper-texture" data-reveal>
+  <div class="container legal-content">
+    <div class="section-label" data-reveal data-delay="100">I. ¿Qué son las Cookies?</div>
+    <p data-reveal data-delay="200">
+      Las cookies son pequeños archivos de texto que se almacenan en tu navegador cuando visitas un sitio web. Permiten que el sitio recuerde tus preferencias y acciones durante un período de tiempo, para que no tengas que volver a configurarlas cada vez que nos visites.
+    </p>
+
+    <h3 data-reveal data-delay="200">II. Tipos de Cookies que Utilizamos</h3>
+    <p data-reveal data-delay="200">En Nexxts utilizamos los siguientes tipos de cookies:</p>
+
+    <table data-reveal data-delay="200">
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Propósito</th>
+          <th>Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Cookies Esenciales</strong></td>
+          <td>Necesarias para el funcionamiento básico del sitio web. Permiten la navegación y el acceso a áreas seguras.</td>
+          <td>Sesión</td>
+        </tr>
+        <tr>
+          <td><strong>Cookies de Preferencias</strong></td>
+          <td>Permiten recordar tus preferencias como el idioma o la región para una experiencia personalizada.</td>
+          <td>1 año</td>
+        </tr>
+        <tr>
+          <td><strong>Cookies de Análisis</strong></td>
+          <td>Recopilan información anónima sobre cómo los visitantes usan el sitio web para mejorar su funcionamiento.</td>
+          <td>2 años</td>
+        </tr>
+        <tr>
+          <td><strong>Cookies de Marketing</strong></td>
+          <td>Se utilizan para mostrar anuncios relevantes basados en tus intereses y medir la efectividad de campañas.</td>
+          <td>90 días</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 data-reveal data-delay="200">III. Cookies de Terceros</h3>
+    <p data-reveal data-delay="200">
+      Nuestro sitio web puede utilizar servicios de terceros que también instalan cookies. Estos incluyen servicios de análisis como Google Analytics y plataformas de redes sociales. Estas cookies están sujetas a las políticas de privacidad de los respectivos proveedores.
+    </p>
+
+    <h3 data-reveal data-delay="200">IV. Cómo Gestionar las Cookies</h3>
+    <p data-reveal data-delay="200">
+      Puedes gestionar y controlar las cookies de las siguientes maneras:
+    </p>
+    <ul data-reveal data-delay="200">
+      <li><strong>Configuración del navegador:</strong> La mayoría de los navegadores te permiten ver, eliminar y bloquear cookies desde su configuración.</li>
+      <li><strong>Configuración de privacidad:</strong> Puedes configurar tu navegador para que te notifique antes de aceptar cookies.</li>
+      <li><strong>Herramientas de terceros:</strong> Existen herramientas que permiten gestionar preferencias de cookies de manera centralizada.</li>
+    </ul>
+    <p data-reveal data-delay="200">
+      Ten en cuenta que si deshabilitas las cookies esenciales, algunas partes de nuestro sitio web pueden no funcionar correctamente.
+    </p>
+
+    <h3 data-reveal data-delay="200">V. Cómo Deshabilitar Cookies en tu Navegador</h3>
+    <p data-reveal data-delay="200">Puedes configurar tu navegador para rechazar cookies siguiendo estas guías:</p>
+    <ul data-reveal data-delay="200">
+      <li><strong>Google Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios.</li>
+      <li><strong>Mozilla Firefox:</strong> Opciones → Privacidad y seguridad → Cookies y datos del sitio.</li>
+      <li><strong>Safari:</strong> Preferencias → Privacidad → Cookies y datos de sitios web.</li>
+      <li><strong>Microsoft Edge:</strong> Configuración → Cookies y permisos del sitio → Administrar y eliminar cookies.</li>
+    </ul>
+
+    <h3 data-reveal data-delay="200">VI. Actualizaciones de esta Política</h3>
+    <p data-reveal data-delay="200">
+      Es posible que actualicemos esta Política de Cookies periódicamente para reflejar cambios en las cookies que utilizamos o por requisitos legales. Te recomendamos revisar esta página regularmente para mantenerte informado.
+    </p>
+
+    <h3 data-reveal data-delay="200">VII. Contacto</h3>
+    <p data-reveal data-delay="200">Si tienes preguntas sobre nuestra Política de Cookies, contáctanos en:</p>
+    <p data-reveal data-delay="200">
+      <strong>Email:</strong> <a href="mailto:team@Nexxts.es">team@Nexxts.es</a><br>
+      <strong>Ubicación:</strong> Quito, Ecuador<br>
+      
+    </p>
+  </div>
+</section>
+
+<section class="section paper-texture" style="text-align:center;" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">Formulario de Contacto — TEST</div>
-    <div class="contact-test-form" data-reveal data-delay="200">
-      <form id="contact-test-form">
-        <div class="form-group">
-          <label for="test-name">Nombre completo</label>
-          <input type="text" id="test-name" name="name" required placeholder="Nombre de prueba">
-        </div>
-        <div class="form-group">
-          <label for="test-email">Email</label>
-          <input type="email" id="test-email" name="email" required placeholder="test@ejemplo.com">
-        </div>
-        <div class="form-group">
-          <label for="test-company">Empresa (opcional)</label>
-          <input type="text" id="test-company" name="company" placeholder="Empresa de prueba">
-        </div>
-        <div class="form-group">
-          <label for="test-phone">Teléfono (opcional)</label>
-          <input type="tel" id="test-phone" name="phone" placeholder="+593 99 999 9999">
-        </div>
-        <div class="form-group">
-          <label for="test-contact-method">Método de contacto preferido</label>
-          <select id="test-contact-method" name="contact_method">
-            <option value="">Selecciona...</option>
-            <option value="email">Email</option>
-            <option value="phone">Teléfono</option>
-            <option value="whatsapp">WhatsApp</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="test-service">Servicio de interés</label>
-          <select id="test-service" name="service">
-            <option value="">Selecciona un servicio</option>
-            <option value="web">Desarrollo Web</option>
-            <option value="ai">Integraciones IA</option>
-            <option value="ml">Machine Learning</option>
-            <option value="llm">LLMs y Fine-tuning</option>
-            <option value="consulting">Consultoría</option>
-            <option value="other">Otro</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="test-message">Mensaje</label>
-          <textarea id="test-message" name="message" required placeholder="Este es un mensaje de prueba..."></textarea>
-        </div>
-        <button type="submit" id="test-submit" class="btn btn-primary">Enviar Mensaje de Prueba</button>
-        <div id="test-status" style="margin-top:1rem;font-family:var(--font-mono);font-size:0.75rem;display:none;"></div>
-      </form>
-    </div>
+    <p style="font-family:var(--font-mono);font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Al continuar navegando en nuestro sitio, aceptas el uso de cookies según esta política.</p>
+    <a href="contacto.html" class="btn btn-primary">Contactar</a>
   </div>
 </section>
 
@@ -224,12 +258,12 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
       </div>
     </div>
     <div class="footer-mega">
-      Página de prueba — Solo testing. <span class="em-serif">Nexxts.</span> <span class="accent" style="font-family:var(--font-display)">—</span>
+      Innovación ecuatoriana para el mundo. <span class="em-serif">Nexxts.</span> <span class="accent" style="font-family:var(--font-display)">—</span>
     </div>
     <div class="footer-bottom">
-      <span>✦ Nexxts — Página de Prueba © 2026</span>
+      <span>✦ Nexxts — © 2026</span>
       <span>Quito, Ecuador</span>
-      <span>Solo testing</span>
+      <span>Todos los derechos reservados</span>
     </div>
   </div>
 </footer>
@@ -237,59 +271,7 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 <script>
 (function() { if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 }); document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el)); })();
 (function() { const nav = document.getElementById('main-nav'); let lastScroll = 0; window.addEventListener('scroll', () => { const currentScroll = window.pageYOffset; if (currentScroll > lastScroll && currentScroll > 100) { nav.classList.add('nav-hidden'); } else { nav.classList.remove('nav-hidden'); } lastScroll = currentScroll; }, { passive: true }); })();
-
-// ── Formulario de prueba ──
-(function() {
-  const form = document.getElementById('contact-test-form');
-  if (!form) return;
-  const status = document.getElementById('test-status');
-  const submitBtn = document.getElementById('test-submit');
-  
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = {
-      name: form.querySelector('#test-name').value.trim(),
-      email: form.querySelector('#test-email').value.trim(),
-      company: form.querySelector('#test-company').value.trim(),
-      phone: form.querySelector('#test-phone') ? form.querySelector('#test-phone').value.trim() : '',
-      contactMethod: form.querySelector('#test-contact-method') ? form.querySelector('#test-contact-method').value : '',
-      service: form.querySelector('#test-service').value,
-      message: form.querySelector('#test-message').value.trim()
-    };
-    
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando...';
-    status.style.display = 'block';
-    status.style.color = 'var(--muted)';
-    status.textContent = 'Enviando mensaje de prueba...';
-    
-    try {
-      const response = await fetch('/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      
-      const result = await response.json();
-      
-      if (result.success) {
-        status.style.color = 'green';
-        status.textContent = '✓ ¡Mensaje de prueba enviado correctamente! Revisa tu correo.';
-        form.reset();
-      } else {
-        status.style.color = 'red';
-        status.textContent = '✗ Error: ' + (result.message || 'Intenta de nuevo.');
-      }
-    } catch (error) {
-      status.style.color = 'red';
-      status.textContent = '✗ Error de conexión. Verifica que el servidor esté corriendo.';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Enviar Mensaje de Prueba';
-    }
-  });
-})();
+document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const target = document.querySelector(a.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
 </script>
 <script>
 // ── Geo Location: cambiar a Ibarra si visitante está en Imbabura ──
