@@ -12,6 +12,32 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Middleware para trackear visitas a páginas
+app.use((req, res, next) => {
+  // Solo trackear páginas HTML, ignorar peticiones a assets, CSS, JS, etc.
+  const path = req.path;
+  
+  // Ignorar archivos estáticos y endpoints API
+  if (!path.startsWith('/api') && !path.startsWith('/send-email') && !path.startsWith('/subscribe') && !path.match(/\.(css|js|png|jpg|gif|svg|webp|ico|json|txt)$/)) {
+    const ip = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.ip || req.connection?.remoteAddress;
+    const userAgent = req.headers['user-agent'] || null;
+    const referrer = req.headers['referer'] || null;
+    const visitedUrl = path;
+
+    // Guardar asíncronamente sin bloquear la respuesta
+    pool.query(
+      `INSERT INTO web_visits (ip_address, user_agent, referrer, visited_url)
+       VALUES ($1, $2, $3, $4)`,
+      [ip, userAgent, referrer, visitedUrl]
+    ).catch(err => {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('Error guardando visita:', err.message);
+      }
+    });
+  }
+  next();
+});
+
 // Servir archivos estáticos
 app.use(express.static(path.join(__dirname)));
 
