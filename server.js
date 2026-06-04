@@ -1,5 +1,5 @@
 const express = require('express');
-const sgMail = require('@sendgrid/mail');
+const { Pool } = require('pg');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
@@ -15,91 +15,48 @@ app.use(express.urlencoded({ extended: true }));
 // Servir archivos estáticos
 app.use(express.static(path.join(__dirname)));
 
-// Configurar SendGrid con API Key
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-if (SENDGRID_API_KEY) {
-  sgMail.setApiKey(SENDGRID_API_KEY);
-  console.log('SendGrid configurado correctamente');
-} else {
-  console.warn('ADVERTENCIA: No se encontró SENDGRID_API_KEY en las variables de entorno');
-}
+// Configurar conexión a PostgreSQL
+const pool = new Pool({
+  connectionString: process.env.Dbnhost,
+  ssl: process.env.Dbnhost && process.env.Dbnhost.includes('ssl') ? { rejectUnauthorized: false } : false
+});
 
-// Función helper para enviar emails
-async function sendEmail({ to, from, replyTo, subject, html }) {
-  if (!SENDGRID_API_KEY) {
-    console.error('SendGrid no configurado - revisa variables de entorno');
-    throw new Error('SendGrid no configurado');
+// Verificar conexión a la base de datos
+pool.query('SELECT NOW()', (err, res) => {
+  if (err) {
+    console.error('Error conectando a PostgreSQL:', err.message);
+  } else {
+    console.log('Conectado a PostgreSQL correctamente');
   }
-  
-  const msg = {
-    to: to,
-    from: from || process.env.SENDGRID_FROM || 'team@Nexxts.es',
-    replyTo: replyTo,
-    subject: subject,
-    html: html
-  };
-  
-  await sgMail.send(msg);
-}
+});
 
-// Endpoint para recibir datos del formulario de contacto
+// Endpoint para guardar mensajes de contacto
 app.post('/send-email', async (req, res) => {
   try {
     const { name, email, company, service, message } = req.body;
-    const to = process.env.CONTACT_EMAIL || 'team@Nexxts.es';
-    const fromEmail = process.env.SENDGRID_FROM || 'team@Nexxts.es';
+    
+    if (!name || !email || !message) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Faltan campos requeridos (nombre, email, mensaje).' 
+      });
+    }
 
-    await sendEmail({
-      to: to,
-      from: fromEmail,
-      replyTo: email,
-      subject: `Contacto desde Nexxts - ${name} - ${service || 'Consulta'}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background-color: #8B4513; color: white; padding: 20px; text-align: center;">
-            <h1 style="margin: 0;">✦ Nexxts</h1>
-            <p style="margin: 5px 0 0; opacity: 0.9;">Nuevo mensaje de contacto</p>
-          </div>
-          <div style="padding: 30px; background-color: #f9f9f9;">
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold; color: #333;">Nombre</td>
-                <td style="padding: 10px; border-bottom: 1px solid #ddd; color: #555;">${name}</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold; color: #333;">Email</td>
-                <td style="padding: 10px; border-bottom: 1px solid #ddd; color: #555;">${email}</td>
-              </tr>
-              ${company ? `<tr>
-                <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold; color: #333;">Empresa</td>
-                <td style="padding: 10px; border-bottom: 1px solid #ddd; color: #555;">${company}</td>
-              </tr>` : ''}
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold; color: #333;">Servicio</td>
-                <td style="padding: 10px; border-bottom: 1px solid #ddd; color: #555;">${service || 'No especificado'}</td>
-              </tr>
-            </table>
-            <div style="margin-top: 20px;">
-              <h3 style="color: #333; margin-bottom: 10px;">Mensaje:</h3>
-              <p style="background: white; padding: 15px; border-radius: 5px; border-left: 4px solid #8B4513; color: #555; line-height: 1.6;">${message}</p>
-            </div>
-          </div>
-          <div style="background-color: #333; color: white; padding: 15px; text-align: center; font-size: 12px;">
-            <p style="margin: 0;">Enviado desde Nexxts.es — Páginas Web en Quito, Ecuador</p>
-          </div>
-        </div>
-      `
-    });
+    const result = await pool.query(
+      `INSERT INTO contact_messages (full_name, email, company, service_interest, message, status)
+       VALUES ($1, $2, $3, $4, $5, 'pending')
+       RETURNING id`,
+      [name, email, company || null, service || null, message]
+    );
+    
+    console.log(`Mensaje guardado con ID: ${result.rows[0].id}`);
     
     res.json({ 
       success: true, 
       message: '¡Gracias! Hemos recibido tu mensaje. Te contactaremos pronto.' 
     });
   } catch (error) {
-    console.error('Error al enviar email:', error);
-    if (error.response) {
-      console.error('Error detallado SendGrid:', error.response.body);
-    }
+    console.error('Error al guardar mensaje:', error);
     res.status(500).json({ 
       success: false, 
       message: 'Hubo un error al enviar tu mensaje. Por favor intenta de nuevo.' 
@@ -111,42 +68,29 @@ app.post('/send-email', async (req, res) => {
 app.post('/subscribe', async (req, res) => {
   try {
     const { email } = req.body;
-    const to = process.env.CONTACT_EMAIL || 'team@Nexxts.es';
-    const fromEmail = process.env.SENDGRID_FROM || 'team@Nexxts.es';
+    
+    if (!email) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'El email es requerido.' 
+      });
+    }
 
-    await sendEmail({
-      to: to,
-      from: fromEmail,
-      replyTo: email,
-      subject: 'Nuevo lead desde Nexxts',
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background-color: #8B4513; color: white; padding: 20px; text-align: center;">
-            <h1 style="margin: 0;">✦ Nexxts</h1>
-            <p style="margin: 5px 0 0; opacity: 0.9;">Nuevo lead interesado</p>
-          </div>
-          <div style="padding: 30px; background-color: #f9f9f9;">
-            <p style="color: #555; font-size: 16px;">Una persona ha mostrado interés en los servicios de Nexxts:</p>
-            <p style="background: white; padding: 15px; border-radius: 5px; border-left: 4px solid #8B4513;">
-              <strong>Email:</strong> ${email}
-            </p>
-          </div>
-          <div style="background-color: #333; color: white; padding: 15px; text-align: center; font-size: 12px;">
-            <p style="margin: 0;">Enviado desde Nexxts.es</p>
-          </div>
-        </div>
-      `
-    });
+    const result = await pool.query(
+      `INSERT INTO contact_messages (full_name, email, message, service_interest, status)
+       VALUES ($1, $2, $3, $4, 'pending')
+       RETURNING id`,
+      ['Lead vía web', email, 'Interesado en servicios de Nexxts (lead desde formulario CTA)', 'Web']
+    );
+    
+    console.log(`Lead guardado con ID: ${result.rows[0].id}`);
     
     res.json({ 
       success: true, 
       message: '¡Gracias! Te contactaremos pronto.' 
     });
   } catch (error) {
-    console.error('Error al enviar email:', error);
-    if (error.response) {
-      console.error('Error detallado SendGrid:', error.response.body);
-    }
+    console.error('Error al guardar lead:', error);
     res.status(500).json({ 
       success: false, 
       message: 'Hubo un error. Por favor intenta de nuevo.' 
@@ -161,5 +105,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Servidor Nexxts corriendo en http://localhost:${PORT}`);
-  console.log('Usando SendGrid para envío de correos');
+  console.log('Usando PostgreSQL para almacenar mensajes');
 });

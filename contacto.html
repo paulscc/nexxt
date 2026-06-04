@@ -444,22 +444,39 @@ footer {
           </div>
         </div>
       </div>
-      <div class="contact-form" data-reveal data-delay="400" style="text-align:center;">
-        <div style="margin-bottom: 2rem;">
-          <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent);">📧</div>
-          <h3 style="margin-bottom: 1rem; font-family: var(--font-display);">Contáctanos por Email</h3>
-          <p style="font-size: 1.05rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem;">
-            El formulario de contacto está en mantenimiento. Mientras tanto, escríbenos directamente a:
-          </p>
-          <a href="mailto:team@Nexxts.es" style="font-size: 1.3rem; color: var(--accent); font-family: var(--font-display); text-decoration: none; display: inline-block; padding: 1rem 2rem; border: 2px solid var(--accent); border-radius: 2px; transition: all 0.2s;">
-            team@Nexxts.es ✦
-          </a>
-          <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--muted); font-family: var(--font-mono);">
-            Te responderemos en menos de 24 horas
-          </p>
-          <hr class="ruler-dotted" style="margin: 2rem 0;">
-          
-        </div>
+      <div class="contact-form" data-reveal data-delay="400">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="company">Empresa (opcional)</label>
+            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+          </div>
+          <div class="form-group">
+            <label for="service">Servicio de interés</label>
+            <select id="service" name="service">
+              <option value="">Selecciona un servicio</option>
+              <option value="Web">Desarrollo Web</option>
+              <option value="IA">Integraciones IA</option>
+              <option value="ML">Machine Learning</option>
+              <option value="LLM">LLMs y Fine-tuning</option>
+              <option value="Consultoria">Consultoría</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+          </div>
+          <button type="submit" id="contact-submit" class="btn btn-primary">Enviar Mensaje</button>
+          <div id="contact-status" style="margin-top:1rem;font-family:var(--font-mono);font-size:0.75rem;display:none;"></div>
+        </form>
       </div>
     </div>
   </div>
