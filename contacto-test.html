@@ -146,6 +146,19 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
           <input type="text" id="test-company" name="company" placeholder="Empresa de prueba">
         </div>
         <div class="form-group">
+          <label for="test-phone">Teléfono (opcional)</label>
+          <input type="tel" id="test-phone" name="phone" placeholder="+593 99 999 9999">
+        </div>
+        <div class="form-group">
+          <label for="test-contact-method">Método de contacto preferido</label>
+          <select id="test-contact-method" name="contact_method">
+            <option value="">Selecciona...</option>
+            <option value="email">Email</option>
+            <option value="phone">Teléfono</option>
+            <option value="whatsapp">WhatsApp</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label for="test-service">Servicio de interés</label>
           <select id="test-service" name="service">
             <option value="">Selecciona un servicio</option>
@@ -232,6 +245,8 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
       name: form.querySelector('#test-name').value.trim(),
       email: form.querySelector('#test-email').value.trim(),
       company: form.querySelector('#test-company').value.trim(),
+      phone: form.querySelector('#test-phone') ? form.querySelector('#test-phone').value.trim() : '',
+      contactMethod: form.querySelector('#test-contact-method') ? form.querySelector('#test-contact-method').value : '',
       service: form.querySelector('#test-service').value,
       message: form.querySelector('#test-message').value.trim()
     };

@@ -59,7 +59,7 @@ pool.query('SELECT NOW()', (err, res) => {
 // Endpoint para guardar mensajes de contacto
 app.post('/send-email', async (req, res) => {
   try {
-    const { name, email, company, service, message } = req.body;
+    const { name, email, company, phone, contactMethod, service, message } = req.body;
     
     if (!name || !email || !message) {
       return res.status(400).json({ 
@@ -69,10 +69,10 @@ app.post('/send-email', async (req, res) => {
     }
 
     const result = await pool.query(
-      `INSERT INTO contact_messages (full_name, email, company, service_interest, message, status)
-       VALUES ($1, $2, $3, $4, $5, 'pending')
+      `INSERT INTO contact_messages (full_name, email, company, phone, preferred_contact_method, service_interest, message, status)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, 'pending')
        RETURNING id`,
-      [name, email, company || null, service || null, message]
+      [name, email, company || null, phone || null, contactMethod || null, service || null, message]
     );
     
     console.log(`Mensaje guardado con ID: ${result.rows[0].id}`);

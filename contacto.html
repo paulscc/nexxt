@@ -430,7 +430,9 @@ footer {
         <div class="info-item">
           <div class="info-icon">📱</div>
           <div class="info-content">
-            <p> 24/7</p>
+            <h4>Teléfono</h4>
+            <p><a href="tel:+593961427970">+593 96142 7970</a></p>
+            <p>24/7</p>
           </div>
         </div>
         <div class="info-item">
@@ -455,6 +457,19 @@ footer {
           <div class="form-group">
             <label for="company">Empresa (opcional)</label>
             <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+          </div>
+          <div class="form-group">
+            <label for="phone">Teléfono (opcional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+593 99 999 9999">
+          </div>
+          <div class="form-group">
+            <label for="contact_method">Método de contacto preferido</label>
+            <select id="contact_method" name="contact_method">
+              <option value="">Selecciona...</option>
+              <option value="email">Email</option>
+              <option value="phone">Teléfono</option>
+              <option value="whatsapp">WhatsApp</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="service">Servicio de interés</label>
@@ -585,6 +600,8 @@ footer {
       name: form.name.value.trim(),
       email: form.email.value.trim(),
       company: form.company.value.trim(),
+      phone: form.phone ? form.phone.value.trim() : '',
+      contactMethod: form.contact_method ? form.contact_method.value : '',
       service: form.service.value,
       message: form.message.value.trim()
     };
