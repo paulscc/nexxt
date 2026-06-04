@@ -100,7 +100,7 @@ app.post('/subscribe', async (req, res) => {
 
 // Ruta principal
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dev-studio-landing.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
