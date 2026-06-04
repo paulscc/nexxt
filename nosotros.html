@@ -562,5 +562,25 @@ footer {
   }, { passive: true });
 })();
 </script>
+<script>
+// ── Geo Location: cambiar a Ibarra si visitante está en Imbabura ──
+(function() {
+  fetch('/api/location')
+    .then(r => r.json())
+    .then(data => {
+      if (data && data.region === 'I') {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(n => { if (n.nodeValue && n.nodeValue.includes('Quito')) n.nodeValue = n.nodeValue.replace(/Quito/g, 'Ibarra'); });
+        if (document.title) document.title = document.title.replace(/Quito/g, 'Ibarra');
+        document.querySelectorAll('[alt]').forEach(el => { if (el.alt && el.alt.includes('Quito')) el.alt = el.alt.replace(/Quito/g, 'Ibarra'); });
+        const md = document.querySelector('meta[name=description]');
+        if (md && md.content && md.content.includes('Quito')) md.content = md.content.replace(/Quito/g, 'Ibarra');
+      }
+    })
+    .catch(() => {});
+})();
+</script>
 </body>
 </html>

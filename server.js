@@ -2,6 +2,7 @@ const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
 const path = require('path');
+const geoip = require('geoip-lite');
 require('dotenv').config();
 
 const app = express();
@@ -121,6 +122,24 @@ app.post('/subscribe', async (req, res) => {
       success: false, 
       message: 'Hubo un error. Por favor intenta de nuevo.' 
     });
+  }
+});
+
+// Endpoint para detectar ubicación del visitante
+app.get('/api/location', (req, res) => {
+  const ip = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.ip || req.connection?.remoteAddress;
+  
+  // Ignorar IPs locales
+  if (ip === '127.0.0.1' || ip === '::1' || ip === '::ffff:127.0.0.1' || ip?.startsWith('192.168.') || ip?.startsWith('10.')) {
+    return res.json({ city: null, region: null });
+  }
+  
+  const geo = geoip.lookup(ip);
+  
+  if (geo) {
+    res.json({ city: geo.city, region: geo.region });
+  } else {
+    res.json({ city: null, region: null });
   }
 });
 

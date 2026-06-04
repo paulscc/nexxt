@@ -404,5 +404,25 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 (function() { const nav = document.getElementById('main-nav'); let lastScroll = 0; window.addEventListener('scroll', () => { const currentScroll = window.pageYOffset; if (currentScroll > lastScroll && currentScroll > 100) { nav.classList.add('nav-hidden'); } else { nav.classList.remove('nav-hidden'); } lastScroll = currentScroll; }, { passive: true }); })();
 document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const target = document.querySelector(a.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
 </script>
+<script>
+// ── Geo Location: cambiar a Ibarra si visitante está en Imbabura ──
+(function() {
+  fetch('/api/location')
+    .then(r => r.json())
+    .then(data => {
+      if (data && data.region === 'I') {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(n => { if (n.nodeValue && n.nodeValue.includes('Quito')) n.nodeValue = n.nodeValue.replace(/Quito/g, 'Ibarra'); });
+        if (document.title) document.title = document.title.replace(/Quito/g, 'Ibarra');
+        document.querySelectorAll('[alt]').forEach(el => { if (el.alt && el.alt.includes('Quito')) el.alt = el.alt.replace(/Quito/g, 'Ibarra'); });
+        const md = document.querySelector('meta[name=description]');
+        if (md && md.content && md.content.includes('Quito')) md.content = md.content.replace(/Quito/g, 'Ibarra');
+      }
+    })
+    .catch(() => {});
+})();
+</script>
 </body>
 </html>
