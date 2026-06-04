@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Política de Cookies — Nexxts Quito Ecuador</title>
+<title>Servicios — Nexxts | Páginas Web en Quito</title>
 <link rel="icon" href="assets/logoo.png" type="image/png">
-<meta name="description" content="Política de cookies de Nexxts. Información sobre el uso de cookies en nuestro sitio web.">
+<meta name="description" content="Servicios de Nexxts: Desarrollo Web, Integraciones IA, Machine Learning, LLMs & Fine-tuning en Quito, Ecuador.">
 <style>
 :root {
   --bg:      oklch(96.5% 0.015 75);
@@ -38,7 +38,8 @@ h4 { font-size: clamp(1rem, 1.5vw, 1.2rem); }
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter); }
 .section { padding: clamp(4rem, 8vw, 8rem) 0; position: relative; }
 .section-label { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 1rem; }
-.topbar { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem var(--gutter); font-size: 0.7rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); background: var(--surface); border-bottom: 1px solid var(--border); max-width: var(--max-width); margin: 0 auto; }
+.topbar { width: 100%; background: var(--surface); border-bottom: 1px solid var(--border); }
+.topbar-inner { display: flex; justify-content: space-between; align-items: center; max-width: var(--max-width); margin: 0 auto; padding: 0.6rem var(--gutter); font-size: 0.7rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .topbar-brand { font-weight: 600; color: var(--fg); }
 nav { position: sticky; top: 0; z-index: 100; background: rgba(255 255 255 / 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: transform 0.3s; }
 nav.nav-hidden { transform: translateY(-100%); }
@@ -49,27 +50,39 @@ nav.nav-hidden { transform: translateY(-100%); }
 .nav-links { display: flex; gap: 1.5rem; list-style: none; font-size: 0.85rem; }
 .nav-links a { color: var(--muted); transition: color 0.2s; display: flex; align-items: center; gap: 0.3rem; }
 .nav-links a:hover { color: var(--fg); text-decoration: none; }
+.nav-links a.active { color: var(--accent); }
 .nav-badge { font-family: var(--font-mono); font-size: 0.6rem; background: var(--accent-soft); color: var(--accent); padding: 0.1rem 0.4rem; border-radius: 3px; }
 .hero { min-height: 40vh; display: flex; flex-direction: column; justify-content: center; padding: 4rem 0; position: relative; }
 .hero-label { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 1.5rem; }
 .hero h1 { margin-bottom: 1.5rem; }
 .hero h1 .em-serif { color: var(--accent); }
 .hero-lead { font-size: clamp(1.1rem, 1.5vw, 1.3rem); color: var(--muted); line-height: 1.7; margin-bottom: 2.5rem; max-width: 32em; }
-.section-alt { background: var(--surface); }
-.legal-content { max-width: 800px; margin: 0 auto; }
-.legal-content p { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
-.legal-content h3 { margin-top: 2.5rem; margin-bottom: 1rem; color: var(--fg); }
-.legal-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
-.legal-content li { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.5rem; }
-.legal-content strong { color: var(--fg); }
-.legal-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
-.legal-content table th, .legal-content table td { border: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; font-size: 0.9rem; }
-.legal-content table th { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); background: var(--surface); }
-.legal-content table td { color: var(--muted); }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .btn:hover { text-decoration: none; }
 .btn-primary { background: var(--accent); color: #fff; border-radius: 2px; }
 .btn-primary:hover { background: oklch(44% 0.12 28); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--fg); border: 1px solid var(--border); border-radius: 2px; }
+.btn-secondary:hover { border-color: var(--muted); background: var(--surface); }
+.section-alt { background: var(--surface); }
+.section-dark { background: oklch(15% 0.015 60); color: oklch(92% 0.005 80); }
+.section-dark .section-label { color: oklch(60% 0.015 60); }
+.service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+.service-card { background: var(--surface); border: 1px solid var(--border); padding: 2.5rem; transition: all 0.3s; position: relative; overflow: hidden; }
+.service-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+.service-card .service-img { width: 100%; aspect-ratio: 16/10; background: var(--border); margin-bottom: 1.5rem; overflow: hidden; }
+.service-card .service-img img { width: 100%; height: 100%; object-fit: cover; }
+.service-card .service-num { font-family: var(--font-display); font-size: 2.5rem; color: var(--accent); opacity: 0.3; line-height: 1; margin-bottom: 0.5rem; }
+.service-card .service-tag { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
+.service-card h3 { margin-bottom: 0.75rem; font-size: 1.5rem; }
+.service-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.service-card ul { list-style: none; padding: 0; }
+.service-card li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.2rem; position: relative; }
+.service-card li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+.cta-ribbon { background: var(--accent); color: #fff; padding: 4rem 0; text-align: center; position: relative; }
+.cta-ribbon::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: oklch(44% 0.12 28); }
+.cta-ribbon h2 { color: #fff; }
+.cta-ribbon p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 2rem; max-width: 32em; margin-left: auto; margin-right: auto; }
 footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem; }
 .footer-col h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(60% 0.01 60); margin-bottom: 1rem; }
@@ -85,19 +98,23 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 [data-reveal][data-delay="100"] { transition-delay: 0.1s; }
 [data-reveal][data-delay="200"] { transition-delay: 0.2s; }
 [data-reveal][data-delay="300"] { transition-delay: 0.3s; }
-@media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } }
-@media (max-width: 880px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } }
-@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } .legal-content table { font-size: 0.8rem; } .legal-content table th, .legal-content table td { padding: 0.5rem; } }
+[data-reveal][data-delay="400"] { transition-delay: 0.4s; }
+[data-reveal][data-delay="500"] { transition-delay: 0.5s; }
+@media (max-width: 880px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } .service-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .service-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } }
 .paper-texture { position: relative; }
 .paper-texture::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); background-size: 256px 256px; pointer-events: none; }
+.ruler-dotted { border: none; border-top: 1px dotted var(--border); margin: 2rem 0; }
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <span class="topbar-brand">✦ Nexxts</span>
-  <span>Quito, Ecuador — <span class="mono">2026</span></span>
-  <span><span class="mono">Nexxts.com.ec</span></span>
+  <div class="topbar-inner">
+    <span class="topbar-brand">✦ Nexxts</span>
+    <span>Quito, Ecuador — <span class="mono">2026</span></span>
+    <span><span class="mono">Nexxts.com.ec</span></span>
+  </div>
 </div>
 
 <nav id="main-nav">
@@ -108,112 +125,98 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
+      <li><a href="servicios.html" class="active">Servicios <span class="nav-badge">Catálogo</span></a></li>
       <li><a href="nosotros.html">Nosotros <span class="nav-badge">Equipo</span></a></li>
-      <li><a href="contacto.html">Contacto <span class="nav-badge">Habla con nosotros</span></a></li>
+      <li><a href="contacto.html">Contacto</a></li>
     </ul>
   </div>
 </nav>
 
 <section class="hero container" id="hero" data-reveal>
-  <div class="hero-label" data-reveal data-delay="100">Legal</div>
+  <div class="hero-label" data-reveal data-delay="100">Nuestros Servicios</div>
   <h1 data-reveal data-delay="200">
-    Política de <span class="em-serif">Cookies</span>
+    Todo lo que necesitas para tu <span class="em-serif">negocio digital</span>
     <span class="accent" style="font-family:var(--font-display)">✦</span>
   </h1>
   <p class="hero-lead" data-reveal data-delay="300">
-    Última actualización: Enero 2026. Esta política explica qué son las cookies y cómo las utilizamos en nuestro sitio web.
+    Ofrecemos soluciones completas de tecnología para impulsar tu empresa. Desde páginas web hasta inteligencia artificial, tenemos el expertise que necesitas.
   </p>
 </section>
 
 <section class="section section-alt paper-texture" data-reveal>
-  <div class="container legal-content">
-    <div class="section-label" data-reveal data-delay="100">I. ¿Qué son las Cookies?</div>
-    <p data-reveal data-delay="200">
-      Las cookies son pequeños archivos de texto que se almacenan en tu navegador cuando visitas un sitio web. Permiten que el sitio recuerde tus preferencias y acciones durante un período de tiempo, para que no tengas que volver a configurarlas cada vez que nos visites.
-    </p>
-
-    <h3 data-reveal data-delay="200">II. Tipos de Cookies que Utilizamos</h3>
-    <p data-reveal data-delay="200">En Nexxts utilizamos los siguientes tipos de cookies:</p>
-
-    <table data-reveal data-delay="200">
-      <thead>
-        <tr>
-          <th>Tipo</th>
-          <th>Propósito</th>
-          <th>Duración</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Cookies Esenciales</strong></td>
-          <td>Necesarias para el funcionamiento básico del sitio web. Permiten la navegación y el acceso a áreas seguras.</td>
-          <td>Sesión</td>
-        </tr>
-        <tr>
-          <td><strong>Cookies de Preferencias</strong></td>
-          <td>Permiten recordar tus preferencias como el idioma o la región para una experiencia personalizada.</td>
-          <td>1 año</td>
-        </tr>
-        <tr>
-          <td><strong>Cookies de Análisis</strong></td>
-          <td>Recopilan información anónima sobre cómo los visitantes usan el sitio web para mejorar su funcionamiento.</td>
-          <td>2 años</td>
-        </tr>
-        <tr>
-          <td><strong>Cookies de Marketing</strong></td>
-          <td>Se utilizan para mostrar anuncios relevantes basados en tus intereses y medir la efectividad de campañas.</td>
-          <td>90 días</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3 data-reveal data-delay="200">III. Cookies de Terceros</h3>
-    <p data-reveal data-delay="200">
-      Nuestro sitio web puede utilizar servicios de terceros que también instalan cookies. Estos incluyen servicios de análisis como Google Analytics y plataformas de redes sociales. Estas cookies están sujetas a las políticas de privacidad de los respectivos proveedores.
-    </p>
-
-    <h3 data-reveal data-delay="200">IV. Cómo Gestionar las Cookies</h3>
-    <p data-reveal data-delay="200">
-      Puedes gestionar y controlar las cookies de las siguientes maneras:
-    </p>
-    <ul data-reveal data-delay="200">
-      <li><strong>Configuración del navegador:</strong> La mayoría de los navegadores te permiten ver, eliminar y bloquear cookies desde su configuración.</li>
-      <li><strong>Configuración de privacidad:</strong> Puedes configurar tu navegador para que te notifique antes de aceptar cookies.</li>
-      <li><strong>Herramientas de terceros:</strong> Existen herramientas que permiten gestionar preferencias de cookies de manera centralizada.</li>
-    </ul>
-    <p data-reveal data-delay="200">
-      Ten en cuenta que si deshabilitas las cookies esenciales, algunas partes de nuestro sitio web pueden no funcionar correctamente.
-    </p>
-
-    <h3 data-reveal data-delay="200">V. Cómo Deshabilitar Cookies en tu Navegador</h3>
-    <p data-reveal data-delay="200">Puedes configurar tu navegador para rechazar cookies siguiendo estas guías:</p>
-    <ul data-reveal data-delay="200">
-      <li><strong>Google Chrome:</strong> Configuración → Privacidad y seguridad → Cookies y otros datos de sitios.</li>
-      <li><strong>Mozilla Firefox:</strong> Opciones → Privacidad y seguridad → Cookies y datos del sitio.</li>
-      <li><strong>Safari:</strong> Preferencias → Privacidad → Cookies y datos de sitios web.</li>
-      <li><strong>Microsoft Edge:</strong> Configuración → Cookies y permisos del sitio → Administrar y eliminar cookies.</li>
-    </ul>
-
-    <h3 data-reveal data-delay="200">VI. Actualizaciones de esta Política</h3>
-    <p data-reveal data-delay="200">
-      Es posible que actualicemos esta Política de Cookies periódicamente para reflejar cambios en las cookies que utilizamos o por requisitos legales. Te recomendamos revisar esta página regularmente para mantenerte informado.
-    </p>
-
-    <h3 data-reveal data-delay="200">VII. Contacto</h3>
-    <p data-reveal data-delay="200">Si tienes preguntas sobre nuestra Política de Cookies, contáctanos en:</p>
-    <p data-reveal data-delay="200">
-      <strong>Email:</strong> <a href="mailto:team@Nexxts.com.ec">team@Nexxts.com.ec</a><br>
-      <strong>Ubicación:</strong> Quito, Ecuador<br>
-      
-    </p>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">I. Servicios</div>
+    <h2 data-reveal data-delay="200">Lo que <span class="em-serif">ofrecemos</span></h2>
+    <div class="service-grid">
+      <div class="service-card" data-reveal data-delay="100">
+        <div class="service-img"><img src="assets/desarrollo.gif" alt="Desarrollo Web" loading="lazy"></div>
+        <div class="service-num">01</div>
+        <div class="service-tag">Desarrollo Web</div>
+        <h3>Aplicaciones Web Modernas</h3>
+        <p>Creamos sitios web y aplicaciones web profesionales, rápidas y optimizadas que impulsan tu negocio en el entorno digital.</p>
+        <ul>
+          <li>Sitios corporativos y landing pages</li>
+          <li>Tiendas online (E-commerce)</li>
+          <li>Plataformas SaaS</li>
+          <li>APIs y microservicios</li>
+          <li>Optimización SEO y rendimiento</li>
+        </ul>
+        <div style="margin-top:1.5rem;"><a href="web.html" class="btn btn-primary">Ver más</a></div>
+      </div>
+      <div class="service-card" data-reveal data-delay="200">
+        <div class="service-img"><img src="assets/apis.gif" alt="Integraciones IA" loading="lazy"></div>
+        <div class="service-num">02</div>
+        <div class="service-tag">Inteligencia Artificial</div>
+        <h3>Integraciones IA</h3>
+        <p>Integramos inteligencia artificial en tus procesos empresariales para automatizar tareas, analizar datos y tomar mejores decisiones.</p>
+        <ul>
+          <li>Chatbots y asistentes virtuales</li>
+          <li>Integración de APIs IA (OpenAI, Claude)</li>
+          <li>Automatización de procesos</li>
+          <li>Análisis inteligente de datos</li>
+          <li>Visión por computadora</li>
+        </ul>
+        <div style="margin-top:1.5rem;"><a href="ia.html" class="btn btn-primary">Ver más</a></div>
+      </div>
+      <div class="service-card" data-reveal data-delay="300">
+        <div class="service-img"><img src="assets/nlp.gif" alt="Machine Learning" loading="lazy"></div>
+        <div class="service-num">03</div>
+        <div class="service-tag">Machine Learning</div>
+        <h3>Modelos Predictivos</h3>
+        <p>Desarrollamos modelos de machine learning personalizados que transforman tus datos en ventajas competitivas.</p>
+        <ul>
+          <li>Modelos predictivos y clasificación</li>
+          <li>Sistemas de recomendación</li>
+          <li>Detección de anomalías</li>
+          <li>Segmentación de clientes</li>
+          <li>Procesamiento de lenguaje natural</li>
+        </ul>
+        <div style="margin-top:1.5rem;"><a href="ml.html" class="btn btn-primary">Ver más</a></div>
+      </div>
+      <div class="service-card" data-reveal data-delay="400">
+        <div class="service-img"><img src="assets/llms.gif" alt="LLMs y Fine-tuning" loading="lazy"></div>
+        <div class="service-num">04</div>
+        <div class="service-tag">LLMs & Fine-tuning</div>
+        <h3>Modelos de Lenguaje</h3>
+        <p>Personalizamos modelos de lenguaje avanzados (GPT, Claude, Llama) para crear soluciones adaptadas a tu negocio.</p>
+        <ul>
+          <li>Fine-tuning de modelos</li>
+          <li>Chatbots con IA generativa</li>
+          <li>Sistemas RAG</li>
+          <li>Generación de contenido</li>
+          <li>Agentes autónomos</li>
+        </ul>
+        <div style="margin-top:1.5rem;"><a href="llm.html" class="btn btn-primary">Ver más</a></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section paper-texture" style="text-align:center;" data-reveal>
+<section class="cta-ribbon" id="cta" data-reveal>
   <div class="container">
-    <p style="font-family:var(--font-mono);font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Al continuar navegando en nuestro sitio, aceptas el uso de cookies según esta política.</p>
-    <a href="contacto.html" class="btn btn-primary">Contactar</a>
+    <h2>¿Listo para empezar tu <span class="em-serif">proyecto?</span></h2>
+    <p>Cuéntanos qué necesitas y te enviaremos una propuesta personalizada sin compromiso.</p>
+    <a href="contacto.html" class="btn" style="background:#fff;color:var(--accent);padding:0.85rem 2rem;display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;border-radius:2px;">Solicitar Cotización</a>
   </div>
 </section>
 
@@ -223,6 +226,7 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
+          <li><a href="servicios.html">Todos los Servicios</a></li>
           <li><a href="web.html">Desarrollo Web</a></li>
           <li><a href="ia.html">Integraciones IA</a></li>
           <li><a href="ml.html">Machine Learning</a></li>
@@ -266,27 +270,6 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 <script>
 (function() { if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 }); document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el)); })();
 (function() { const nav = document.getElementById('main-nav'); let lastScroll = 0; window.addEventListener('scroll', () => { const currentScroll = window.pageYOffset; if (currentScroll > lastScroll && currentScroll > 100) { nav.classList.add('nav-hidden'); } else { nav.classList.remove('nav-hidden'); } lastScroll = currentScroll; }, { passive: true }); })();
-document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const target = document.querySelector(a.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
-</script>
-<script>
-// ── Geo Location: cambiar a Ibarra si visitante está en Imbabura ──
-(function() {
-  fetch('/api/location')
-    .then(r => r.json())
-    .then(data => {
-      if (data && data.region === 'I') {
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-        const nodes = [];
-        while (walker.nextNode()) nodes.push(walker.currentNode);
-        nodes.forEach(n => { if (n.nodeValue && n.nodeValue.includes('Quito')) n.nodeValue = n.nodeValue.replace(/Quito/g, 'Ibarra'); });
-        if (document.title) document.title = document.title.replace(/Quito/g, 'Ibarra');
-        document.querySelectorAll('[alt]').forEach(el => { if (el.alt && el.alt.includes('Quito')) el.alt = el.alt.replace(/Quito/g, 'Ibarra'); });
-        const md = document.querySelector('meta[name=description]');
-        if (md && md.content && md.content.includes('Quito')) md.content = md.content.replace(/Quito/g, 'Ibarra');
-      }
-    })
-    .catch(() => {});
-})();
 </script>
 </body>
 </html>
