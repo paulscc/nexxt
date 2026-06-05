@@ -133,6 +133,34 @@ nav.nav-hidden { transform: translateY(-100%); }
 .nav-links a:hover { color: var(--fg); text-decoration: none; }
 .nav-links a.active { color: var(--accent); }
 
+/* ── Mobile menu toggle ── */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 101;
+}
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--fg);
+  transition: all 0.3s ease;
+}
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* ── Hero ── */
 .hero {
   min-height: calc(100vh - 120px);
@@ -349,7 +377,29 @@ footer {
 /* ── Responsive ── */
 @media (max-width: 880px) {
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
-  .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255 255 255 / 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 1.5rem var(--gutter);
+    gap: 1rem;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 6px rgba(0 0 0 0.05);
+  }
+  .nav-links.mobile-open {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 0.75rem 0;
+    font-size: 1rem;
+  }
   .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
@@ -389,6 +439,11 @@ footer {
       <span class="nav-logo-mark">✦</span>
       <span>Nexxts</span>
     </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
@@ -429,15 +484,13 @@ footer {
           <div class="info-icon">📧</div>
           <div class="info-content">
             <h4>Email</h4>
-            <p><a href="mailto:team@Nexxts.com.ec">team@Nexxts.com.ec</a></p>
-            <p><a href="mailto:team@Nexxts.com.ec">team@Nexxts.com.ec</a></p>
+            <p><a href="mailto:team@Nexxts.com.ec">team@Nexxts.es</a></p>
+            <p><a href="mailto:team@Nexxts.com.ec">team@Nexxts.es</a></p>
           </div>
         </div>
         <div class="info-item">
           <div class="info-icon">📱</div>
           <div class="info-content">
-            <h4>Teléfono</h4>
-            <p><a href="tel:+593961427970">+593 96142 7970</a></p>
             <p>24/7</p>
           </div>
         </div>
