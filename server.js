@@ -2,11 +2,36 @@ const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
 const path = require('path');
+const https = require('https');
 const geoip = require('geoip-lite');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// ── Cronjob: hacer ping a la web cada 5 min para mantener Render activo ──
+const PING_URL = 'https://cronbloj.onrender.com/ping';
+const PING_INTERVAL = 5 * 60 * 1000; // 5 minutos
+
+function doPing() {
+  https.get(PING_URL, (resp) => {
+    let data = '';
+    resp.on('data', chunk => data += chunk);
+    resp.on('end', () => {
+      console.log(`[${new Date().toISOString()}] Ping exitoso a ${PING_URL} → ${resp.statusCode}`);
+    });
+  }).on('error', (err) => {
+    console.error(`[${new Date().toISOString()}] Error en ping: ${err.message}`);
+  });
+}
+
+// Primer ping a los 10 segundos de iniciar el servidor, luego cada 5 min
+setTimeout(() => {
+  doPing();
+  setInterval(doPing, PING_INTERVAL);
+}, 10000);
+
+console.log(`Cronjob configurado: ping cada 5 min a ${PING_URL}`);
 
 // Middleware
 app.use(cors());
