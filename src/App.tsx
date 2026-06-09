@@ -13,14 +13,12 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      {/* Leaf decorator - link to classic version */}
-      <button
-        onClick={() => { window.location.href = '/old/index.html'; }}
-        className="fixed top-4 left-4 z-[999] w-10 h-10 flex items-center justify-center rounded-full bg-white/30 backdrop-blur-md border border-stone-300/50 hover:border-amber-500/50 hover:bg-white/60 hover:scale-110 transition-all duration-300 cursor-pointer group"
-        title="Ir a versión anterior"
-      >
-        <span className="text-lg group-hover:animate-[leaf-spin_1.5s_ease-in-out_infinite]">🌿</span>
-      </button>
+      {/* Page Flip Effect - top left corner */}
+      <div className="fixed top-0 left-0 z-[999] w-16 h-16 overflow-hidden cursor-pointer group" onClick={() => window.location.href = '/old/index.html'} title="Ir a versión anterior">
+        <div className="absolute top-0 left-0 w-0 h-0 border-l-[60px] border-t-[60px] border-l-stone-200/80 border-t-stone-200/80 group-hover:border-l-amber-500/30 group-hover:border-t-amber-500/30 transition-all duration-500" />
+        <div className="absolute top-0 left-0 w-0 h-0 border-l-[56px] border-t-[56px] border-l-white border-t-white group-hover:border-l-amber-100 group-hover:border-t-amber-100 transition-all duration-500" />
+        <span className="absolute top-[10px] right-[6px] text-[10px] font-mono font-bold text-stone-400 group-hover:text-amber-600 transition-colors duration-500 opacity-0 group-hover:opacity-100 pointer-events-none rotate-45 origin-top-left">✦</span>
+      </div>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectsPage />} />

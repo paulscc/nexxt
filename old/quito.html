@@ -154,33 +154,6 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 .paper-texture::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); background-size: 256px 256px; pointer-events: none; }
 
 /* ── Leaf decorator - link back to main site ── */
-.leaf-main-link {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 9999;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter: blur(4px);
-  border: 1px solid oklch(88% 0.012 75);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-.leaf-main-link:hover {
-  transform: scale(1.1);
-  border-color: oklch(52% 0.12 28);
-  background: rgba(255,255,255,0.8);
-}
-.leaf-main-link:hover .leaf-icon {
-  animation: leaf-spin 1.5s ease-in-out infinite;
-}
 @keyframes leaf-spin {
   0% { transform: rotate(0deg) scale(1); }
   25% { transform: rotate(15deg) scale(1.15); }
@@ -189,10 +162,74 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
   100% { transform: rotate(0deg) scale(1); }
 }
 
+
+/* ── Page Flip Effect - top left corner ── */
+.page-flip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.page-flip-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 60px solid var(--surface, #f5f5f0);
+  border-top: 60px solid var(--surface, #f5f5f0);
+  transition: all 0.5s ease;
+}
+.page-flip-flap-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 56px solid #fff;
+  border-top: 56px solid #fff;
+  transition: all 0.5s ease;
+}
+.page-flip-link:hover .page-flip-flap {
+  border-left-color: var(--accent-soft, #e8c4a0);
+  border-top-color: var(--accent-soft, #e8c4a0);
+}
+.page-flip-link:hover .page-flip-flap-inner {
+  border-left-color: #fbf5ef;
+  border-top-color: #fbf5ef;
+}
+.page-flip-star {
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  font-size: 10px;
+  font-family: var(--font-mono, monospace);
+  font-weight: bold;
+  color: var(--muted, #999);
+  transition: all 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+.page-flip-link:hover .page-flip-star {
+  opacity: 1;
+  color: var(--accent, #8B4513);
+}
+
 </style>
 </head>
 <body>
-<a href="/" class="leaf-main-link" title="Volver a versión principal"><span class="leaf-icon">✨</span></a>
+<a href="/" class="page-flip-link" title="Volver a versión principal">
+  <div class="page-flip-flap"></div>
+  <div class="page-flip-flap-inner"></div>
+  <span class="page-flip-star">&#10022;</span>
+</a>
+
 
 <div class="topbar">
   <span class="topbar-brand">✦ Nexxts</span>
