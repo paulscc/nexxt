@@ -27,7 +27,7 @@ export default function ContactPage() {
     if (errorMsg) setErrorMsg(null);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name.trim()) { setErrorMsg('El nombre es obligatorio'); return; }
     if (!formData.email.trim()) { setErrorMsg('El email es obligatorio'); return; }
@@ -35,11 +35,24 @@ export default function ContactPage() {
     if (!formData.message.trim()) { setErrorMsg('El mensaje es obligatorio'); return; }
     setLoading(true);
     setErrorMsg(null);
-    setTimeout(() => {
+    try {
+      const response = await fetch('/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      const result = await response.json();
+      if (result.success) {
+        setSuccess(true);
+        setFormData({ name: '', email: '', company: '', phone: '', contactMethod: '', service: '', message: '' });
+      } else {
+        setErrorMsg(result.message || 'Error al enviar. Intenta de nuevo.');
+      }
+    } catch (error) {
+      setErrorMsg('Error de conexión. Intenta de nuevo.');
+    } finally {
       setLoading(false);
-      setSuccess(true);
-      setFormData({ name: '', email: '', company: '', phone: '', contactMethod: '', service: '', message: '' });
-    }, 1500);
+    }
   };
 
   return (
