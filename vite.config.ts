@@ -16,6 +16,10 @@ export default defineConfig(() => {
         '/api': 'http://localhost:3001',
         '/send-email': 'http://localhost:3001',
         '/subscribe': 'http://localhost:3001',
+        '/classic': {
+          target: 'http://localhost:3001',
+          changeOrigin: true,
+        },
       },
     },
   };
