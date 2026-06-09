@@ -388,16 +388,300 @@ footer {
 }
 
 /* ── Leaf decorator - link back to main site ── */
-@keyframes leaf-spin {
-  0% { transform: rotate(0deg) scale(1); }
   25% { transform: rotate(15deg) scale(1.15); }
   50% { transform: rotate(-10deg) scale(1.2); }
   75% { transform: rotate(10deg) scale(1.1); }
   100% { transform: rotate(0deg) scale(1); }
 }
 
+/* ── Page Flip Effect - top right corner ── */
+.page-flip-link {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  overflow: visible;
+}
+.page-flip-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 48px solid rgba(200, 200, 190, 0.6);
+  border-top: 48px solid rgba(200, 200, 190, 0.6);
+  transition: all 0.3s ease;
+}
+.page-flip-fold {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 44px solid transparent;
+  border-top: 44px solid #fff;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.page-flip-arrow {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 12px;
+  color: #999;
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-family: sans-serif;
+}
+.page-flip-link:hover .page-flip-fold {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+.page-flip-link:hover .page-flip-arrow {
+  opacity: 1;
+  transform: translate(2px, 0);
+}
+</style>
+</head>
+<body>
+<a href="/" class="page-flip-link" title="Volver a versión principal"><div class="page-flip-bg"></div><div class="page-flip-fold"></div><span class="page-flip-arrow">→</span></a>
 
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-brand">✦ Nexxts</span>
+    <span>Quito, Ecuador — <span class="mono">2026</span></span>
+    <span><span class="mono">Nexxts.com.ec</span></span>
+  </div>
+</div>
 
+<!-- Nav -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/old/index.html" class="nav-logo">
+      <span class="nav-logo-mark">✦</span>
+      <span>Nexxts</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/old/index.html">Inicio</a></li>
+      <li><a href="/old/servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
+      <li><a href="/old/nosotros.html" class="active">Nosotros</a></li>
+      <li><a href="/old/contacto.html">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero container" id="hero" data-reveal>
+  <div class="hero-label" data-reveal data-delay="100">Sobre Nosotros</div>
+  <h1 data-reveal data-delay="200">
+    Innovación desde <span class="em-serif">Quito</span>
+    <span class="accent">✦</span>
+  </h1>
+  <p class="hero-lead" data-reveal data-delay="300">
+    Somos un equipo de desarrolladores apasionados comprometidos con transformar ideas en soluciones digitales de vanguardia desde el corazón de Ecuador.
+  </p>
+</section>
+
+<!-- Story -->
+<section class="section paper-texture" id="story" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">Nuestra Historia</div>
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 data-reveal data-delay="200">Una visión compartida</h2>
+      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-top: 1.5rem;" data-reveal data-delay="300">
+        Nexxts nació en Quito, Ecuador, con la convicción de que la tecnología de calidad no debería ser exclusiva de grandes centros tecnológicos. Desde 2018, hemos trabajado incansablemente para demostrar que el talento ecuatoriano puede competir a nivel global en desarrollo de software, inteligencia artificial y machine learning.
+      </p>
+      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-top: 1.5rem;" data-reveal data-delay="400">
+        Nuestro equipo combina experiencia técnica con una profunda comprensión de las necesidades empresariales latinoamericanas, creando soluciones que no solo funcionan técnicamente, sino que generan valor real para nuestros clientes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section section-alt paper-texture" id="values" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">Nuestros Valores</div>
+    <h2 data-reveal data-delay="200">Lo que nos <span class="em-serif">define</span></h2>
+    <div class="values-grid">
+      <div class="value-card" data-reveal data-delay="100">
+        <div class="value-icon">🎯</div>
+        <h3>Excelencia Técnica</h3>
+        <p>Nos comprometemos con las más altas estándares de calidad en cada línea de código que escribimos.</p>
+      </div>
+      <div class="value-card" data-reveal data-delay="200">
+        <div class="value-icon">🤝</div>
+        <h3>Colaboración</h3>
+        <p>Trabajamos como una extensión de tu equipo, manteniendo comunicación transparente y constante.</p>
+      </div>
+      <div class="value-card" data-reveal data-delay="300">
+        <div class="value-icon">💡</div>
+        <h3>Innovación</h3>
+        <p>Exploramos continuamente nuevas tecnologías para ofrecer soluciones vanguardistas a nuestros clientes.</p>
+      </div>
+      <div class="value-card" data-reveal data-delay="400">
+        <div class="value-icon">🌍</div>
+        <h3>Impacto Local</h3>
+        <p>Creemos en el potencial de Ecuador y Latinoamérica para liderar la transformación digital.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section paper-texture" id="team" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">Nuestro Equipo</div>
+    <h2 data-reveal data-delay="200">Las personas detrás del <span class="em-serif">código</span></h2>
+    <div class="team-grid">
+      <div class="team-card" data-reveal data-delay="100">
+        <div class="team-role">CEO & Fundador</div>
+        <h3>Carlos Martínez</h3>
+        <p>Experto en arquitectura de software con más de 12 años de experiencia liderando proyectos tecnológicos en Latinoamérica.</p>
+      </div>
+      <div class="team-card" data-reveal data-delay="200">
+        <div class="team-role">CTO</div>
+        <h3>Ana Rodríguez</h3>
+        <p>Especialista en inteligencia artificial y machine learning, PhD en Ciencias de la Computación.</p>
+      </div>
+      <div class="team-card" data-reveal data-delay="300">
+        <div class="team-role">Lead Developer</div>
+        <h3>Miguel Sánchez</h3>
+        <p>Desarrollador full-stack con expertise en React, Node.js y arquitecturas cloud-native.</p>
+      </div>
+      <div class="team-card" data-reveal data-delay="400">
+        <div class="team-role">AI Engineer</div>
+        <h3>Laura González</h3>
+        <p>Especialista en LLMs, fine-tuning y NLP con experiencia en implementación de soluciones de IA generativa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="section section-alt paper-texture" id="location" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">Nuestra Ubicación</div>
+    <h2 data-reveal data-delay="200">Desde <span class="em-serif">Quito</span> para el mundo</h2>
+    <div class="location-section">
+      <div class="location-info" data-reveal data-delay="300">
+        <p>
+          Estamos orgullosamente ubicados en Quito, Ecuador, una ciudad que combina historia rica con una vibrante comunidad tecnológica en crecimiento. Nuestra ubicación estratégica nos permite servir a clientes en toda Latinoamérica y más allá.
+        </p>
+        <p>
+          Trabajamos de forma remota con equipos distribuidos, lo que nos permite adaptarnos a diferentes zonas horarias y culturas de trabajo, manteniendo siempre la calidad y el compromiso que nos caracteriza.
+        </p>
+        <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent);">
+          📍 Quito, Ecuador<br>
+          🕐 Zona horaria: GMT-5<br>
+          🌐 Servicios globales
+        </p>
+      </div>
+      <div class="location-map" data-reveal data-delay="400">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199359.9548475375!2d-78.5759709375!3d-0.2298519999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a2c5b6c5f5f%3A0x6d8b4b4b4b4b4b4b!2sQuito%2C%20Ecuador!5e0!3m2!1sen!2sus!4v1234567890" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark" id="cta" data-reveal>
+  <div class="container" style="text-align: center;">
+    <h2 data-reveal data-delay="100">¿Listo para trabajar <span class="em-serif">juntos?</span></h2>
+    <p style="font-size: 1.1rem; opacity: 0.85; margin: 1.5rem 0 2rem; max-width: 32em; margin-left: auto; margin-right: auto;" data-reveal data-delay="200">
+      Nos encantaría conocer más sobre tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.
+    </p>
+    <a href="/old/contacto.html" class="btn" style="background: #fff; color: var(--accent); padding: 0.85rem 2rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; border-radius: 2px;" data-reveal data-delay="300">
+      Contáctanos
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="/old/web.html">Desarrollo Web</a></li>
+          <li><a href="/old/ia.html">Integraciones IA</a></li>
+          <li><a href="/old/ml.html">Machine Learning</a></li>
+          <li><a href="/old/llm.html">LLMs & Fine-tuning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/old/nosotros.html">Nosotros</a></li>
+          <li><a href="/old/contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ubicación</h4>
+        <ul>
+          <li><a href="#">Quito, Ecuador</a></li>
+          <li><a href="#">Remoto Global</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/old/privacidad.html">Política de Privacidad</a></li>
+          <li><a href="/old/terminos.html">Términos de Servicio</a></li>
+          <li><a href="/old/cookies.html">Política de Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-mega">
+      Innovación ecuatoriana para el mundo. <span class="em-serif">Nexxts.</span> <span class="accent">—</span>
+    </div>
+    <div class="footer-bottom">
+      <span>✦ Nexxts — © 2026</span>
+      <span>Quito, Ecuador</span>
+      <span>Todos los derechos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ──
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+})();
+
+// ── Headroom nav ──
+(function() {
+  const nav = document.getElementById('main-nav');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 100) {
       nav.classList.add('nav-hidden');
     } else {
       nav.classList.remove('nav-hidden');

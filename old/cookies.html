@@ -153,64 +153,10 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 .paper-texture::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); background-size: 256px 256px; pointer-events: none; }
 
 /* ── Leaf decorator - link back to main site ── */
-@keyframes leaf-spin {
-  0% { transform: rotate(0deg) scale(1); }
   25% { transform: rotate(15deg) scale(1.15); }
   50% { transform: rotate(-10deg) scale(1.2); }
   75% { transform: rotate(10deg) scale(1.1); }
   100% { transform: rotate(0deg) scale(1); }
-}
-
-
-/* ── Page Flip Effect - top right corner ── */
-.page-flip-link {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 9999;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  overflow: visible;
-}
-.page-flip-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 48px solid rgba(200, 200, 190, 0.6);
-  border-top: 48px solid rgba(200, 200, 190, 0.6);
-  transition: all 0.3s ease;
-}
-.page-flip-fold {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 44px solid transparent;
-  border-top: 44px solid #fff;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-.page-flip-arrow {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 12px;
-  color: #999;
-  opacity: 0;
-  transition: all 0.3s ease;
-  font-family: sans-serif;
-}
-.page-flip-link:hover .page-flip-fold {
-  opacity: 1;
-  transform: translate(2px, -2px);
-}
-.page-flip-link:hover .page-flip-arrow {
-  opacity: 1;
-  transform: translate(2px, 0);
 }
 
 /* ── Page Flip Effect - top right corner ── */
@@ -266,11 +212,8 @@ footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem
 </style>
 </head>
 <body>
-<a href="/" class="page-flip-link" title="Volver a versión principal">
-  <div class="page-flip-bg"></div>
-  <div class="page-flip-fold"></div>
-  <span class="page-flip-arrow">→</span>
-</a>
+<a href="/" class="page-flip-link" title="Volver a versión principal"><div class="page-flip-bg"></div><div class="page-flip-fold"></div><span class="page-flip-arrow">→</span></a>
+
 <div class="topbar">
   <span class="topbar-brand">✦ Nexxts</span>
   <span>Quito, Ecuador — <span class="mono">2026</span></span>

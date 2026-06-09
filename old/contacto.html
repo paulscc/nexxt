@@ -429,16 +429,280 @@ footer {
 }
 
 /* ── Leaf decorator - link back to main site ── */
-@keyframes leaf-spin {
-  0% { transform: rotate(0deg) scale(1); }
   25% { transform: rotate(15deg) scale(1.15); }
   50% { transform: rotate(-10deg) scale(1.2); }
   75% { transform: rotate(10deg) scale(1.1); }
   100% { transform: rotate(0deg) scale(1); }
 }
 
+/* ── Page Flip Effect - top right corner ── */
+.page-flip-link {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  overflow: visible;
+}
+.page-flip-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 48px solid rgba(200, 200, 190, 0.6);
+  border-top: 48px solid rgba(200, 200, 190, 0.6);
+  transition: all 0.3s ease;
+}
+.page-flip-fold {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 44px solid transparent;
+  border-top: 44px solid #fff;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.page-flip-arrow {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 12px;
+  color: #999;
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-family: sans-serif;
+}
+.page-flip-link:hover .page-flip-fold {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+.page-flip-link:hover .page-flip-arrow {
+  opacity: 1;
+  transform: translate(2px, 0);
+}
+</style>
+</head>
+<body>
+<a href="/" class="page-flip-link" title="Volver a versión principal"><div class="page-flip-bg"></div><div class="page-flip-fold"></div><span class="page-flip-arrow">→</span></a>
 
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-brand">✦ Nexxts</span>
+    <span>Quito, Ecuador — <span class="mono">2026</span></span>
+    <span><span class="mono">Nexxts.com.ec</span></span>
+  </div>
+</div>
 
+<!-- Nav -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/old/index.html" class="nav-logo">
+      <span class="nav-logo-mark">✦</span>
+      <span>Nexxts</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/old/index.html">Inicio</a></li>
+      <li><a href="/old/servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
+      <li><a href="/old/nosotros.html">Nosotros</a></li>
+      <li><a href="/old/contacto.html" class="active">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero container" id="hero" data-reveal>
+  <div class="hero-label" data-reveal data-delay="100">Contacto</div>
+  <h1 data-reveal data-delay="200">
+    Hablemos de tu <span class="em-serif">proyecto</span>
+    <span class="accent">✦</span>
+  </h1>
+  <p class="hero-lead" data-reveal data-delay="300">
+    Estamos listos para ayudarte a transformar tus ideas en realidad. Cuéntanos sobre tu proyecto y te responderemos pronto.
+  </p>
+</section>
+
+<!-- Contact Section -->
+<section class="section section-alt paper-texture" id="contact" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">Información de Contacto</div>
+    <h2 data-reveal data-delay="200">Conéctate con <span class="em-serif">nosotros</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info" data-reveal data-delay="300">
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-content">
+            <h4>Ubicación</h4>
+            <p>Quito, Ecuador</p>
+            <p>Trabajamos de forma remota con clientes en todo el mundo</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📧</div>
+          <div class="info-content">
+            <h4>Email</h4>
+            <p><a href="mailto:team@Nexxts.com.ec">team@Nexxts.es</a></p>
+            <p><a href="mailto:team@Nexxts.com.ec">team@Nexxts.es</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📱</div>
+          <div class="info-content">
+            <p>24/7</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">💼</div>
+          <div class="info-content">
+            <h4>Servicios</h4>
+            <p>Desarrollo Web, IA, ML, LLMs, Fine-tuning</p>
+            <p>Consultoría tecnológica y soluciones a medida</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form" data-reveal data-delay="400">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="company">Empresa (opcional)</label>
+            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+          </div>
+          <div class="form-group">
+            <label for="phone">Teléfono (opcional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+593 99 999 9999">
+          </div>
+          <div class="form-group">
+            <label for="contact_method">Método de contacto preferido</label>
+            <select id="contact_method" name="contact_method">
+              <option value="">Selecciona...</option>
+              <option value="email">Email</option>
+              <option value="phone">Teléfono</option>
+              <option value="whatsapp">WhatsApp</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="service">Servicio de interés</label>
+            <select id="service" name="service">
+              <option value="">Selecciona un servicio</option>
+              <option value="Web">Desarrollo Web</option>
+              <option value="IA">Integraciones IA</option>
+              <option value="ML">Machine Learning</option>
+              <option value="LLM">LLMs y Fine-tuning</option>
+              <option value="Consultoria">Consultoría</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+          </div>
+          <button type="submit" id="contact-submit" class="btn btn-primary">Enviar Mensaje</button>
+          <div id="contact-status" style="margin-top:1rem;font-family:var(--font-mono);font-size:0.75rem;display:none;"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark" id="cta" data-reveal>
+  <div class="container" style="text-align: center;">
+    <h2 data-reveal data-delay="100">¿Prefieres una <span class="em-serif">llamada?</span></h2>
+    <p style="font-size: 1.1rem; opacity: 0.85; margin: 1.5rem 0 2rem; max-width: 32em; margin-left: auto; margin-right: auto;" data-reveal data-delay="200">
+      Agenda una llamada con nuestro equipo para discutir tu proyecto en detalle. Sin compromiso.
+    </p>
+    <a href="mailto:team@Nexxts.com.ec?subject=Solicitud%20de%20llamada" class="btn" style="background: #fff; color: var(--accent); padding: 0.85rem 2rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; border-radius: 2px;" data-reveal data-delay="300">
+      Solicitar Llamada
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="/old/web.html">Desarrollo Web</a></li>
+          <li><a href="/old/ia.html">Integraciones IA</a></li>
+          <li><a href="/old/ml.html">Machine Learning</a></li>
+          <li><a href="/old/llm.html">LLMs & Fine-tuning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/old/nosotros.html">Nosotros</a></li>
+          <li><a href="/old/contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ubicación</h4>
+        <ul>
+          <li><a href="#">Quito, Ecuador</a></li>
+          <li><a href="#">Remoto Global</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/old/privacidad.html">Política de Privacidad</a></li>
+          <li><a href="/old/terminos.html">Términos de Servicio</a></li>
+          <li><a href="/old/cookies.html">Política de Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-mega">
+      Innovación ecuatoriana para el mundo. <span class="em-serif">Nexxts.</span> <span class="accent">—</span>
+    </div>
+    <div class="footer-bottom">
+      <span>✦ Nexxts — © 2026</span>
+      <span>Quito, Ecuador</span>
+      <span>Todos los derechos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ──
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+})();
+
+// ── Headroom nav ──
+(function() {
+  const nav = document.getElementById('main-nav');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 100) {
       nav.classList.add('nav-hidden');
     } else {
       nav.classList.remove('nav-hidden');
