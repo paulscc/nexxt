@@ -15,9 +15,9 @@ export default function App() {
       <ScrollToTop />
       {/* Leaf decorator - link to classic version */}
       <button
-        onClick={() => { window.location.href = '/classic'; }}
+        onClick={() => { window.location.href = '/old/index.html'; }}
         className="fixed top-4 left-4 z-[999] w-10 h-10 flex items-center justify-center rounded-full bg-white/30 backdrop-blur-md border border-stone-300/50 hover:border-amber-500/50 hover:bg-white/60 hover:scale-110 transition-all duration-300 cursor-pointer group"
-        title="Ir a versión clásica"
+        title="Ir a versión anterior"
       >
         <span className="text-lg group-hover:animate-[leaf-spin_1.5s_ease-in-out_infinite]">🌿</span>
       </button>
