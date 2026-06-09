@@ -12,9 +12,6 @@ export default defineConfig(() => {
       },
     },
     server: {
-      watch: {
-        ignored: ['**/_old/**'],
-      },
       proxy: {
         '/api': 'http://localhost:3001',
         '/send-email': 'http://localhost:3001',

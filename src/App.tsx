@@ -13,19 +13,14 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      {/* Page Flip Effect - top right corner */}
-      <div 
-        className="fixed top-0 right-0 z-[999] w-12 h-12 cursor-pointer group"
-        onClick={() => window.location.href = '/_old/index.html'}
+      {/* Leaf decorator - link to classic version */}
+      <button
+        onClick={() => { window.location.href = '/old/index.html'; }}
+        className="fixed top-4 left-4 z-[999] w-10 h-10 flex items-center justify-center rounded-full bg-white/30 backdrop-blur-md border border-stone-300/50 hover:border-amber-500/50 hover:bg-white/60 hover:scale-110 transition-all duration-300 cursor-pointer group"
         title="Ir a versión anterior"
       >
-        {/* Background page */}
-        <div className="absolute top-0 right-0 w-0 h-0 border-r-[48px] border-t-[48px] border-r-stone-200/60 border-t-stone-200/60 transition-all duration-300" />
-        {/* Folded corner - visible on hover */}
-        <div className="absolute top-0 right-0 w-0 h-0 border-r-[44px] border-t-[44px] border-r-transparent border-t-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-        {/* Arrow indicator */}
-        <span className="absolute top-[14px] right-[14px] text-xs text-stone-500 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1">→</span>
-      </div>
+        <span className="text-lg group-hover:animate-[leaf-spin_1.5s_ease-in-out_infinite]">🌿</span>
+      </button>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectsPage />} />

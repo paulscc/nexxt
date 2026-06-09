@@ -16,13 +16,13 @@
 <meta name="description" content="Servicios de Nexxts: Desarrollo Web, Integraciones IA, Machine Learning, LLMs & Fine-tuning en Quito, Ecuador.">
 <style>
 :root {
-  --bg:      #f5f5f0;
-  --surface: #fafaf8;
-  --fg:      #2d2a24;
-  --muted:   #7a756e;
-  --border:  #dedad2;
-  --accent:  #8B4513;
-  --accent-soft: #d4a574;
+  --bg:      oklch(96.5% 0.015 75);
+  --surface: oklch(98.5% 0.008 75);
+  --fg:      oklch(18% 0.02 60);
+  --muted:   oklch(48% 0.015 60);
+  --border:  oklch(88% 0.012 75);
+  --accent:  oklch(52% 0.12 28);
+  --accent-soft: oklch(78% 0.06 28);
   --font-display: 'Iowan Old Style', 'Charter', Georgia, 'Times New Roman', serif;
   --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --font-mono:    ui-monospace, 'IBM Plex Mono', 'JetBrains Mono', Menlo, monospace;
@@ -97,12 +97,12 @@ nav.nav-hidden { transform: translateY(-100%); }
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .btn:hover { text-decoration: none; }
 .btn-primary { background: var(--accent); color: #fff; border-radius: 2px; }
-.btn-primary:hover { background: #753a0e; transform: translateY(-1px); }
+.btn-primary:hover { background: oklch(44% 0.12 28); transform: translateY(-1px); }
 .btn-secondary { background: transparent; color: var(--fg); border: 1px solid var(--border); border-radius: 2px; }
 .btn-secondary:hover { border-color: var(--muted); background: var(--surface); }
 .section-alt { background: var(--surface); }
-.section-dark { background: #26231d; color: #eae8e4; }
-.section-dark .section-label { color: #9a958e; }
+.section-dark { background: oklch(15% 0.015 60); color: oklch(92% 0.005 80); }
+.section-dark .section-label { color: oklch(60% 0.015 60); }
 .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
 .service-card { background: var(--surface); border: 1px solid var(--border); padding: 2.5rem; transition: all 0.3s; position: relative; overflow: hidden; }
 .service-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
@@ -116,19 +116,19 @@ nav.nav-hidden { transform: translateY(-100%); }
 .service-card li { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; padding-left: 1.2rem; position: relative; }
 .service-card li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
 .cta-ribbon { background: var(--accent); color: #fff; padding: 4rem 0; text-align: center; position: relative; }
-.cta-ribbon::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: #753a0e; }
+.cta-ribbon::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: oklch(44% 0.12 28); }
 .cta-ribbon h2 { color: #fff; }
 .cta-ribbon p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 2rem; max-width: 32em; margin-left: auto; margin-right: auto; }
-footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
+footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem; }
-.footer-col h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #9a958e; margin-bottom: 1rem; }
+.footer-col h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(60% 0.01 60); margin-bottom: 1rem; }
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 0.5rem; }
-.footer-col a { color: #ccc9c4; font-size: 0.9rem; }
+.footer-col a { color: oklch(80% 0.005 80); font-size: 0.9rem; }
 .footer-col a:hover { color: #fff; }
-.footer-mega { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: #eae8e4; line-height: 1.1; border-top: 1px solid #4d4943; padding-top: 2rem; margin-top: 2rem; }
+.footer-mega { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: oklch(92% 0.005 80); line-height: 1.1; border-top: 1px solid oklch(30% 0.01 60); padding-top: 2rem; margin-top: 2rem; }
 .footer-mega .em-serif { color: var(--accent); font-style: italic; }
-.footer-bottom { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #736e67; border-top: 1px solid #403d37; padding-top: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.footer-bottom { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(45% 0.01 60); border-top: 1px solid oklch(25% 0.01 60); padding-top: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 [data-reveal].revealed { opacity: 1; transform: translateY(0); }
 [data-reveal][data-delay="100"] { transition-delay: 0.1s; }
@@ -169,66 +169,45 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 .ruler-dotted { border: none; border-top: 1px dotted var(--border); margin: 2rem 0; }
 
 /* ── Leaf decorator - link back to main site ── */
+.leaf-main-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid oklch(88% 0.012 75);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.leaf-main-link:hover {
+  transform: scale(1.1);
+  border-color: oklch(52% 0.12 28);
+  background: rgba(255,255,255,0.8);
+}
+.leaf-main-link:hover .leaf-icon {
+  animation: leaf-spin 1.5s ease-in-out infinite;
+}
+@keyframes leaf-spin {
+  0% { transform: rotate(0deg) scale(1); }
   25% { transform: rotate(15deg) scale(1.15); }
   50% { transform: rotate(-10deg) scale(1.2); }
   75% { transform: rotate(10deg) scale(1.1); }
   100% { transform: rotate(0deg) scale(1); }
 }
 
-/* ── Page Flip Effect - top right corner ── */
-.page-flip-link {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 9999;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  overflow: visible;
-}
-.page-flip-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 48px solid rgba(200, 200, 190, 0.6);
-  border-top: 48px solid rgba(200, 200, 190, 0.6);
-  transition: all 0.3s ease;
-}
-.page-flip-fold {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 44px solid transparent;
-  border-top: 44px solid #fff;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-.page-flip-arrow {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 12px;
-  color: #999;
-  opacity: 0;
-  transition: all 0.3s ease;
-  font-family: sans-serif;
-}
-.page-flip-link:hover .page-flip-fold {
-  opacity: 1;
-  transform: translate(2px, -2px);
-}
-.page-flip-link:hover .page-flip-arrow {
-  opacity: 1;
-  transform: translate(2px, 0);
-
 </style>
 </head>
 <body>
-<a href="/" class="page-flip-link" title="Volver a versión principal"><div class="page-flip-bg"></div><div class="page-flip-fold"></div><span class="page-flip-arrow">→</span></a>
+<a href="/" class="leaf-main-link" title="Volver a versión principal"><span class="leaf-icon">✨</span></a>
 
 <div class="topbar">
   <div class="topbar-inner">
@@ -240,7 +219,7 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 
 <nav id="main-nav">
   <div class="nav-inner">
-    <a href="/classic/index.html" class="nav-logo">
+    <a href="/old/index.html" class="nav-logo">
       <span class="nav-logo-mark">✦</span>
       <span>Nexxts</span>
     </a>
@@ -250,10 +229,10 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
       <span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="/classic/index.html">Inicio</a></li>
-      <li><a href="/classic/servicios.html" class="active">Servicios <span class="nav-badge">Catálogo</span></a></li>
-      <li><a href="/classic/nosotros.html">Nosotros <span class="nav-badge">Equipo</span></a></li>
-      <li><a href="/classic/contacto.html">Contacto</a></li>
+      <li><a href="/old/index.html">Inicio</a></li>
+      <li><a href="/old/servicios.html" class="active">Servicios <span class="nav-badge">Catálogo</span></a></li>
+      <li><a href="/old/nosotros.html">Nosotros <span class="nav-badge">Equipo</span></a></li>
+      <li><a href="/old/contacto.html">Contacto</a></li>
     </ul>
   </div>
 </nav>
@@ -275,7 +254,7 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
     <h2 data-reveal data-delay="200">Lo que <span class="em-serif">ofrecemos</span></h2>
     <div class="service-grid">
       <div class="service-card" data-reveal data-delay="100">
-        <div class="service-img"><img src="/classic/assets/desarrollo.gif" alt="Desarrollo Web" loading="lazy"></div>
+        <div class="service-img"><img src="/old/assets/desarrollo.gif" alt="Desarrollo Web" loading="lazy"></div>
         <div class="service-num">01</div>
         <div class="service-tag">Desarrollo Web</div>
         <h3>Aplicaciones Web Modernas</h3>
@@ -287,10 +266,10 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
           <li>APIs y microservicios</li>
           <li>Optimización SEO y rendimiento</li>
         </ul>
-        <div style="margin-top:1.5rem;"><a href="/classic/web.html" class="btn btn-primary">Ver más</a></div>
+        <div style="margin-top:1.5rem;"><a href="/old/web.html" class="btn btn-primary">Ver más</a></div>
       </div>
       <div class="service-card" data-reveal data-delay="200">
-        <div class="service-img"><img src="/classic/assets/apis.gif" alt="Integraciones IA" loading="lazy"></div>
+        <div class="service-img"><img src="/old/assets/apis.gif" alt="Integraciones IA" loading="lazy"></div>
         <div class="service-num">02</div>
         <div class="service-tag">Inteligencia Artificial</div>
         <h3>Integraciones IA</h3>
@@ -302,10 +281,10 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
           <li>Análisis inteligente de datos</li>
           <li>Visión por computadora</li>
         </ul>
-        <div style="margin-top:1.5rem;"><a href="/classic/ia.html" class="btn btn-primary">Ver más</a></div>
+        <div style="margin-top:1.5rem;"><a href="/old/ia.html" class="btn btn-primary">Ver más</a></div>
       </div>
       <div class="service-card" data-reveal data-delay="300">
-        <div class="service-img"><img src="/classic/assets/nlp.gif" alt="Machine Learning" loading="lazy"></div>
+        <div class="service-img"><img src="/old/assets/nlp.gif" alt="Machine Learning" loading="lazy"></div>
         <div class="service-num">03</div>
         <div class="service-tag">Machine Learning</div>
         <h3>Modelos Predictivos</h3>
@@ -317,10 +296,10 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
           <li>Segmentación de clientes</li>
           <li>Procesamiento de lenguaje natural</li>
         </ul>
-        <div style="margin-top:1.5rem;"><a href="/classic/ml.html" class="btn btn-primary">Ver más</a></div>
+        <div style="margin-top:1.5rem;"><a href="/old/ml.html" class="btn btn-primary">Ver más</a></div>
       </div>
       <div class="service-card" data-reveal data-delay="400">
-        <div class="service-img"><img src="/classic/assets/llms.gif" alt="LLMs y Fine-tuning" loading="lazy"></div>
+        <div class="service-img"><img src="/old/assets/llms.gif" alt="LLMs y Fine-tuning" loading="lazy"></div>
         <div class="service-num">04</div>
         <div class="service-tag">LLMs & Fine-tuning</div>
         <h3>Modelos de Lenguaje</h3>
@@ -332,7 +311,7 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
           <li>Generación de contenido</li>
           <li>Agentes autónomos</li>
         </ul>
-        <div style="margin-top:1.5rem;"><a href="/classic/llm.html" class="btn btn-primary">Ver más</a></div>
+        <div style="margin-top:1.5rem;"><a href="/old/llm.html" class="btn btn-primary">Ver más</a></div>
       </div>
     </div>
   </div>
@@ -342,7 +321,7 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
   <div class="container">
     <h2>¿Listo para empezar tu <span class="em-serif">proyecto?</span></h2>
     <p>Cuéntanos qué necesitas y te enviaremos una propuesta personalizada sin compromiso.</p>
-    <a href="/classic/contacto.html" class="btn" style="background:#fff;color:var(--accent);padding:0.85rem 2rem;display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;border-radius:2px;">Solicitar Cotización</a>
+    <a href="/old/contacto.html" class="btn" style="background:#fff;color:var(--accent);padding:0.85rem 2rem;display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;border-radius:2px;">Solicitar Cotización</a>
   </div>
 </section>
 
@@ -352,33 +331,33 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
-          <li><a href="/classic/servicios.html">Todos los Servicios</a></li>
-          <li><a href="/classic/web.html">Desarrollo Web</a></li>
-          <li><a href="/classic/ia.html">Integraciones IA</a></li>
-          <li><a href="/classic/ml.html">Machine Learning</a></li>
-          <li><a href="/classic/llm.html">LLMs & Fine-tuning</a></li>
+          <li><a href="/old/servicios.html">Todos los Servicios</a></li>
+          <li><a href="/old/web.html">Desarrollo Web</a></li>
+          <li><a href="/old/ia.html">Integraciones IA</a></li>
+          <li><a href="/old/ml.html">Machine Learning</a></li>
+          <li><a href="/old/llm.html">LLMs & Fine-tuning</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="/classic/nosotros.html">Nosotros</a></li>
-          <li><a href="/classic/contacto.html">Contacto</a></li>
+          <li><a href="/old/nosotros.html">Nosotros</a></li>
+          <li><a href="/old/contacto.html">Contacto</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Ubicación</h4>
         <ul>
-          <li><a href="/classic/nosotros.html#location">Quito, Ecuador</a></li>
+          <li><a href="/old/nosotros.html#location">Quito, Ecuador</a></li>
           <li><a href="#">Remoto Global</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="/classic/privacidad.html">Política de Privacidad</a></li>
-          <li><a href="/classic/terminos.html">Términos de Servicio</a></li>
-          <li><a href="/classic/cookies.html">Política de Cookies</a></li>
+          <li><a href="/old/privacidad.html">Política de Privacidad</a></li>
+          <li><a href="/old/terminos.html">Términos de Servicio</a></li>
+          <li><a href="/old/cookies.html">Política de Cookies</a></li>
         </ul>
       </div>
     </div>

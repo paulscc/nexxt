@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Machine Learning — Nexxts Quito Ecuador</title>
+<title>Página Web Quito — Diseño y Desarrollo Web en Quito, Ecuador | Nexxts</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHSN12QMFP"></script>
 <script>
@@ -13,16 +13,22 @@
   gtag('config', 'G-LHSN12QMFP');
 </script>
 <link rel="icon" href="assets/logoo.png" type="image/png">
-<meta name="description" content="Soluciones de Machine Learning en Nexxts. Modelos predictivos, clustering, clasificación y sistemas de recomendación impulsados por datos.">
+<meta name="description" content="Creamos páginas web profesionales en Quito, Ecuador. Diseño web moderno, desarrollo web, tiendas online y sitios web corporativos para negocios en Quito. ¡Solicita tu página web hoy!">
+<meta name="keywords" content="página web Quito, páginas web Quito, diseño web Quito, desarrollo web Quito, agencia web Quito, crear página web Quito, sitio web Quito Ecuador, diseño de páginas web Quito, empresa de páginas web Quito">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="EC-P">
+<meta name="geo.placename" content="Quito">
+<meta name="geo.position" content="-0.22985;-78.52495">
+<meta name="ICBM" content="-0.22985, -78.52495">
 <style>
 :root {
-  --bg:      #f5f5f0;
-  --surface: #fafaf8;
-  --fg:      #2d2a24;
-  --muted:   #7a756e;
-  --border:  #dedad2;
-  --accent:  #8B4513;
-  --accent-soft: #d4a574;
+  --bg:      oklch(96.5% 0.015 75);
+  --surface: oklch(98.5% 0.008 75);
+  --fg:      oklch(18% 0.02 60);
+  --muted:   oklch(48% 0.015 60);
+  --border:  oklch(88% 0.012 75);
+  --accent:  oklch(52% 0.12 28);
+  --accent-soft: oklch(78% 0.06 28);
   --font-display: 'Iowan Old Style', 'Charter', Georgia, 'Times New Roman', serif;
   --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --font-mono:    ui-monospace, 'IBM Plex Mono', 'JetBrains Mono', Menlo, monospace;
@@ -40,7 +46,6 @@ h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.01em; }
 h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
 h4 { font-size: clamp(1rem, 1.5vw, 1.2rem); }
-.ds-serif { font-family: var(--font-body); }
 .em-serif { font-family: var(--font-display); font-style: italic; }
 .mono { font-family: var(--font-mono); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.08em; }
 .accent { color: var(--accent); }
@@ -58,34 +63,6 @@ nav.nav-hidden { transform: translateY(-100%); }
 .nav-links { display: flex; gap: 1.5rem; list-style: none; font-size: 0.85rem; }
 .nav-links a { color: var(--muted); transition: color 0.2s; display: flex; align-items: center; gap: 0.3rem; }
 .nav-links a:hover { color: var(--fg); text-decoration: none; }
-
-/* ── Mobile menu toggle ── */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 101;
-}
-.menu-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--fg);
-  transition: all 0.3s ease;
-}
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
 .nav-badge { font-family: var(--font-mono); font-size: 0.6rem; background: var(--accent-soft); color: var(--accent); padding: 0.1rem 0.4rem; border-radius: 3px; }
 .hero { min-height: calc(100vh - 120px); display: flex; flex-direction: column; justify-content: center; padding: 4rem 0; position: relative; }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -97,7 +74,7 @@ nav.nav-hidden { transform: translateY(-100%); }
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .btn:hover { text-decoration: none; }
 .btn-primary { background: var(--accent); color: #fff; border-radius: 2px; }
-.btn-primary:hover { background: #753a0e; transform: translateY(-1px); }
+.btn-primary:hover { background: oklch(44% 0.12 28); transform: translateY(-1px); }
 .btn-secondary { background: transparent; color: var(--fg); border: 1px solid var(--border); border-radius: 2px; }
 .btn-secondary:hover { border-color: var(--muted); background: var(--surface); }
 .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
@@ -105,10 +82,10 @@ nav.nav-hidden { transform: translateY(-100%); }
 .stat-label { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
 .hero-image { aspect-ratio: 4/5; background: var(--border); overflow: hidden; position: relative; }
 .hero-image img { width: 100%; height: 100%; object-fit: cover; }
-.section-dark { background: #26231d; color: #eae8e4; }
-.section-dark .section-label { color: #9a958e; }
-.section-dark .btn-secondary { border-color: #59554e; color: #e2e0dc; }
-.section-dark .btn-secondary:hover { border-color: #9a958e; }
+.section-dark { background: oklch(15% 0.015 60); color: oklch(92% 0.005 80); }
+.section-dark .section-label { color: oklch(60% 0.015 60); }
+.section-dark .btn-secondary { border-color: oklch(35% 0.01 60); color: oklch(90% 0.005 80); }
+.section-dark .btn-secondary:hover { border-color: oklch(60% 0.01 60); }
 .section-alt { background: var(--surface); }
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
 .card { background: var(--surface); border: 1px solid var(--border); padding: 2rem; transition: all 0.3s; }
@@ -130,18 +107,18 @@ nav.nav-hidden { transform: translateY(-100%); }
 .process-step h3 { margin-bottom: 0.5rem; }
 .process-step p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-.work-card { background: #33302a; padding: 2.5rem; transform: rotate(-0.5deg); transition: all 0.4s; position: relative; }
+.work-card { background: oklch(20% 0.015 60); padding: 2.5rem; transform: rotate(-0.5deg); transition: all 0.4s; position: relative; }
 .work-card:nth-child(2) { transform: rotate(0.5deg) translateY(1rem); }
 .work-card:hover { transform: rotate(0deg) translateY(-0.25rem); }
-.work-card-category { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #a06030; margin-bottom: 0.75rem; }
-.work-card h3 { font-size: 1.5rem; color: #eae8e4; margin-bottom: 0.5rem; }
-.work-card p { font-size: 0.9rem; color: #b0aca4; }
+.work-card-category { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(60% 0.04 30); margin-bottom: 0.75rem; }
+.work-card h3 { font-size: 1.5rem; color: oklch(92% 0.005 80); margin-bottom: 0.5rem; }
+.work-card p { font-size: 0.9rem; color: oklch(70% 0.01 70); }
 .testimonial { text-align: center; max-width: 720px; margin: 0 auto; padding: 3rem 0; }
 .testimonial-quote { font-family: var(--font-display); font-size: clamp(1.2rem, 2vw, 1.6rem); line-height: 1.6; font-style: italic; margin-bottom: 1.5rem; position: relative; }
 .testimonial-quote::before { content: '\201C'; font-size: 4rem; color: var(--accent); opacity: 0.2; position: absolute; top: -1.5rem; left: -1rem; font-family: var(--font-display); line-height: 1; }
 .testimonial-author { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .cta-ribbon { background: var(--accent); color: #fff; padding: 4rem 0; text-align: center; position: relative; }
-.cta-ribbon::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: #753a0e; }
+.cta-ribbon::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: oklch(44% 0.12 28); }
 .cta-ribbon h2 { color: #fff; }
 .cta-ribbon p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 2rem; max-width: 32em; margin-left: auto; margin-right: auto; }
 .cta-form { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
@@ -149,17 +126,17 @@ nav.nav-hidden { transform: translateY(-100%); }
 .cta-form input::placeholder { color: rgba(255,255,255,0.5); }
 .cta-form input:focus { outline: none; border-color: #fff; }
 .cta-form .btn { background: #fff; color: var(--accent); border-radius: 2px; }
-.cta-form .btn:hover { background: #f0eee8; }
-footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
+.cta-form .btn:hover { background: oklch(95% 0.01 80); }
+footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem; }
-.footer-col h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #9a958e; margin-bottom: 1rem; }
+.footer-col h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(60% 0.01 60); margin-bottom: 1rem; }
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 0.5rem; }
-.footer-col a { color: #ccc9c4; font-size: 0.9rem; }
+.footer-col a { color: oklch(80% 0.005 80); font-size: 0.9rem; }
 .footer-col a:hover { color: #fff; }
-.footer-mega { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: #eae8e4; line-height: 1.1; border-top: 1px solid #4d4943; padding-top: 2rem; margin-top: 2rem; }
+.footer-mega { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: oklch(92% 0.005 80); line-height: 1.1; border-top: 1px solid oklch(30% 0.01 60); padding-top: 2rem; margin-top: 2rem; }
 .footer-mega .em-serif { color: var(--accent); font-style: italic; }
-.footer-bottom { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #736e67; border-top: 1px solid #403d37; padding-top: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.footer-bottom { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(45% 0.01 60); border-top: 1px solid oklch(25% 0.01 60); padding-top: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 [data-reveal].revealed { opacity: 1; transform: translateY(0); }
 [data-reveal][data-delay="100"] { transition-delay: 0.1s; }
@@ -170,98 +147,52 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 [data-reveal][data-delay="600"] { transition-delay: 0.6s; }
 @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } .work-card, .card { transform: none !important; } }
 @media (max-width: 1080px) { .hero-grid { grid-template-columns: 1fr; gap: 2rem; } .hero-image { aspect-ratio: 16/9; max-height: 60vh; } .work-grid { grid-template-columns: 1fr; } .work-card:nth-child(2) { transform: rotate(0deg) translateY(0); } }
-@media (max-width: 880px) {
-  .footer-grid { grid-template-columns: repeat(2, 1fr); }
-  .menu-toggle { display: flex; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(255 255 255 / 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    flex-direction: column;
-    padding: 1.5rem var(--gutter);
-    gap: 1rem;
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 4px 6px rgba(0 0 0 0.05);
-  }
-  .nav-links.mobile-open {
-    display: flex;
-  }
-  .nav-links a {
-    padding: 0.75rem 0;
-    font-size: 1rem;
-  }
-}
+@media (max-width: 880px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } }
 @media (max-width: 560px) { .hero-stats { grid-template-columns: 1fr; gap: 1rem; } .cards-grid, .tech-grid, .process-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .cta-form input { min-width: 100%; } }
 .ruler-dotted { border: none; border-top: 1px dotted var(--border); margin: 2rem 0; }
 .paper-texture { position: relative; }
 .paper-texture::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); background-size: 256px 256px; pointer-events: none; }
 
 /* ── Leaf decorator - link back to main site ── */
+.leaf-main-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid oklch(88% 0.012 75);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.leaf-main-link:hover {
+  transform: scale(1.1);
+  border-color: oklch(52% 0.12 28);
+  background: rgba(255,255,255,0.8);
+}
+.leaf-main-link:hover .leaf-icon {
+  animation: leaf-spin 1.5s ease-in-out infinite;
+}
+@keyframes leaf-spin {
+  0% { transform: rotate(0deg) scale(1); }
   25% { transform: rotate(15deg) scale(1.15); }
   50% { transform: rotate(-10deg) scale(1.2); }
   75% { transform: rotate(10deg) scale(1.1); }
   100% { transform: rotate(0deg) scale(1); }
 }
 
-/* ── Page Flip Effect - top right corner ── */
-.page-flip-link {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 9999;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  overflow: visible;
-}
-.page-flip-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 48px solid rgba(200, 200, 190, 0.6);
-  border-top: 48px solid rgba(200, 200, 190, 0.6);
-  transition: all 0.3s ease;
-}
-.page-flip-fold {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 44px solid transparent;
-  border-top: 44px solid #fff;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-.page-flip-arrow {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 12px;
-  color: #999;
-  opacity: 0;
-  transition: all 0.3s ease;
-  font-family: sans-serif;
-}
-.page-flip-link:hover .page-flip-fold {
-  opacity: 1;
-  transform: translate(2px, -2px);
-}
-.page-flip-link:hover .page-flip-arrow {
-  opacity: 1;
-  transform: translate(2px, 0);
-
 </style>
 </head>
 <body>
-<a href="/" class="page-flip-link" title="Volver a versión principal"><div class="page-flip-bg"></div><div class="page-flip-fold"></div><span class="page-flip-arrow">→</span></a>
+<a href="/" class="leaf-main-link" title="Volver a versión principal"><span class="leaf-icon">✨</span></a>
 
 <div class="topbar">
   <span class="topbar-brand">✦ Nexxts</span>
@@ -271,20 +202,15 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 
 <nav id="main-nav">
   <div class="nav-inner">
-    <a href="/classic/index.html" class="nav-logo">
+    <a href="/old/index.html" class="nav-logo">
       <span class="nav-logo-mark">✦</span>
       <span>Nexxts</span>
     </a>
-    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
     <ul class="nav-links">
-      <li><a href="/classic/index.html">Inicio</a></li>
-      <li><a href="/classic/servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
-      <li><a href="/classic/nosotros.html">Nosotros <span class="nav-badge">Equipo</span></a></li>
-      <li><a href="/classic/contacto.html">Contacto <span class="nav-badge">Habla con nosotros</span></a></li>
+      <li><a href="/old/index.html">Inicio</a></li>
+      <li><a href="/old/servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
+      <li><a href="/old/nosotros.html">Nosotros <span class="nav-badge">Equipo</span></a></li>
+      <li><a href="/old/contacto.html">Contacto <span class="nav-badge">Habla con nosotros</span></a></li>
     </ul>
   </div>
 </nav>
@@ -292,50 +218,50 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 <section class="hero container" id="hero" data-reveal>
   <div class="hero-grid">
     <div>
-      <div class="hero-label" data-reveal data-delay="100">Machine Learning</div>
+      <div class="hero-label" data-reveal data-delay="100">Página Web Quito</div>
       <h1 data-reveal data-delay="200">
-        Modelos predictivos <span class="em-serif">impulsados por datos</span>
+        Tu <span class="em-serif">página web</span> en Quito
         <span class="accent" style="font-family:var(--font-display)">✦</span>
       </h1>
       <p class="hero-lead" data-reveal data-delay="300">
-        Desarrollamos modelos de machine learning personalizados para predecir tendencias, optimizar operaciones empresariales y descubrir patrones ocultos en tus datos que impulsan decisiones estratégicas.
+        Somos tu agencia de páginas web en Quito, Ecuador Creamos sitios web profesionales, modernos y optimizados para que tu negocio destaque en el mercado quiteño. Diseño web, desarrollo web y posicionamiento para empresas en Quito.
       </p>
       <div class="hero-actions" data-reveal data-delay="400">
-        <a href="/classic/contacto.html" class="btn btn-primary">Iniciar Proyecto</a>
-        <a href="#services" class="btn btn-secondary">Nuestros Modelos</a>
+        <a href="/old/contacto.html" class="btn btn-primary">Solicita tu Página Web</a>
+        <a href="#services" class="btn btn-secondary">Nuestros Servicios Web</a>
       </div>
       <div class="hero-stats" data-reveal data-delay="500">
         <div class="stat">
-          <div class="stat-value">40+</div>
-          <div class="stat-label">Modelos Entrenados</div>
+          <div class="stat-value">80+</div>
+          <div class="stat-label">Páginas Web Creadas</div>
         </div>
         <div class="stat">
-          <div class="stat-value">96%</div>
-          <div class="stat-label">Precisión Promedio</div>
+          <div class="stat-value">98%</div>
+          <div class="stat-label">Clientes en Quito Felices</div>
         </div>
         <div class="stat">
-          <div class="stat-value">5TB+</div>
-          <div class="stat-label">Datos Procesados</div>
+          <div class="stat-value">8+</div>
+          <div class="stat-label">Años en Quito</div>
         </div>
       </div>
     </div>
     <div class="hero-image" data-reveal data-delay="300">
-      <img src="/classic/assets/nlp.gif" alt="Nexxts machine learning" loading="lazy">
+      <img src="/old/assets/desarrollo.gif" alt="Páginas web en Quito - Nexxts" loading="lazy">
     </div>
   </div>
 </section>
 
 <section class="section paper-texture" id="about" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">I. Visión General</div>
+    <div class="section-label" data-reveal data-delay="100">I. Agencia Web en Quito</div>
     <div class="hero-grid" style="grid-template-columns: 1fr 1fr; gap: 4rem;">
       <div>
-        <h2 data-reveal data-delay="200">ML que <span class="em-serif">genera valor</span></h2>
+        <h2 data-reveal data-delay="200">Expertos en páginas web <span class="em-serif">en Quito</span></h2>
         <hr class="ruler-dotted" data-reveal data-delay="250">
       </div>
       <div>
         <p style="font-size:1.05rem;line-height:1.8;color:var(--muted)" data-reveal data-delay="300">
-          En Nexxts transformamos datos en ventajas competitivas a través del machine learning. Nuestros modelos predictivos ayudan a las empresas a anticipar tendencias del mercado, optimizar inventarios, personalizar experiencias de usuario y automatizar decisiones complejas. Utilizamos algoritmos de última generación y mejores prácticas de MLOps para garantizar modelos robustos, escalables y mantenibles en el tiempo.
+          En <strong>Nexxts</strong> somos una agencia de <strong>páginas web en Quito</strong> con más de 8 años de experiencia. Creamos sitios web profesionales para negocios quiteños: desde landing pages hasta tiendas online y plataformas corporativas. Trabajamos contigo para entender tu negocio y crear una página web que impulse tus resultados. Nuestra oficina está en Quito, Ecuador, y conocemos el mercado local.
         </p>
       </div>
     </div>
@@ -344,123 +270,142 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 
 <section class="section section-alt paper-texture" id="services" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">II. Servicios ML</div>
-    <h2 data-reveal data-delay="200">Lo que <span class="em-serif">modelamos</span></h2>
+    <div class="section-label" data-reveal data-delay="100">II. Servicios de Páginas Web en Quito</div>
+    <h2 data-reveal data-delay="200">Creamos tu <span class="em-serif">página web</span></h2>
     <div class="cards-grid">
       <div class="card" data-reveal data-delay="100">
         <div class="card-num">01</div>
-        <div class="card-tag">Predicción</div>
-        <h3>Modelos Predictivos</h3>
-        <p>Desarrollamos modelos para pronosticar ventas, demanda, comportamiento de clientes y tendencias del mercado con alta precisión utilizando series temporales y regresión.</p>
+        <div class="card-tag">Página Web Quito</div>
+        <h3>Sitios Web Corporativos</h3>
+        <p>Páginas web profesionales para empresas en Quito. Diseño moderno, contenido optimizado y presencia digital que genera confianza en tus clientes quiteños.</p>
       </div>
       <div class="card" data-reveal data-delay="200">
         <div class="card-num">02</div>
-        <div class="card-tag">Clasificación</div>
-        <h3>Sistemas de Clasificación</h3>
-        <p>Implementamos modelos de clasificación para segmentación de clientes, detección de fraude, diagnóstico automatizado y categorización de documentos.</p>
+        <div class="card-tag">Tiendas Online Quito</div>
+        <h3>E-commerce en Quito</h3>
+        <p>Tiendas online para negocios en Quito con catálogo de productos, carrito de compras, pagos integrados y envíos locales. Vende por internet en Ecuador.</p>
       </div>
       <div class="card" data-reveal data-delay="300">
         <div class="card-num">03</div>
-        <div class="card-tag">Recomendación</div>
-        <h3>Sistemas de Recomendación</h3>
-        <p>Creamos motores de recomendación personalizados que aumentan las ventas cruzadas, mejoran la experiencia de usuario y maximizan el valor del cliente.</p>
+        <div class="card-tag">Landing Pages Quito</div>
+        <h3>Landing Pages Profesionales</h3>
+        <p>Páginas de aterrizaje optimizadas para captar clientes en Quito. Diseñadas para convertir visitantes en leads y ventas para tu negocio quiteño.</p>
       </div>
       <div class="card" data-reveal data-delay="400">
         <div class="card-num">04</div>
-        <div class="card-tag">Clustering</div>
-        <h3>Segmentación y Agrupación</h3>
-        <p>Aplicamos algoritmos de clustering no supervisado para descubrir segmentos de clientes, patrones de comportamiento y agrupaciones naturales en tus datos.</p>
+        <div class="card-tag">Rediseño Web Quito</div>
+        <h3>Rediseño de Sitios Web</h3>
+        <p>Renovamos tu página web en Quito con diseño moderno, mejor rendimiento y experiencia de usuario optimizada. Le damos una nueva vida a tu presencia digital.</p>
       </div>
       <div class="card" data-reveal data-delay="500">
         <div class="card-num">05</div>
-        <div class="card-tag">Anomalías</div>
-        <h3>Detección de Anomalías</h3>
-        <p>Identificamos patrones anómalos en tiempo real para detectar fraudes, fallos en equipos, intrusiones de seguridad y comportamientos atípicos.</p>
+        <div class="card-tag">SEO Quito</div>
+        <h3>Posicionamiento Web Local</h3>
+        <p>Optimizamos tu página web para que aparezca en Google cuando clientes en Quito busquen tus servicios. SEO local para negocios quiteños.</p>
       </div>
       <div class="card" data-reveal data-delay="600">
         <div class="card-num">06</div>
-        <div class="card-tag">NLP</div>
-        <h3>Procesamiento de Texto</h3>
-        <p>Modelos de NLP para análisis de opiniones, extracción de entidades, resumen automático de textos y clasificación de contenido en múltiples idiomas.</p>
+        <div class="card-tag">Mantenimiento Web</div>
+        <h3>Soporte y Mantenimiento</h3>
+        <p>Mantenemos tu página web en Quito actualizada, segura y funcionando correctamente. Soporte técnico local para tu sitio web.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section paper-texture" id="tech" data-reveal>
+<section class="section paper-texture" id="why" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">III. Tecnologías</div>
-    <h2 data-reveal data-delay="200">Stack de <span class="em-serif">ML</span></h2>
-    <div class="tech-grid">
-      <div class="tech-item" data-reveal data-delay="100"><div class="tech-icon">🐍</div><h4>Python</h4><p>Lenguaje Principal</p></div>
-      <div class="tech-item" data-reveal data-delay="150"><div class="tech-icon">📦</div><h4>scikit-learn</h4><p>ML Clásico</p></div>
-      <div class="tech-item" data-reveal data-delay="200"><div class="tech-icon">🧠</div><h4>TensorFlow</h4><p>Deep Learning</p></div>
-      <div class="tech-item" data-reveal data-delay="250"><div class="tech-icon">🔥</div><h4>PyTorch</h4><p>Deep Learning</p></div>
-      <div class="tech-item" data-reveal data-delay="300"><div class="tech-icon">📊</div><h4>Pandas</h4><p>Análisis de Datos</p></div>
-      <div class="tech-item" data-reveal data-delay="350"><div class="tech-icon">📈</div><h4>NumPy</h4><p>Cómputo Numérico</p></div>
-      <div class="tech-item" data-reveal data-delay="400"><div class="tech-icon">☁️</div><h4>AWS SageMaker</h4><p>ML en la Nube</p></div>
-      <div class="tech-item" data-reveal data-delay="450"><div class="tech-icon">📉</div><h4>Matplotlib</h4><p>Visualización</p></div>
-      <div class="tech-item" data-reveal data-delay="500"><div class="tech-icon">⚡</div><h4>XGBoost</h4><p>Gradient Boosting</p></div>
-      <div class="tech-item" data-reveal data-delay="550"><div class="tech-icon">🔄</div><h4>MLflow</h4><p>MLOps</p></div>
-      <div class="tech-item" data-reveal data-delay="600"><div class="tech-icon">💬</div><h4>Hugging Face</h4><p>Modelos NLP</p></div>
-      <div class="tech-item" data-reveal data-delay="650"><div class="tech-icon">🗄️</div><h4>BigQuery</h4><p>Data Warehouse</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt paper-texture" id="process" data-reveal>
-  <div class="container">
-    <div class="section-label" data-reveal data-delay="100">IV. Metodología</div>
-    <h2 data-reveal data-delay="200">Cómo <span class="em-serif">construimos modelos</span></h2>
+    <div class="section-label" data-reveal data-delay="100">III. ¿Por qué elegirnos para tu página web en Quito?</div>
+    <h2 data-reveal data-delay="200">Tu mejor opción en <span class="em-serif">Quito</span></h2>
     <div class="process-grid">
       <div class="process-step" data-num="01" data-reveal data-delay="100">
-        <div class="process-tag">Datos</div>
-        <h3>Recolección y Preparación</h3>
-        <p>Recopilamos, limpiamos y preparamos tus datos para el entrenamiento. Identificamos fuentes relevantes y aseguramos la calidad de los datos.</p>
+        <div class="process-tag">Local</div>
+        <h3>Somos de Quito</h3>
+        <p>Conocemos el mercado quiteño y ecuatoriano. Trabajamos cara a cara contigo en Quito para entender tu negocio y crear la página web perfecta.</p>
       </div>
       <div class="process-step" data-num="02" data-reveal data-delay="200">
-        <div class="process-tag">Modelado</div>
-        <h3>Selección y Entrenamiento</h3>
-        <p>Seleccionamos los algoritmos adecuados para tu problema, entrenamos múltiples modelos y optimizamos hiperparámetros para máximo rendimiento.</p>
+        <div class="process-tag">Profesional</div>
+        <h3>Diseño Web Moderno</h3>
+        <p>Creamos páginas web con diseño profesional, responsive y optimizadas para dispositivos móviles. Tu sitio web se verá increíble en cualquier dispositivo.</p>
       </div>
       <div class="process-step" data-num="03" data-reveal data-delay="300">
-        <div class="process-tag">Validación</div>
-        <h3>Evaluación y Validación</h3>
-        <p>Validamos rigurosamente los modelos con métricas relevantes, pruebas de robustez y validación cruzada para garantizar su confiabilidad.</p>
+        <div class="process-tag">Rápido</div>
+        <h3>Resultados Rápidos</h3>
+        <p>Entregamos tu página web en Quito en tiempo récord. Desde la primera reunión hasta el lanzamiento, trabajamos ágilmente para que tu negocio esté online cuanto antes.</p>
       </div>
       <div class="process-step" data-num="04" data-reveal data-delay="400">
-        <div class="process-tag">Despliegue</div>
-        <h3>Implementación y Monitoreo</h3>
-        <p>Desplegamos el modelo en producción con APIs escalables, monitoreo continuo de rendimiento y reentrenamiento programado para mantener la precisión.</p>
+        <div class="process-tag">Soporte</div>
+        <h3>Acompañamiento Continuo</h3>
+        <p>No te dejamos solo después del lanzamiento. Te acompañamos con soporte técnico, capacitación y mejoras continuas para tu página web en Quito.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-dark paper-texture" id="work" data-reveal>
+<section class="section section-alt paper-texture" id="tech" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">V. Casos de Éxito</div>
-    <h2 data-reveal data-delay="200">Proyectos <span class="em-serif">ML</span></h2>
+    <div class="section-label" data-reveal data-delay="100">IV. Tecnologías para tu Página Web</div>
+    <h2 data-reveal data-delay="200">Tecnología <span class="em-serif">moderna</span></h2>
+    <div class="tech-grid">
+      <div class="tech-item" data-reveal data-delay="100"><div class="tech-icon">⚛️</div><h4>React</h4><p>Interfaces Modernas</p></div>
+      <div class="tech-item" data-reveal data-delay="150"><div class="tech-icon">▲</div><h4>Next.js</h4><p>Rendimiento Óptimo</p></div>
+      <div class="tech-item" data-reveal data-delay="200"><div class="tech-icon">🔷</div><h4>TypeScript</h4><p>Código Seguro</p></div>
+      <div class="tech-item" data-reveal data-delay="250"><div class="tech-icon">🗄️</div><h4>PostgreSQL</h4><p>Base de Datos</p></div>
+      <div class="tech-item" data-reveal data-delay="300"><div class="tech-icon">☁️</div><h4>AWS</h4><p>Hosting en la Nube</p></div>
+      <div class="tech-item" data-reveal data-delay="350"><div class="tech-icon">📱</div><h4>Responsive</h4><p>Diseño Adaptable</p></div>
+      <div class="tech-item" data-reveal data-delay="400"><div class="tech-icon">🚀</div><h4>SEO</h4><p>Posicionamiento</p></div>
+      <div class="tech-item" data-reveal data-delay="450"><div class="tech-icon">⚡</div><h4>Rendimiento</h4><p>Carga Rápida</p></div>
+      <div class="tech-item" data-reveal data-delay="500"><div class="tech-icon">🔒</div><h4>SSL</h4><p>Seguridad</p></div>
+      <div class="tech-item" data-reveal data-delay="550"><div class="tech-icon">🎨</div><h4>UI/UX</h4><p>Experiencia de Usuario</p></div>
+      <div class="tech-item" data-reveal data-delay="600"><div class="tech-icon">📊</div><h4>Analytics</h4><p>Mide Resultados</p></div>
+      <div class="tech-item" data-reveal data-delay="650"><div class="tech-icon">🔄</div><h4>CMS</h4><p>Gestión de Contenido</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark paper-texture" id="process" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">V. Proceso para tu Página Web</div>
+    <h2 data-reveal data-delay="200">Así creamos tu <span class="em-serif">página web</span></h2>
+    <div class="process-grid">
+      <div class="process-step" data-num="01" data-reveal data-delay="100">
+        <div class="process-tag">Reunión</div>
+        <h3>Conocemos tu Negocio</h3>
+        <p>Nos reunimos contigo en Quito (o por videollamada) para entender tu negocio, tus objetivos y lo que necesitas en tu página web.</p>
+      </div>
+      <div class="process-step" data-num="02" data-reveal data-delay="200">
+        <div class="process-tag">Diseño</div>
+        <h3>Diseñamos tu Sitio</h3>
+        <p>Creamos el diseño de tu página web con mockups y prototipos. Aprobamos cada detalle contigo antes de empezar a desarrollar.</p>
+      </div>
+      <div class="process-step" data-num="03" data-reveal data-delay="300">
+        <div class="process-tag">Desarrollo</div>
+        <h3>Desarrollamos tu Web</h3>
+        <p>Construimos tu página web con las mejores tecnologías. Te mantenemos informado del progreso en cada etapa del desarrollo.</p>
+      </div>
+      <div class="process-step" data-num="04" data-reveal data-delay="400">
+        <div class="process-tag">Lanzamiento</div>
+        <h3>Publicamos tu Sitio</h3>
+        <p>Desplegamos tu página web, la optimizamos para buscadores y la lanzamos al mundo. Tu negocio en Quito ahora tiene presencia online profesional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section paper-texture" id="work" data-reveal>
+  <div class="container">
+    <div class="section-label" data-reveal data-delay="100">VI. Proyectos Web en Quito</div>
+    <h2 data-reveal data-delay="200">Páginas web que <span class="em-serif">hemos creado</span></h2>
     <div class="work-grid">
-      <div class="work-card" data-reveal data-delay="100">
-        <div class="work-card-category">Redes Neuronales</div>
-        <h3>Pipeline ML Anti-Fraude</h3>
-        <p>Pipeline de machine learning con redes neuronales profundas para detección de fraude en tiempo real. Procesa 10,000 transacciones/segundo con precisión del 99.2%.</p>
-      </div>
-      <div class="work-card" data-reveal data-delay="200">
-        <div class="work-card-category">Deep Learning</div>
-        <h3>Red Neuronal para Diagnóstico</h3>
-        <p>Red neuronal convolucional profunda para análisis de imágenes médicas, logrando segmentación semántica de patologías con un 94% de precisión diagnóstica.</p>
-      </div>
       <div class="work-card" data-reveal data-delay="300">
-        <div class="work-card-category">Predicción</div>
-        <h3>Modelo de Pronóstico de Ventas</h3>
-        <p>Sistema de predicción de demanda con precisión del 94% que optimizó el inventario de una cadena retail, reduciendo costos de almacenamiento en un 30%.</p>
+        <div class="work-card-category">Página Web Corporativa</div>
+        <h3>Sitio Web para Constructora</h3>
+        <p>Página web profesional para constructora en Quito con portafolio de proyectos, galería de imágenes y formulario de contacto para captar clientes.</p>
       </div>
       <div class="work-card" data-reveal data-delay="400">
-        <div class="work-card-category">Recomendación</div>
-        <h3>Motor de Recomendaciones E-commerce</h3>
-        <p>Sistema de recomendación basado en filtrado colaborativo que aumentó las ventas cruzadas en un 35% y mejoró la retención de usuarios en un 25%.</p>
+        <div class="work-card-category">Tienda Online Quito</div>
+        <h3>E-commerce para Tienda de Ropa</h3>
+        <p>Tienda online con catálogo de productos, carrito de compras, pasarela de pagos y logística de envíos para todo Ecuador.</p>
       </div>
     </div>
   </div>
@@ -468,23 +413,23 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 
 <section class="section section-alt paper-texture" id="testimonial" data-reveal>
   <div class="container">
-    <div class="section-label" data-reveal data-delay="100">VI. Testimonios</div>
+    <div class="section-label" data-reveal data-delay="100">VII. Testimonios</div>
     <div class="testimonial" data-reveal data-delay="200">
       <div class="testimonial-quote">
-        El modelo predictivo que Nexxts desarrolló para nosotros transformó nuestra cadena de suministro. Ahora anticipamos la demanda con precisión y hemos reducido significativamente los costos operativos. Su expertise en ML es excepcional.
+        Nexxts creó la página web para mi negocio en Quito y los resultados fueron increíbles. El diseño es moderno, el sitio carga rápido y ahora mis clientes me encuentran fácilmente en Google. ¡Totalmente recomendados para crear páginas web en Quito!
       </div>
-      <div class="testimonial-author">Roberto García, Director de Operaciones LogiDist</div>
+      <div class="testimonial-author">Patricia Morales, Dueña de Boutique en Quito</div>
     </div>
   </div>
 </section>
 
 <section class="cta-ribbon" id="cta" data-reveal>
   <div class="container">
-    <h2>¿Listo para descubrir el poder de tus <span class="em-serif">datos?</span></h2>
-    <p>Convierte tus datos en decisiones inteligentes con nuestros modelos de machine learning. Solicita una consultoría gratuita y descubre cómo el ML puede transformar tu negocio.</p>
-    <form class="cta-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos pronto para discutir tu proyecto de Machine Learning.')">
-      <input type="email" placeholder="Ingresa tu email" required>
-      <button type="submit" class="btn">Comenzar</button>
+    <h2>Solicita tu <span class="em-serif">página web en Quito</span></h2>
+    <p>¿Necesitas una página web para tu negocio en Quito? Contáctanos hoy y te enviaremos una propuesta sin compromiso. Transforma tu presencia digital con Nexxts.</p>
+    <form class="cta-form" onsubmit="event.preventDefault(); alert('¡Gracias por contactarnos! Te responderemos pronto para crear tu página web en Quito.');">
+      <input type="email" placeholder="Tu email" required>
+      <button type="submit" class="btn">Quiero mi Página Web</button>
     </form>
   </div>
 </section>
@@ -495,40 +440,41 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
-          <li><a href="/classic/web.html">Desarrollo Web</a></li>
-          <li><a href="/classic/ia.html">Integraciones IA</a></li>
-          <li><a href="/classic/ml.html">Machine Learning</a></li>
-          <li><a href="/classic/llm.html">LLMs & Fine-tuning</a></li>
+          <li><a href="/old/quito.html">Página Web Quito</a></li>
+          <li><a href="/old/web.html">Desarrollo Web</a></li>
+          <li><a href="/old/ia.html">Integraciones IA</a></li>
+          <li><a href="/old/ml.html">Machine Learning</a></li>
+          <li><a href="/old/llm.html">LLMs & Fine-tuning</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="/classic/nosotros.html">Nosotros</a></li>
-          <li><a href="/classic/contacto.html">Contacto</a></li>
+          <li><a href="/old/nosotros.html">Nosotros</a></li>
+          <li><a href="/old/contacto.html">Contacto</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Ubicación</h4>
         <ul>
-          <li><a href="/classic/nosotros.html#location">Quito, Ecuador</a></li>
+          <li><a href="/old/nosotros.html#location">Quito, Ecuador</a></li>
           <li><a href="#">Remoto Global</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="/classic/privacidad.html">Política de Privacidad</a></li>
-          <li><a href="/classic/terminos.html">Términos de Servicio</a></li>
-          <li><a href="/classic/cookies.html">Política de Cookies</a></li>
+          <li><a href="/old/privacidad.html">Política de Privacidad</a></li>
+          <li><a href="/old/terminos.html">Términos de Servicio</a></li>
+          <li><a href="/old/cookies.html">Política de Cookies</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-mega">
-      Innovación ecuatoriana para el mundo. <span class="em-serif">Nexxts.</span> <span class="accent" style="font-family:var(--font-display)">—</span>
+      Páginas web en Quito, Ecuador. <span class="em-serif">Nexxts.</span> <span class="accent" style="font-family:var(--font-display)">—</span>
     </div>
     <div class="footer-bottom">
-      <span>✦ Nexxts — © 2026</span>
+      <span>✦ Nexxts — Páginas Web en Quito © 2026</span>
       <span>Quito, Ecuador</span>
       <span>Todos los derechos reservados</span>
     </div>

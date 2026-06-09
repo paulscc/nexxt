@@ -18,13 +18,13 @@
 <style>
 /* ── Atelier Zero: Editorial-Warm palette ── */
 :root {
-  --bg:      #f5f5f0;
-  --surface: #fafaf8;
-  --fg:      #2d2a24;
-  --muted:   #7a756e;
-  --border:  #dedad2;
-  --accent:  #8B4513;
-  --accent-soft: #d4a574;
+  --bg:      oklch(96.5% 0.015 75);
+  --surface: oklch(98.5% 0.008 75);
+  --fg:      oklch(18% 0.02 60);
+  --muted:   oklch(48% 0.015 60);
+  --border:  oklch(88% 0.012 75);
+  --accent:  oklch(52% 0.12 28);
+  --accent-soft: oklch(78% 0.06 28);
 
   --font-display: 'Iowan Old Style', 'Charter', Georgia, 'Times New Roman', serif;
   --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
@@ -260,7 +260,7 @@ nav.nav-hidden { transform: translateY(-100%); }
   color: #fff;
   border-radius: 2px;
 }
-.btn-primary:hover { background: #753a0e; transform: translateY(-1px); }
+.btn-primary:hover { background: oklch(44% 0.12 28); transform: translateY(-1px); }
 .btn-secondary {
   background: transparent;
   color: var(--fg);
@@ -299,15 +299,15 @@ nav.nav-hidden { transform: translateY(-100%); }
 
 /* ── Section themes ── */
 .section-dark {
-  background: #26231d;
-  color: #eae8e4;
+  background: oklch(15% 0.015 60);
+  color: oklch(92% 0.005 80);
 }
-.section-dark .section-label { color: #9a958e; }
+.section-dark .section-label { color: oklch(60% 0.015 60); }
 .section-dark .btn-secondary {
-  border-color: #59554e;
-  color: #e2e0dc;
+  border-color: oklch(35% 0.01 60);
+  color: oklch(90% 0.005 80);
 }
-.section-dark .btn-secondary:hover { border-color: #9a958e; }
+.section-dark .btn-secondary:hover { border-color: oklch(60% 0.01 60); }
 
 .section-alt {
   background: var(--surface);
@@ -489,7 +489,7 @@ nav.nav-hidden { transform: translateY(-100%); }
   margin-top: 2rem;
 }
 .work-card {
-  background: #33302a;
+  background: oklch(20% 0.015 60);
   padding: 2.5rem;
   transform: rotate(-0.5deg);
   transition: all 0.4s;
@@ -502,15 +502,15 @@ nav.nav-hidden { transform: translateY(-100%); }
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #a06030;
+  color: oklch(60% 0.04 30);
   margin-bottom: 0.75rem;
 }
 .work-card h3 {
   font-size: 1.5rem;
-  color: #eae8e4;
+  color: oklch(92% 0.005 80);
   margin-bottom: 0.5rem;
 }
-.work-card p { font-size: 0.9rem; color: #b0aca4; }
+.work-card p { font-size: 0.9rem; color: oklch(70% 0.01 70); }
 
 /* ── Testimonial ── */
 .testimonial {
@@ -576,7 +576,7 @@ nav.nav-hidden { transform: translateY(-100%); }
   left: 0;
   right: 0;
   height: 4px;
-  background: #753a0e;
+  background: oklch(44% 0.12 28);
 }
 .cta h2 { margin-bottom: 1rem; }
 .cta-ribbon h2 { color: #fff; }
@@ -603,12 +603,12 @@ nav.nav-hidden { transform: translateY(-100%); }
   color: var(--accent);
   border-radius: 2px;
 }
-.cta-form .btn:hover { background: #f0eee8; }
+.cta-form .btn:hover { background: oklch(95% 0.01 80); }
 
 /* ── Footer ── */
 footer {
   background: var(--fg);
-  color: #e0ddd8;
+  color: oklch(88% 0.005 80);
   padding: 4rem 0 2rem;
 }
 .footer-grid {
@@ -622,19 +622,19 @@ footer {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #9a958e;
+  color: oklch(60% 0.01 60);
   margin-bottom: 1rem;
 }
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 0.5rem; }
-.footer-col a { color: #ccc9c4; font-size: 0.9rem; }
+.footer-col a { color: oklch(80% 0.005 80); font-size: 0.9rem; }
 .footer-col a:hover { color: #fff; }
 .footer-mega {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.5rem);
-  color: #eae8e4;
+  color: oklch(92% 0.005 80);
   line-height: 1.1;
-  border-top: 1px solid #4d4943;
+  border-top: 1px solid oklch(30% 0.01 60);
   padding-top: 2rem;
   margin-top: 2rem;
 }
@@ -644,8 +644,8 @@ footer {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #736e67;
-  border-top: 1px solid #403d37;
+  color: oklch(45% 0.01 60);
+  border-top: 1px solid oklch(25% 0.01 60);
   padding-top: 1.5rem;
   margin-top: 1.5rem;
   display: flex;
@@ -751,26 +751,6 @@ footer {
 }
 
 /* ── Leaf decorator - link back to main site ── */
-  25% { transform: rotate(15deg) scale(1.15); }
-  50% { transform: rotate(-10deg) scale(1.2); }
-  75% { transform: rotate(10deg) scale(1.1); }
-  100% { transform: rotate(0deg) scale(1); }
-}
-
-/* ── Paper texture overlay ── */
-.paper-texture {
-  position: relative;
-}
-.paper-texture::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  background-size: 256px 256px;
-  pointer-events: none;
-}
-
-/* ── Leaf decorator - link back to main site ── */
 .leaf-main-link {
   position: fixed;
   top: 10px;
@@ -784,7 +764,7 @@ footer {
   border-radius: 50%;
   background: rgba(255,255,255,0.5);
   backdrop-filter: blur(4px);
-  border: 1px solid #dedad2;
+  border: 1px solid oklch(88% 0.012 75);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -792,7 +772,7 @@ footer {
 }
 .leaf-main-link:hover {
   transform: scale(1.1);
-  border-color: #8B4513;
+  border-color: oklch(52% 0.12 28);
   background: rgba(255,255,255,0.8);
 }
 .leaf-main-link:hover .leaf-icon {
@@ -806,60 +786,10 @@ footer {
   100% { transform: rotate(0deg) scale(1); }
 }
 
-/* ── Page Flip Effect - top right corner ── */
-.page-flip-link {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 9999;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  overflow: visible;
-}
-.page-flip-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 48px solid rgba(200, 200, 190, 0.6);
-  border-top: 48px solid rgba(200, 200, 190, 0.6);
-  transition: all 0.3s ease;
-}
-.page-flip-fold {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 44px solid transparent;
-  border-top: 44px solid #fff;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-.page-flip-arrow {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 12px;
-  color: #999;
-  opacity: 0;
-  transition: all 0.3s ease;
-  font-family: sans-serif;
-}
-.page-flip-link:hover .page-flip-fold {
-  opacity: 1;
-  transform: translate(2px, -2px);
-}
-.page-flip-link:hover .page-flip-arrow {
-  opacity: 1;
-  transform: translate(2px, 0);
-
 </style>
 </head>
 <body>
-<a href="/" class="page-flip-link" title="Volver a versión principal"><div class="page-flip-bg"></div><div class="page-flip-fold"></div><span class="page-flip-arrow">→</span></a>
+<a href="/" class="leaf-main-link" title="Volver a versión principal"><span class="leaf-icon">✨</span></a>
 <a href="/" class="leaf-studio-link" title="Ir a versión principal">
   <span class="leaf-icon">✨</span>
 </a>
@@ -876,7 +806,7 @@ footer {
 <!-- Nav -->
 <nav id="main-nav">
   <div class="nav-inner">
-    <a href="/classic/index.html" class="nav-logo">
+    <a href="/old/index.html" class="nav-logo">
       <span class="nav-logo-mark">✦</span>
       <span>Nexxts</span>
     </a>
@@ -884,10 +814,10 @@ footer {
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="/classic/index.html">Inicio</a></li>
-      <li><a href="/classic/servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
-      <li><a href="/classic/nosotros.html">Nosotros <span class="nav-badge">Equipo</span></a></li>
-      <li><a href="/classic/contacto.html">Contacto <span class="nav-badge">Habla con nosotros</span></a></li>
+      <li><a href="/old/index.html">Inicio</a></li>
+      <li><a href="/old/servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
+      <li><a href="/old/nosotros.html">Nosotros <span class="nav-badge">Equipo</span></a></li>
+      <li><a href="/old/contacto.html">Contacto <span class="nav-badge">Habla con nosotros</span></a></li>
     </ul>
     <div class="nav-star">
       <svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
@@ -909,7 +839,7 @@ footer {
         Somos tu agencia de páginas web en Quito, Ecuador. Creamos sitios web profesionales, modernos y optimizados para que tu negocio destaque. También ofrecemos integraciones de IA, machine learning y más para impulsar tu empresa.
       </p>
       <div class="hero-actions" data-reveal data-delay="400">
-        <a href="/classic/web.html" class="btn btn-primary">Iniciar Proyecto</a>
+        <a href="/old/web.html" class="btn btn-primary">Iniciar Proyecto</a>
         <a href="#method" class="btn btn-secondary">Cómo trabajamos</a>
       </div>
       <div class="hero-stats" data-reveal data-delay="500">
@@ -928,7 +858,7 @@ footer {
       </div>
     </div>
     <div class="hero-image" data-reveal data-delay="300">
-      <img src="/classic/assets/landing1.jpeg" alt="Nexxts desarrollo de software" loading="lazy">
+      <img src="/old/assets/landing1.jpeg" alt="Nexxts desarrollo de software" loading="lazy">
     </div>
   </div>
 </section>
@@ -1016,25 +946,25 @@ footer {
     </div>
     <div class="labs-grid">
       <div class="lab-card" data-reveal data-delay="100" onclick="location.href='web.html'" style="cursor:pointer;">
-        <div class="lab-thumb"><img src="/classic/assets/desarrollo.gif" alt="Desarrollo Web" loading="lazy"></div>
+        <div class="lab-thumb"><img src="/old/assets/desarrollo.gif" alt="Desarrollo Web" loading="lazy"></div>
         <div class="lab-card-num">I.</div>
         <h4>Desarrollo Web</h4>
         <p>Creamos sitios web y aplicaciones web modernas, rápidas y optimizadas con las mejores tecnologías del mercado.</p>
       </div>
       <div class="lab-card" data-reveal data-delay="200" onclick="location.href='ia.html'" style="cursor:pointer;">
-        <div class="lab-thumb"><img src="/classic/assets/apis.gif" alt="Integraciones IA" loading="lazy"></div>
+        <div class="lab-thumb"><img src="/old/assets/apis.gif" alt="Integraciones IA" loading="lazy"></div>
         <div class="lab-card-num">II.</div>
         <h4>Integraciones IA</h4>
         <p>Integramos inteligencia artificial en tus procesos para automatizar, analizar datos y potenciar tu negocio.</p>
       </div>
       <div class="lab-card" data-reveal data-delay="300" onclick="location.href='ml.html'" style="cursor:pointer;">
-        <div class="lab-thumb"><img src="/classic/assets/nlp.gif" alt="Machine Learning" loading="lazy"></div>
+        <div class="lab-thumb"><img src="/old/assets/nlp.gif" alt="Machine Learning" loading="lazy"></div>
         <div class="lab-card-num">III.</div>
         <h4>Machine Learning</h4>
         <p>Modelos predictivos y sistemas de recomendación impulsados por datos para decisiones inteligentes.</p>
       </div>
       <div class="lab-card" data-reveal data-delay="400" onclick="location.href='llm.html'" style="cursor:pointer;">
-        <div class="lab-thumb"><img src="/classic/assets/llms.gif" alt="LLMs y Fine-tuning" loading="lazy"></div>
+        <div class="lab-thumb"><img src="/old/assets/llms.gif" alt="LLMs y Fine-tuning" loading="lazy"></div>
         <div class="lab-card-num">IV.</div>
         <h4>LLMs & Fine-tuning</h4>
         <p>Personalizamos modelos de lenguaje como GPT y Llama para crear asistentes inteligentes a tu medida.</p>
@@ -1050,25 +980,25 @@ footer {
     <h2 data-reveal data-delay="200">Cómo <span class="em-serif">trabajamos</span></h2>
     <div class="method-grid">
       <div class="method-step" data-num="01" data-reveal data-delay="100">
-        <div class="method-thumb"><img src="/classic/assets/descubrimiento.png" alt="Descubrimiento" loading="lazy"></div>
+        <div class="method-thumb"><img src="/old/assets/descubrimiento.png" alt="Descubrimiento" loading="lazy"></div>
         <div class="method-tag">Análisis</div>
         <h3>Descubrimiento</h3>
         <p>Entendemos tus necesidades, objetivos y el contexto de tu negocio para definir la solución ideal.</p>
       </div>
       <div class="method-step" data-num="02" data-reveal data-delay="200">
-        <div class="method-thumb"><img src="/classic/assets/diseño.gif" alt="Diseño" loading="lazy"></div>
+        <div class="method-thumb"><img src="/old/assets/diseño.gif" alt="Diseño" loading="lazy"></div>
         <div class="method-tag">Planificación</div>
         <h3>Diseño</h3>
         <p>Creamos la arquitectura y el diseño de la solución, asegurando escalabilidad y mejores prácticas.</p>
       </div>
       <div class="method-step" data-num="03" data-reveal data-delay="300">
-        <div class="method-thumb"><img src="/classic/assets/desarrollo.gif" alt="Desarrollo" loading="lazy"></div>
+        <div class="method-thumb"><img src="/old/assets/desarrollo.gif" alt="Desarrollo" loading="lazy"></div>
         <div class="method-tag">Implementación</div>
         <h3>Desarrollo</h3>
         <p>Construimos tu solución con código limpio, pruebas automatizadas y metodologías ágiles.</p>
       </div>
       <div class="method-step" data-num="04" data-reveal data-delay="400">
-        <div class="method-thumb"><img src="/classic/assets/despliegue.gif" alt="Lanzamiento" loading="lazy"></div>
+        <div class="method-thumb"><img src="/old/assets/despliegue.gif" alt="Lanzamiento" loading="lazy"></div>
         <div class="method-tag">Despliegue</div>
         <h3>Lanzamiento</h3>
         <p>Desplegamos tu solución y proporcionamos soporte continuo para asegurar su éxito.</p>
@@ -1157,32 +1087,32 @@ footer {
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
-          <li><a href="/classic/web.html">Desarrollo Web</a></li>
-          <li><a href="/classic/ia.html">Integraciones IA</a></li>
-          <li><a href="/classic/ml.html">Machine Learning</a></li>
-          <li><a href="/classic/llm.html">LLMs & Fine-tuning</a></li>
+          <li><a href="/old/web.html">Desarrollo Web</a></li>
+          <li><a href="/old/ia.html">Integraciones IA</a></li>
+          <li><a href="/old/ml.html">Machine Learning</a></li>
+          <li><a href="/old/llm.html">LLMs & Fine-tuning</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="/classic/nosotros.html">Nosotros</a></li>
-          <li><a href="/classic/contacto.html">Contacto</a></li>
+          <li><a href="/old/nosotros.html">Nosotros</a></li>
+          <li><a href="/old/contacto.html">Contacto</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Ubicación</h4>
         <ul>
-          <li><a href="/classic/nosotros.html#location">Quito, Ecuador</a></li>
+          <li><a href="/old/nosotros.html#location">Quito, Ecuador</a></li>
           <li><a href="#">Remoto Global</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="/classic/privacidad.html">Política de Privacidad</a></li>
-          <li><a href="/classic/terminos.html">Términos de Servicio</a></li>
-          <li><a href="/classic/cookies.html">Política de Cookies</a></li>
+          <li><a href="/old/privacidad.html">Política de Privacidad</a></li>
+          <li><a href="/old/terminos.html">Términos de Servicio</a></li>
+          <li><a href="/old/cookies.html">Política de Cookies</a></li>
         </ul>
       </div>
     </div>

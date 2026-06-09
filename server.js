@@ -174,13 +174,14 @@ app.get('/', (req, res) => {
 });
 
 // Ruta para la versión clásica (anterior)
-app.use('/classic', express.static(path.join(__dirname, '_old'), {
+app.use('/classic', express.static(path.join(__dirname), {
   index: ['index.html', 'contacto.html', 'nosotros.html']
 }));
 
-// Fallback para rutas del classic
+// Fallback para rutas del classic: si no encuentra archivo, servir index.html
 app.get('/classic/*', (req, res) => {
-  const filePath = path.join(__dirname, '_old', req.path.replace('/classic/', ''));
+  const filePath = path.join(__dirname, req.path.replace('/classic/', ''));
+  // Si el archivo existe, Express static ya lo sirvió. Si llegamos aquí, no existe.
   res.status(404).send('Página no encontrada en versión clásica');
 });
 

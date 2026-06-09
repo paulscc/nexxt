@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Términos de Servicio — Nexxts Quito Ecuador</title>
+<title>Política de Privacidad — Nexxts Quito Ecuador</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHSN12QMFP"></script>
 <script>
@@ -13,16 +13,16 @@
   gtag('config', 'G-LHSN12QMFP');
 </script>
 <link rel="icon" href="assets/logoo.png" type="image/png">
-<meta name="description" content="Términos y condiciones de servicio de Nexxts. Conoce las condiciones de uso de nuestros servicios de desarrollo de software.">
+<meta name="description" content="Política de privacidad de Nexxts. Conoce cómo protegemos y gestionamos tus datos personales.">
 <style>
 :root {
-  --bg:      #f5f5f0;
-  --surface: #fafaf8;
-  --fg:      #2d2a24;
-  --muted:   #7a756e;
-  --border:  #dedad2;
-  --accent:  #8B4513;
-  --accent-soft: #d4a574;
+  --bg:      oklch(96.5% 0.015 75);
+  --surface: oklch(98.5% 0.008 75);
+  --fg:      oklch(18% 0.02 60);
+  --muted:   oklch(48% 0.015 60);
+  --border:  oklch(88% 0.012 75);
+  --accent:  oklch(52% 0.12 28);
+  --accent-soft: oklch(78% 0.06 28);
   --font-display: 'Iowan Old Style', 'Charter', Georgia, 'Times New Roman', serif;
   --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --font-mono:    ui-monospace, 'IBM Plex Mono', 'JetBrains Mono', Menlo, monospace;
@@ -101,17 +101,17 @@ nav.nav-hidden { transform: translateY(-100%); }
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; border: none; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .btn:hover { text-decoration: none; }
 .btn-primary { background: var(--accent); color: #fff; border-radius: 2px; }
-.btn-primary:hover { background: #753a0e; transform: translateY(-1px); }
-footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
+.btn-primary:hover { background: oklch(44% 0.12 28); transform: translateY(-1px); }
+footer { background: var(--fg); color: oklch(88% 0.005 80); padding: 4rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem; }
-.footer-col h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #9a958e; margin-bottom: 1rem; }
+.footer-col h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(60% 0.01 60); margin-bottom: 1rem; }
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 0.5rem; }
-.footer-col a { color: #ccc9c4; font-size: 0.9rem; }
+.footer-col a { color: oklch(80% 0.005 80); font-size: 0.9rem; }
 .footer-col a:hover { color: #fff; }
-.footer-mega { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: #eae8e4; line-height: 1.1; border-top: 1px solid #4d4943; padding-top: 2rem; margin-top: 2rem; }
+.footer-mega { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: oklch(92% 0.005 80); line-height: 1.1; border-top: 1px solid oklch(30% 0.01 60); padding-top: 2rem; margin-top: 2rem; }
 .footer-mega .em-serif { color: var(--accent); font-style: italic; }
-.footer-bottom { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #736e67; border-top: 1px solid #403d37; padding-top: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.footer-bottom { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: oklch(45% 0.01 60); border-top: 1px solid oklch(25% 0.01 60); padding-top: 1.5rem; margin-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 [data-reveal].revealed { opacity: 1; transform: translateY(0); }
 [data-reveal][data-delay="100"] { transition-delay: 0.1s; }
@@ -149,66 +149,45 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 .paper-texture::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); background-size: 256px 256px; pointer-events: none; }
 
 /* ── Leaf decorator - link back to main site ── */
+.leaf-main-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid oklch(88% 0.012 75);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.leaf-main-link:hover {
+  transform: scale(1.1);
+  border-color: oklch(52% 0.12 28);
+  background: rgba(255,255,255,0.8);
+}
+.leaf-main-link:hover .leaf-icon {
+  animation: leaf-spin 1.5s ease-in-out infinite;
+}
+@keyframes leaf-spin {
+  0% { transform: rotate(0deg) scale(1); }
   25% { transform: rotate(15deg) scale(1.15); }
   50% { transform: rotate(-10deg) scale(1.2); }
   75% { transform: rotate(10deg) scale(1.1); }
   100% { transform: rotate(0deg) scale(1); }
 }
 
-/* ── Page Flip Effect - top right corner ── */
-.page-flip-link {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 9999;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  overflow: visible;
-}
-.page-flip-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 48px solid rgba(200, 200, 190, 0.6);
-  border-top: 48px solid rgba(200, 200, 190, 0.6);
-  transition: all 0.3s ease;
-}
-.page-flip-fold {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 44px solid transparent;
-  border-top: 44px solid #fff;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-.page-flip-arrow {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 12px;
-  color: #999;
-  opacity: 0;
-  transition: all 0.3s ease;
-  font-family: sans-serif;
-}
-.page-flip-link:hover .page-flip-fold {
-  opacity: 1;
-  transform: translate(2px, -2px);
-}
-.page-flip-link:hover .page-flip-arrow {
-  opacity: 1;
-  transform: translate(2px, 0);
-
 </style>
 </head>
 <body>
-<a href="/" class="page-flip-link" title="Volver a versión principal"><div class="page-flip-bg"></div><div class="page-flip-fold"></div><span class="page-flip-arrow">→</span></a>
+<a href="/" class="leaf-main-link" title="Volver a versión principal"><span class="leaf-icon">✨</span></a>
 
 <div class="topbar">
   <span class="topbar-brand">✦ Nexxts</span>
@@ -218,7 +197,7 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 
 <nav id="main-nav">
   <div class="nav-inner">
-    <a href="/classic/index.html" class="nav-logo">
+    <a href="/old/index.html" class="nav-logo">
       <span class="nav-logo-mark">✦</span>
       <span>Nexxts</span>
     </a>
@@ -228,10 +207,10 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
       <span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="/classic/index.html">Inicio</a></li>
-      <li><a href="/classic/servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
-      <li><a href="/classic/nosotros.html">Nosotros <span class="nav-badge">Equipo</span></a></li>
-      <li><a href="/classic/contacto.html">Contacto <span class="nav-badge">Habla con nosotros</span></a></li>
+      <li><a href="/old/index.html">Inicio</a></li>
+      <li><a href="/old/servicios.html">Servicios <span class="nav-badge">Catálogo</span></a></li>
+      <li><a href="/old/nosotros.html">Nosotros <span class="nav-badge">Equipo</span></a></li>
+      <li><a href="/old/contacto.html">Contacto <span class="nav-badge">Habla con nosotros</span></a></li>
     </ul>
   </div>
 </nav>
@@ -239,72 +218,69 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 <section class="hero container" id="hero" data-reveal>
   <div class="hero-label" data-reveal data-delay="100">Legal</div>
   <h1 data-reveal data-delay="200">
-    Términos de <span class="em-serif">Servicio</span>
+    Política de <span class="em-serif">Privacidad</span>
     <span class="accent" style="font-family:var(--font-display)">✦</span>
   </h1>
   <p class="hero-lead" data-reveal data-delay="300">
-    Última actualización: Enero 2026. Al utilizar nuestros servicios, aceptas estos términos y condiciones.
+    Última actualización: Enero 2026. En Nexxts nos tomamos muy en serio la privacidad de tus datos.
   </p>
 </section>
 
 <section class="section section-alt paper-texture" data-reveal>
   <div class="container legal-content">
-    <div class="section-label" data-reveal data-delay="100">I. Aceptación de Términos</div>
+    <div class="section-label" data-reveal data-delay="100">I. Información General</div>
     <p data-reveal data-delay="200">
-      Al acceder y utilizar los servicios de <strong>Nexxts</strong> (en adelante, "la Empresa"), incluyendo nuestro sitio web, servicios de desarrollo de software, inteligencia artificial, machine learning y consultoría, aceptas cumplir con estos Términos de Servicio. Si no estás de acuerdo con alguno de estos términos, no debes utilizar nuestros servicios.
+      <strong>Nexxts</strong> (en adelante, "la Empresa", "nosotros" o "nuestro") opera el sitio web <strong>Nexxts.com.ec</strong> y proporciona servicios de desarrollo de software, inteligencia artificial y consultoría tecnológica. Esta Política de Privacidad describe cómo recopilamos, usamos, procesamos y protegemos la información personal que nos proporcionas al utilizar nuestros servicios o visitar nuestro sitio web.
     </p>
 
-    <h3 data-reveal data-delay="200">II. Descripción de Servicios</h3>
-    <p data-reveal data-delay="200">Nexxts ofrece los siguientes servicios profesionales:</p>
+    <h3 data-reveal data-delay="200">II. Datos que Recopilamos</h3>
+    <p data-reveal data-delay="200">Podemos recopilar los siguientes tipos de información personal:</p>
     <ul data-reveal data-delay="200">
-      <li>Desarrollo de aplicaciones web y plataformas digitales.</li>
-      <li>Integración de soluciones de inteligencia artificial en sistemas existentes.</li>
-      <li>Desarrollo e implementación de modelos de machine learning.</li>
-      <li>Personalización y fine-tuning de Large Language Models (LLMs).</li>
-      <li>Consultoría tecnológica y asesoramiento estratégico en transformación digital.</li>
-    </ul>
-    <p data-reveal data-delay="200">El alcance específico de cada servicio se definirá en un contrato o propuesta individual entre Nexxts y el cliente.</p>
-
-    <h3 data-reveal data-delay="200">III. Obligaciones del Cliente</h3>
-    <p data-reveal data-delay="200">Como cliente de Nexxts, te comprometes a:</p>
-    <ul data-reveal data-delay="200">
-      <li>Proporcionar información veraz, completa y actualizada sobre tu negocio y necesidades.</li>
-      <li>Proveer acceso oportuno a los recursos, datos y personal necesario para la ejecución del proyecto.</li>
-      <li>Cumplir con los plazos de pago acordados en la propuesta o contrato.</li>
-      <li>No utilizar los servicios de Nexxts para actividades ilegales o no autorizadas.</li>
-      <li>Respetar los derechos de propiedad intelectual de Nexxts y de terceros.</li>
+      <li><strong>Información de contacto:</strong> nombre, dirección de correo electrónico, número de teléfono y empresa.</li>
+      <li><strong>Información de comunicación:</strong> mensajes que nos envías a través de formularios de contacto, correos electrónicos o llamadas.</li>
+      <li><strong>Datos de uso:</strong> información sobre cómo interactúas con nuestro sitio web, incluyendo páginas visitadas, tiempo de navegación y preferencias.</li>
+      <li><strong>Datos técnicos:</strong> dirección IP, tipo de navegador, sistema operativo y cookies (según nuestra Política de Cookies).</li>
     </ul>
 
-    <h3 data-reveal data-delay="200">IV. Propiedad Intelectual</h3>
-    <p data-reveal data-delay="200">
-      El código fuente, diseños, documentación y demás entregables desarrollados específicamente para un cliente serán propiedad del cliente una vez que se haya completado el pago total acordado. Nexxts se reserva el derecho de utilizar el conocimiento y las herramientas genéricas adquiridas durante el desarrollo de proyectos para futuros trabajos, sin violar la confidencialidad del cliente.
-    </p>
-    <p data-reveal data-delay="200">
-      Las librerías, frameworks y herramientas de código abierto utilizadas en los proyectos mantendrán sus respectivas licencias originales.
-    </p>
+    <h3 data-reveal data-delay="200">III. Finalidad del Tratamiento</h3>
+    <p data-reveal data-delay="200">Utilizamos tus datos personales para las siguientes finalidades:</p>
+    <ul data-reveal data-delay="200">
+      <li>Responder a tus consultas y solicitudes de información sobre nuestros servicios.</li>
+      <li>Proveer los servicios de desarrollo de software, IA y consultoría que hayas contratado.</li>
+      <li>Enviar comunicaciones comerciales sobre nuestros servicios, solo si has dado tu consentimiento explícito.</li>
+      <li>Mejorar nuestro sitio web y servicios mediante análisis de uso.</li>
+      <li>Cumplir con obligaciones legales y regulatorias aplicables.</li>
+    </ul>
 
-    <h3 data-reveal data-delay="200">V. Confidencialidad</h3>
-    <p data-reveal data-delay="200">
-      Ambas partes se comprometen a mantener la confidencialidad de toda la información comercial, técnica y estratégica compartida durante la relación comercial. Esta obligación de confidencialidad se mantendrá vigente durante la relación contractual y por un período de tres años después de su terminación.
-    </p>
+    <h3 data-reveal data-delay="200">IV. Base Legal</h3>
+    <p data-reveal data-delay="200">El tratamiento de tus datos se basa en las siguientes bases legales:</p>
+    <ul data-reveal data-delay="200">
+      <li><strong>Consentimiento:</strong> cuando nos proporcionas voluntariamente tus datos a través de formularios de contacto.</li>
+      <li><strong>Ejecución de un contrato:</strong> cuando necesitamos tus datos para proveer los servicios contratados.</li>
+      <li><strong>Interés legítimo:</strong> para mejorar nuestros servicios y mantener la seguridad de nuestro sitio web.</li>
+      <li><strong>Cumplimiento legal:</strong> para cumplir con obligaciones fiscales, laborales y regulatorias.</li>
+    </ul>
 
-    <h3 data-reveal data-delay="200">VI. Limitación de Responsabilidad</h3>
-    <p data-reveal data-delay="200">
-      Nexxts no será responsable por daños indirectos, incidentales, especiales o consecuentes que surjan del uso o la imposibilidad de usar nuestros servicios. Nuestra responsabilidad total máxima se limitará al monto total pagado por el cliente por el servicio específico que dio origen a la reclamación, siempre que sea permitido por la ley aplicable.
-    </p>
+    <h3 data-reveal data-delay="200">V. Conservación de Datos</h3>
+    <p data-reveal data-delay="200">Conservamos tus datos personales durante el tiempo necesario para cumplir con las finalidades para las que fueron recopilados, incluyendo cualquier requisito legal, contable o de informes. Generalmente, esto significa que conservaremos tus datos mientras mantengas una relación contractual con nosotros y durante los plazos legales de prescripción aplicables.</p>
 
-    <h3 data-reveal data-delay="200">VII. Modificaciones</h3>
-    <p data-reveal data-delay="200">
-      Nexxts se reserva el derecho de modificar estos Términos de Servicio en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en nuestro sitio web. Te recomendamos revisar periódicamente esta página para estar al tanto de cualquier actualización.
-    </p>
+    <h3 data-reveal data-delay="200">VI. Tus Derechos</h3>
+    <p data-reveal data-delay="200">Como titular de los datos, tienes los siguientes derechos:</p>
+    <ul data-reveal data-delay="200">
+      <li><strong>Acceso:</strong> solicitar información sobre los datos personales que tenemos sobre ti.</li>
+      <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos o incompletos.</li>
+      <li><strong>Supresión:</strong> solicitar la eliminación de tus datos cuando ya no sean necesarios.</li>
+      <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos para fines de marketing directo.</li>
+      <li><strong>Limitación:</strong> solicitar la restricción del tratamiento de tus datos.</li>
+      <li><strong>Portabilidad:</strong> recibir tus datos en un formato estructurado y de uso común.</li>
+    </ul>
+    <p data-reveal data-delay="200">Para ejercer cualquiera de estos derechos, contáctanos a través de <a href="mailto:team@Nexxts.com.ec">team@Nexxts.com.ec</a>.</p>
 
-    <h3 data-reveal data-delay="200">VIII. Ley Aplicable</h3>
-    <p data-reveal data-delay="200">
-      Estos Términos de Servicio se regirán e interpretarán de acuerdo con las leyes de la República del Ecuador. Cualquier disputa que surja en relación con estos términos será sometida a la jurisdicción de los tribunales de la ciudad de Quito, Ecuador.
-    </p>
+    <h3 data-reveal data-delay="200">VII. Seguridad</h3>
+    <p data-reveal data-delay="200">Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger tus datos personales contra el acceso no autorizado, la alteración, la divulgación o la destrucción. Utilizamos cifrado SSL, firewalls y sistemas de control de acceso para garantizar la confidencialidad e integridad de tu información.</p>
 
-    <h3 data-reveal data-delay="200">IX. Contacto</h3>
-    <p data-reveal data-delay="200">Si tienes preguntas sobre estos Términos de Servicio, contáctanos en:</p>
+    <h3 data-reveal data-delay="200">VIII. Contacto</h3>
+    <p data-reveal data-delay="200">Si tienes preguntas sobre esta Política de Privacidad o deseas ejercer tus derechos, puedes contactarnos en:</p>
     <p data-reveal data-delay="200">
       <strong>Email:</strong> <a href="mailto:team@Nexxts.com.ec">team@Nexxts.com.ec</a><br>
       <strong>Ubicación:</strong> Quito, Ecuador<br>
@@ -315,8 +291,8 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
 
 <section class="section paper-texture" style="text-align:center;" data-reveal>
   <div class="container">
-    <p style="font-family:var(--font-mono);font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Al utilizar nuestros servicios, aceptas estos Términos de Servicio.</p>
-    <a href="/classic/contacto.html" class="btn btn-primary">Contactar</a>
+    <p style="font-family:var(--font-mono);font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Al utilizar nuestros servicios, aceptas los términos de esta Política de Privacidad.</p>
+    <a href="/old/contacto.html" class="btn btn-primary">Contactar</a>
   </div>
 </section>
 
@@ -326,32 +302,32 @@ footer { background: var(--fg); color: #e0ddd8; padding: 4rem 0 2rem; }
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
-          <li><a href="/classic/web.html">Desarrollo Web</a></li>
-          <li><a href="/classic/ia.html">Integraciones IA</a></li>
-          <li><a href="/classic/ml.html">Machine Learning</a></li>
-          <li><a href="/classic/llm.html">LLMs & Fine-tuning</a></li>
+          <li><a href="/old/web.html">Desarrollo Web</a></li>
+          <li><a href="/old/ia.html">Integraciones IA</a></li>
+          <li><a href="/old/ml.html">Machine Learning</a></li>
+          <li><a href="/old/llm.html">LLMs & Fine-tuning</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="/classic/nosotros.html">Nosotros</a></li>
-          <li><a href="/classic/contacto.html">Contacto</a></li>
+          <li><a href="/old/nosotros.html">Nosotros</a></li>
+          <li><a href="/old/contacto.html">Contacto</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Ubicación</h4>
         <ul>
-          <li><a href="/classic/nosotros.html#location">Quito, Ecuador</a></li>
+          <li><a href="/old/nosotros.html#location">Quito, Ecuador</a></li>
           <li><a href="#">Remoto Global</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="/classic/privacidad.html">Política de Privacidad</a></li>
-          <li><a href="/classic/terminos.html">Términos de Servicio</a></li>
-          <li><a href="/classic/cookies.html">Política de Cookies</a></li>
+          <li><a href="/old/privacidad.html">Política de Privacidad</a></li>
+          <li><a href="/old/terminos.html">Términos de Servicio</a></li>
+          <li><a href="/old/cookies.html">Política de Cookies</a></li>
         </ul>
       </div>
     </div>
