@@ -1,11 +1,11 @@
-# robots.txt - Nexxts - Páginas Web en Quito, Ecuador
+# robots.txt - Nexxts - Desarrollo Web en Quito, Ecuador
 # Optimizado para buscadores locales (Google Ecuador)
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://nexxts.es/sitemap.xml
+Sitemap: https://nexxts.com.ec/sitemap.xml
 
 # Deshabilitar páginas duplicadas o de sistema
 Disallow: /name-pet-ai-landing.html
@@ -19,6 +19,6 @@ Disallow: /name-pet-ai-landing.html
 # - agencia web Quito
 # - crear página web Quito
 # - sitios web Quito Ecuador
-
-# Host
-Host: https://nexxts.es
+# - integraciones IA Ecuador
+# - machine learning Ecuador
+# - LLMs Ecuador
