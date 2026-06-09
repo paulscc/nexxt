@@ -16,7 +16,7 @@ export default function App() {
       {/* Page Flip Effect - top right corner */}
       <div 
         className="fixed top-0 right-0 z-[999] w-12 h-12 cursor-pointer group"
-        onClick={() => window.location.href = '/old/index.html'}
+        onClick={() => window.location.href = '/_old/index.html'}
         title="Ir a versión anterior"
       >
         {/* Background page */}
