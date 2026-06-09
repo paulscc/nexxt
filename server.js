@@ -168,13 +168,13 @@ app.get('/api/location', (req, res) => {
   }
 });
 
-// Ruta principal - versión clásica
+// Ruta principal - versión Studio (nueva interfaz gráfica)
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'studio', 'index.html'));
 });
 
-// Ruta para la nueva versión Studio
-app.use('/studio', express.static(path.join(__dirname, 'studio')));
+// Ruta para la versión clásica (anterior)
+app.use('/classic', express.static(path.join(__dirname)));
 
 app.listen(PORT, () => {
   console.log(`Servidor Nexxts corriendo en http://localhost:${PORT}`);
