@@ -13,11 +13,18 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      {/* Page Flip Effect - top left corner */}
-      <div className="fixed top-0 left-0 z-[999] w-16 h-16 overflow-hidden cursor-pointer group" onClick={() => window.location.href = '/old/index.html'} title="Ir a versión anterior">
-        <div className="absolute top-0 left-0 w-0 h-0 border-l-[60px] border-t-[60px] border-l-stone-200/80 border-t-stone-200/80 group-hover:border-l-amber-500/30 group-hover:border-t-amber-500/30 transition-all duration-500" />
-        <div className="absolute top-0 left-0 w-0 h-0 border-l-[56px] border-t-[56px] border-l-white border-t-white group-hover:border-l-amber-100 group-hover:border-t-amber-100 transition-all duration-500" />
-        <span className="absolute top-[10px] right-[6px] text-[10px] font-mono font-bold text-stone-400 group-hover:text-amber-600 transition-colors duration-500 opacity-0 group-hover:opacity-100 pointer-events-none rotate-45 origin-top-left">✦</span>
+      {/* Page Flip Effect - top right corner */}
+      <div 
+        className="fixed top-0 right-0 z-[999] w-12 h-12 cursor-pointer group"
+        onClick={() => window.location.href = '/old/index.html'}
+        title="Ir a versión anterior"
+      >
+        {/* Background page */}
+        <div className="absolute top-0 right-0 w-0 h-0 border-r-[48px] border-t-[48px] border-r-stone-200/60 border-t-stone-200/60 transition-all duration-300" />
+        {/* Folded corner - visible on hover */}
+        <div className="absolute top-0 right-0 w-0 h-0 border-r-[44px] border-t-[44px] border-r-transparent border-t-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        {/* Arrow indicator */}
+        <span className="absolute top-[14px] right-[14px] text-xs text-stone-500 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1">→</span>
       </div>
       <Routes>
         <Route path="/" element={<HomePage />} />
