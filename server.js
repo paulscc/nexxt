@@ -7,7 +7,7 @@ const geoip = require('geoip-lite');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // ── Cronjob: hacer ping a la web cada 5 min para mantener Render activo ──
 const PING_URL = 'https://cronbloj.onrender.com/ping';
