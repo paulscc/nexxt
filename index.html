@@ -4,7 +4,52 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nexxts — Páginas Web en Quito, Ecuador</title>
+<title>Nexxts — Agencia de Desarrollo Web en Quito, Ecuador | Diseño Web Profesional</title>
+<meta name="description" content="Agencia de desarrollo web en Quito, Ecuador. Especialistas en diseño web profesional, desarrollo de sitios web modernos, integraciones de IA, Machine Learning y soluciones digitales para negocios en Quito y todo Ecuador.">
+<meta name="keywords" content="desarrollo web Quito, páginas web Ecuador, agencia web Quito, diseño web profesional, desarrollo de sitios web, integraciones IA, machine learning Ecuador, Nexxts">
+<link rel="canonical" href="https://nexxts.com.ec/">
+<!-- Open Graph -->
+<meta property="og:title" content="Nexxts — Agencia de Desarrollo Web en Quito, Ecuador">
+<meta property="og:description" content="Agencia de desarrollo web en Quito, Ecuador. Especialistas en diseño web profesional, desarrollo de sitios web modernos, integraciones de IA, Machine Learning y soluciones digitales.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nexxts.com.ec/">
+<meta property="og:image" content="https://nexxts.com.ec/assets/logoo.png">
+<meta property="og:locale" content="es_EC">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nexxts — Agencia de Desarrollo Web en Quito, Ecuador">
+<meta name="twitter:description" content="Agencia de desarrollo web en Quito, Ecuador. Especialistas en diseño web profesional, desarrollo de sitios web modernos, integraciones de IA, Machine Learning y soluciones digitales.">
+<meta name="twitter:image" content="https://nexxts.com.ec/assets/logoo.png">
+<!-- Schema.org JSON-LD for LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Nexxts",
+  "description": "Agencia de desarrollo web en Quito, Ecuador. Especialistas en diseño web profesional, desarrollo de sitios web modernos, integraciones de IA, Machine Learning y soluciones digitales.",
+  "url": "https://nexxts.com.ec/",
+  "telephone": "+593961427970",
+  "email": "team@nexxts.es",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Quito",
+    "addressRegion": "Pichincha",
+    "addressCountry": "EC"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-0.1807",
+    "longitude": "-78.4678"
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/nexxts",
+    "https://www.instagram.com/nexxts",
+    "https://www.linkedin.com/company/nexxts"
+  ]
+}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHSN12QMFP"></script>
 <script>
@@ -13,7 +58,6 @@
   gtag('js', new Date());
   gtag('config', 'G-LHSN12QMFP');
 </script>
-<meta name="description" content="Agencia de páginas web en Quito, Ecuador. Creamos sitios web profesionales, modernos y optimizados para impulsar tu negocio en Quito y todo Ecuador.">
 <link rel="icon" href="assets/logoo.png" type="image/png">
 <style>
 /* ── Atelier Zero: Editorial-Warm palette ── */
@@ -712,6 +756,64 @@ footer {
   background-size: 256px 256px;
   pointer-events: none;
 }
+
+/* ── Leaf decoration top-left ── */
+.leaf-decoration {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+.leaf-decoration:hover {
+  transform: scale(1.1);
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.8);
+}
+.leaf-decoration .leaf-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+.leaf-decoration:hover .leaf-icon {
+  animation: leaf-spin 1.5s ease-in-out infinite;
+}
+@keyframes leaf-spin {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(15deg) scale(1.15); }
+  50% { transform: rotate(-10deg) scale(1.2); }
+  75% { transform: rotate(10deg) scale(1.1); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+.leaf-particle {
+  position: absolute;
+  font-size: 0.7rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease;
+}
+.leaf-decoration:hover .leaf-particle {
+  animation: leaf-fly 1.5s ease-out forwards;
+}
+.leaf-decoration:hover .leaf-particle:nth-child(2) { animation-delay: 0.1s; }
+.leaf-decoration:hover .leaf-particle:nth-child(3) { animation-delay: 0.2s; }
+.leaf-decoration:hover .leaf-particle:nth-child(4) { animation-delay: 0.3s; }
+.leaf-decoration:hover .leaf-particle:nth-child(5) { animation-delay: 0.4s; }
+@keyframes leaf-fly {
+  0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(0.5); }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(360deg) scale(1.5); }
+}
 </style>
 </head>
 <body>
@@ -748,6 +850,16 @@ footer {
   </div>
 </nav>
 
+<!-- Leaf decoration top-left -->
+<div class="leaf-decoration" id="leaf-decoration">
+  <span class="leaf-icon">🌿</span>
+  <span class="leaf-particle" style="--dx:-20px;--dy:-30px;">🍃</span>
+  <span class="leaf-particle" style="--dx:25px;--dy:-25px;">🌱</span>
+  <span class="leaf-particle" style="--dx:-15px;--dy:20px;">🌿</span>
+  <span class="leaf-particle" style="--dx:20px;--dy:25px;">🍀</span>
+  <span class="leaf-particle" style="--dx:-25px;--dy:15px;">🌿</span>
+</div>
+
 <!-- Hero -->
 <section class="hero container" id="hero" data-reveal>
   <div class="hero-grid">
@@ -780,7 +892,7 @@ footer {
       </div>
     </div>
     <div class="hero-image" data-reveal data-delay="300">
-      <img src="assets/landing1.jpeg" alt="Nexxts desarrollo de software" loading="lazy">
+      <img src="assets/landing1.jpeg" alt="Equipo de desarrollo web Nexxts trabajando en proyectos de software en Quito, Ecuador" loading="lazy">
     </div>
   </div>
 </section>
@@ -902,25 +1014,25 @@ footer {
     <h2 data-reveal data-delay="200">Cómo <span class="em-serif">trabajamos</span></h2>
     <div class="method-grid">
       <div class="method-step" data-num="01" data-reveal data-delay="100">
-        <div class="method-thumb"><img src="assets/descubrimiento.png" alt="Descubrimiento" loading="lazy"></div>
+        <div class="method-thumb"><img src="assets/descubrimiento.png" alt="Fase de descubrimiento y análisis de requisitos para desarrollo web en Nexxts" loading="lazy"></div>
         <div class="method-tag">Análisis</div>
         <h3>Descubrimiento</h3>
         <p>Entendemos tus necesidades, objetivos y el contexto de tu negocio para definir la solución ideal.</p>
       </div>
       <div class="method-step" data-num="02" data-reveal data-delay="200">
-        <div class="method-thumb"><img src="assets/diseño.gif" alt="Diseño" loading="lazy"></div>
+        <div class="method-thumb"><img src="assets/diseño.gif" alt="Fase de diseño y arquitectura de soluciones web en Nexxts Quito" loading="lazy"></div>
         <div class="method-tag">Planificación</div>
         <h3>Diseño</h3>
         <p>Creamos la arquitectura y el diseño de la solución, asegurando escalabilidad y mejores prácticas.</p>
       </div>
       <div class="method-step" data-num="03" data-reveal data-delay="300">
-        <div class="method-thumb"><img src="assets/desarrollo.gif" alt="Desarrollo" loading="lazy"></div>
+        <div class="method-thumb"><img src="assets/desarrollo.gif" alt="Fase de desarrollo de software con metodologías ágiles en Nexxts" loading="lazy"></div>
         <div class="method-tag">Implementación</div>
         <h3>Desarrollo</h3>
         <p>Construimos tu solución con código limpio, pruebas automatizadas y metodologías ágiles.</p>
       </div>
       <div class="method-step" data-num="04" data-reveal data-delay="400">
-        <div class="method-thumb"><img src="assets/despliegue.gif" alt="Lanzamiento" loading="lazy"></div>
+        <div class="method-thumb"><img src="assets/despliegue.gif" alt="Fase de despliegue y lanzamiento de proyectos web en Nexxts Ecuador" loading="lazy"></div>
         <div class="method-tag">Despliegue</div>
         <h3>Lanzamiento</h3>
         <p>Desplegamos tu solución y proporcionamos soporte continuo para asegurar su éxito.</p>
