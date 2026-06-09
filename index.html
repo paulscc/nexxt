@@ -757,6 +757,62 @@ footer {
   pointer-events: none;
 }
 
+/* ── Pages decoration top-right ── */
+.pages-decoration {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+  cursor: pointer;
+  width: 36px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+.pages-decoration:hover {
+  transform: scale(1.1);
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.8);
+}
+.pages-decoration .pages-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+.pages-decoration:hover .pages-icon {
+  animation: pages-flip 1.2s ease-in-out infinite;
+}
+@keyframes pages-flip {
+  0% { transform: perspective(60px) rotateY(0deg); }
+  25% { transform: perspective(60px) rotateY(-25deg); }
+  50% { transform: perspective(60px) rotateY(-45deg); }
+  75% { transform: perspective(60px) rotateY(-20deg); }
+  100% { transform: perspective(60px) rotateY(0deg); }
+}
+.pages-particle {
+  position: absolute;
+  font-size: 0.6rem;
+  opacity: 0;
+  pointer-events: none;
+}
+.pages-decoration:hover .pages-particle {
+  animation: pages-fly 1.2s ease-out forwards;
+}
+.pages-decoration:hover .pages-particle:nth-child(2) { animation-delay: 0.1s; }
+.pages-decoration:hover .pages-particle:nth-child(3) { animation-delay: 0.2s; }
+.pages-decoration:hover .pages-particle:nth-child(4) { animation-delay: 0.3s; }
+@keyframes pages-fly {
+  0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(0.5); }
+  100% { opacity: 0; transform: translate(var(--px), var(--py)) rotate(180deg) scale(1.5); }
+}
+
 /* ── Leaf decoration top-left ── */
 .leaf-decoration {
   position: fixed;
@@ -858,6 +914,15 @@ footer {
   <span class="leaf-particle" style="--dx:-15px;--dy:20px;">🌿</span>
   <span class="leaf-particle" style="--dx:20px;--dy:25px;">🍀</span>
   <span class="leaf-particle" style="--dx:-25px;--dy:15px;">🌿</span>
+</div>
+
+<!-- Pages decoration top-right -->
+<div class="pages-decoration" id="pages-decoration">
+  <span class="pages-icon">📄</span>
+  <span class="pages-particle" style="--px:-15px;--py:-20px;">📃</span>
+  <span class="pages-particle" style="--px:15px;--py:-20px;">📄</span>
+  <span class="pages-particle" style="--px:-10px;--py:20px;">📃</span>
+  <span class="pages-particle" style="--px:12px;--py:18px;">📄</span>
 </div>
 
 <!-- Hero -->
